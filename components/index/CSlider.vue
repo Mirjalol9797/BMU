@@ -39,9 +39,11 @@ const props = defineProps({
       </video>
 
       <div
-        class="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] text-center text-white z-10 w-[60%] 640:w-[90%]"
+        class="absolute top-[50%] left-[10%] translate-y-[-50%] text-white z-10 w-[90%] 1024:w-[80%]"
       >
-        <div class="text-6xl mb-7 font-bold 640:text-4xl 480:!text-2xl">
+        <div
+          class="text-8xl leading-[120px] mb-6 font-medium 1024:text-5xl 480:!text-2xl"
+        >
           {{ slider.title }}
         </div>
         <div class="text-xl leading-10 font-bold mb-10 640:text-base">
@@ -50,7 +52,7 @@ const props = defineProps({
         <nuxt-link
           :to="localePath(`${slider.url}`)"
           v-if="slider.url"
-          class="border-2 border-[#E22F24] rounded-full bg-[rgba(255,255,255,0.3)] px-9 py-4"
+          class="text-base text-white py-[14px] px-10 bg-[#648AC8] rounded-full font-medium"
         >
           {{ $t("read_more") }}
         </nuxt-link>
@@ -65,15 +67,14 @@ const props = defineProps({
 
     .swiper-button-prev,
     .swiper-button-next {
-      width: 56px;
-      height: 56px;
-      border: 1px solid #ffffff;
+      width: 40px;
+      height: 40px;
       border-radius: 100%;
-      background-color: rgba(255, 255, 255, 0.2);
+      background-color: rgba(0, 0, 0, 0.2);
       background-image: url("/icons/slider-left.svg");
       background-position: center;
       background-repeat: no-repeat;
-      left: 70px;
+      left: 20px;
 
       &:hover {
         background-color: rgba(255, 255, 255, 0.6);
@@ -89,7 +90,7 @@ const props = defineProps({
     }
     .swiper-button-next {
       transform: rotate(180deg);
-      right: 70px;
+      right: 20px;
       left: auto;
     }
     .swiper-pagination-bullet {

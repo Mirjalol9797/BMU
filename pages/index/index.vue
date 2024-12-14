@@ -82,9 +82,10 @@ getMainAbout();
 
 <template>
   <div class="main-page">
-    <IndexSlider :sliderData="sliderData" />
-    <IndexWelcome :mainContent="mainContent" />
-    <IndexAbout :mainContent="mainContent" :mainAbout="mainAbout" />
+    <IndexCSlider :sliderData="sliderData" />
+    <IndexCCounts />
+    <IndexCWelcome :mainContent="mainContent" />
+    <IndexCAbout :mainContent="mainContent" :mainAbout="mainAbout" />
   </div>
 </template>
 

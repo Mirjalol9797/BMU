@@ -12,7 +12,7 @@ const props = defineProps({
 </script>
 
 <template>
-  <section class="py-[80px] about 768:py-14">
+  <section class="py-[86px] about 768:py-14">
     <div class="site-container flex items-center 768:flex-col-reverse">
       <div class="max-w-[725px] w-full mr-[80px] 768:max-w-full 768:mr-0">
         <div
