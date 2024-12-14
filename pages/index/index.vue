@@ -83,8 +83,9 @@ getMainAbout();
 <template>
   <div class="main-page">
     <IndexCSlider :sliderData="sliderData" />
-    <IndexCCounts />
+    <!-- <IndexCCounts /> -->
     <IndexCWelcome :mainContent="mainContent" />
+    <IndexCPartnerUniversities />
     <IndexCAbout :mainContent="mainContent" :mainAbout="mainAbout" />
   </div>
 </template>

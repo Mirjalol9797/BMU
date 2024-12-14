@@ -11,7 +11,7 @@ const props = defineProps({
   <section class="pt-[86px] pb-[130px] 1024:py-12">
     <div class="site-container flex gap-10 1024:flex-col 1024:gap-0">
       <h1
-        class="w-1/2 text-5xl font-bold 1024:w-full 1024:text-4xl 1024:mb-7 480:!text-xl"
+        class="w-1/2 text-5xl font-bold 1024:w-full 1024:text-4xl 1024:mb-7 480:!text-3xl"
       >
         {{ mainContent?.title }}
       </h1>

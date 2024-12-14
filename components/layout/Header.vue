@@ -84,11 +84,15 @@ function closeBurgerMenu() {
         <div class="text-[#D9D9D9] 768:mb-2">Notice: News & Events Central</div>
         <div class="flex-center gap-6">
           <div class="flex-center gap-2 text-white">
-            <img src="" alt="" class="w-5" />
+            <img
+              src="../../public/icons/header/phone.svg"
+              alt="phone"
+              class="w-5"
+            />
             <a href="tel:+998 95 511 99 99">+998955119999</a>
           </div>
           <div class="flex-center gap-2 text-white">
-            <img src="" alt="" class="w-5" />
+            <img src="../../public/icons/" alt="" class="w-5" />
             <a href="mailto:info@bmu-edu.uz">info@bmu-edu.uz</a>
           </div>
         </div>
