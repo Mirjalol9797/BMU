@@ -80,8 +80,8 @@ function closeBurgerMenu() {
 <template>
   <header class="relative">
     <div class="bg-[#192B69] py-1.5">
-      <div class="site-container flex-center justify-between">
-        <div class="text-[#D9D9D9]">Notice: News & Events Central</div>
+      <div class="site-container flex-center justify-between 768:flex-col">
+        <div class="text-[#D9D9D9] 768:mb-2">Notice: News & Events Central</div>
         <div class="flex-center gap-6">
           <div class="flex-center gap-2 text-white">
             <img src="" alt="" class="w-5" />
@@ -196,15 +196,10 @@ function closeBurgerMenu() {
 
         <div class="flex-center gap-10">
           <button
-            class="text-base text-white py-[14px] px-[22px] bg-[#648AC8] rounded-full font-medium"
+            class="text-base text-white py-[14px] px-[22px] bg-[#648AC8] rounded-full font-medium 1024:fixed 1024:w-full 1024:left-[0] 1024:rounded-none 1024:bottom-0 1024:z-10 1024:flex 1024:justify-center 1024:items-center"
             @click="openApplyNowModal"
           >
             {{ $t("apply_now") }}
-            <img
-              src="/icons/apply-now-right.svg"
-              alt="apply-now-right"
-              class="hidden 1024:block ml-2.5"
-            />
           </button>
           <div
             class="mr-[50px] flex relative language-view mt-[6px] 1024:hidden"
@@ -229,6 +224,9 @@ function closeBurgerMenu() {
               </li>
             </ul>
           </div>
+          <button class="hidden 1024:block" @click="openBurgerMenu">
+            <img src="/icons/mobile-burger.svg" alt="" />
+          </button>
         </div>
       </div>
     </div>

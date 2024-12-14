@@ -61,7 +61,7 @@ const props = defineProps({
 <style lang="scss">
 .main-page {
   .swiper {
-    height: calc(100vh - 104px);
+    height: calc(100vh - 163px);
 
     .swiper-button-prev,
     .swiper-button-next {
