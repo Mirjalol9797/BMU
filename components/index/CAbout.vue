@@ -37,18 +37,4 @@ const props = defineProps({
     </div>
   </section>
 </template>
-<style lang="scss" scoped>
-.about {
-  h2 {
-    &:after {
-      content: "";
-      position: absolute;
-      top: 1px;
-      left: -24px;
-      width: 24px;
-      height: 24px;
-      background-image: url(/icons/right-red.svg);
-    }
-  }
-}
-</style>
+<style lang="scss" scoped></style>

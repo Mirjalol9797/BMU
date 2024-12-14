@@ -86,6 +86,7 @@ getMainAbout();
     <!-- <IndexCCounts /> -->
     <IndexCWelcome :mainContent="mainContent" />
     <IndexCPartnerUniversities />
+    <IndexCAcademicPrograms />
     <IndexCAbout :mainContent="mainContent" :mainAbout="mainAbout" />
   </div>
 </template>

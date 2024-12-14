@@ -1,0 +1,62 @@
+<script setup></script>
+<template>
+  <div class="py-[130px] academic-programs">
+    <div class="site-container">
+      <div
+        class="text-center text-5xl font-medium mb-4 1024:text-4xl 480:!text-3xl"
+      >
+        Our Academic Programs
+      </div>
+      <div class="text-center text-lg text-[#424343] mb-14 768:mb-8">
+        Gain valuable insights from their experiences and see the impact of our
+        programs through their stories.
+      </div>
+      <div class="grid grid-cols-2 gap-14">
+        <div v-for="item in 4" :key="item" class="relative">
+          <div class="h-[580px] w-full academic-programs__img">
+            <img
+              src="https://www.insidehighered.com/sites/default/files/2024-02/GettyImages-1072191138.jpg"
+              alt=""
+              class="h-full w-full object-cover"
+            />
+          </div>
+          <div class="absolute bottom-0 left-0 p-8 z-10 text-white">
+            <div class="text-4xl font-medium mb-2">Undegraduate Program</div>
+            <div>
+              <div class="text-[#CFCFCF] mb-6">
+                Explore diverse degrees to ignite your potential and shape your
+                future.
+              </div>
+              <nuxt-link
+                to="/"
+                class="font-medium py-3 px-6 rounded-full border border-[#fff]"
+              >
+                Get started
+              </nuxt-link>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+<style lang="scss" scoped>
+.academic-programs {
+  &__img {
+    img {
+      position: relative;
+      &:after {
+        content: "";
+        position: absolute;
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 1) 0%,
+          rgba(0, 0, 0, 1) 100%
+        );
+        inset: 0;
+        z-index: 8;
+      }
+    }
+  }
+}
+</style>

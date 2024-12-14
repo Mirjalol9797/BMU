@@ -3,11 +3,11 @@
   <div class="py-[130px] bg-[#192B69] 768:py-10">
     <div class="site-container">
       <div
-        class="text-center text-5xl text-white mb-4 1024:text-4xl 480:!text-3xl"
+        class="text-center text-5xl font-medium text-white mb-4 1024:text-4xl 480:!text-3xl"
       >
         Partner Universities
       </div>
-      <div class="text-center text-lg text-[#CFCFCF] mb-14">
+      <div class="text-center text-lg text-[#CFCFCF] mb-14 768:mb-8">
         We partner with top universities worldwide to expand opportunities,
         foster excellence, and inspire global connections.
       </div>
