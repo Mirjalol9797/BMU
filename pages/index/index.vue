@@ -83,7 +83,6 @@ getMainAbout();
     <IndexSlider :sliderData="sliderData" />
     <IndexWelcome :mainContent="mainContent" />
     <IndexAbout :mainContent="mainContent" :mainAbout="mainAbout" />
-    <IndexContact />
   </div>
 </template>
 

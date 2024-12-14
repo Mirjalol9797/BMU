@@ -49,57 +49,6 @@ const settingsStore = useSettingsStore();
         <div class="text-[#ffffffb3]">
           ©2020 British Management University. {{ $t("all_rights_reserved") }}
         </div>
-        <div
-          class="flex-center 768:pb-9 640:flex-col-reverse 640:!items-start 640:border-b 640:border-[#ffffff33] 640:mb-8 640:w-full"
-        >
-          <a
-            href="mailto:Info@bmu-edu.uz"
-            class="flex-center text-base mr-[80px] 640:mr-0"
-          >
-            <img src="/icons/email.svg" alt="email" class="mr-2" />
-            <span>Info@bmu-edu.uz</span>
-          </a>
-          <div class="flex-center 640:mb-5">
-            <a href="https://t.me/BMUedu" target="_blank" class="mx-1 640:ml-0">
-              <img src="/icons/telegram.svg" alt="telegram" />
-            </a>
-            <a
-              href="https://yandex.uz/maps/org/175097600348/?ll=69.245041%2C41.323372&z=16"
-              target="_blank"
-              class="mx-1"
-            >
-              <img src="/icons/location.svg" alt="location" />
-            </a>
-            <a
-              href="https://www.facebook.com/bmuedutashkent/"
-              target="_blank"
-              class="mx-1"
-            >
-              <img src="/icons/facebook.svg" alt="" />
-            </a>
-            <a
-              href="https://www.linkedin.com/school/british-management-university/"
-              target="_blank"
-              class="mx-1"
-            >
-              <img src="/icons/linkedin.svg" alt="" />
-            </a>
-            <a
-              href="https://www.youtube.com/c/BritishManagementUniversity"
-              target="_blank"
-              class="mx-1"
-            >
-              <img src="/icons/youtube.svg" alt="" />
-            </a>
-            <a
-              href="https://www.instagram.com/bmuedu/"
-              target="_blank"
-              class="mx-1"
-            >
-              <img src="/icons/instagram.svg" alt="" />
-            </a>
-          </div>
-        </div>
       </div>
     </div>
   </footer>

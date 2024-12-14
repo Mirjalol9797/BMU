@@ -13,7 +13,7 @@ const settingsStore = useSettingsStore();
     <ModalsSearch v-if="settingsStore.isSearchModal" />
   </div>
   <LayoutFooter />
-  <UiTmLoader v-if="settingsStore.isLoader" />
+  <!-- <UiTmLoader v-if="settingsStore.isLoader" /> -->
 </template>
 
 <style scoped></style>
