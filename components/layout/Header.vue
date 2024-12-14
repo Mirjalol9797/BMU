@@ -1,12 +1,22 @@
 <script setup>
+import { useAsyncData } from "nuxt/app";
+import { onMounted } from "vue";
 const settingsStore = useSettingsStore();
 const { locales, locale, setLocale } = useI18n();
+const getHeaderMenu = useApiHeader();
 
 const localeView = computed(() =>
   locales.value.filter((item) => locale.value == item.code)
 );
-const baseUrl = "https://bmu-api.tm.uz";
-// const baseUrl = "https://api2.bmu-edu.uz/";
+
+// fetch api
+const { data: dataHeaderMenu } = useAsyncData("HeaderMenu", () =>
+  getHeaderMenu.getHeaderMenu()
+);
+
+onMounted(() => {
+  console.log("dataHeaderMenu", dataHeaderMenu);
+});
 
 function language(value) {
   setLocale(value);
@@ -16,12 +26,6 @@ function language(value) {
 
 function openApplyNowModal() {
   settingsStore.isApplyNowModal = true;
-  document.querySelector("body").classList.add("open-modal");
-}
-
-function openSearchModal() {
-  settingsStore.textSearch = "";
-  settingsStore.isSearchModal = true;
   document.querySelector("body").classList.add("open-modal");
 }
 
@@ -37,54 +41,69 @@ function closeBurgerMenu() {
 
 // api
 
-const headerMenu = ref(null);
-const { $axiosPlugin } = useNuxtApp();
+// const headerMenu = ref(null);
+// const { $axiosPlugin } = useNuxtApp();
 
-async function getHeader(lang) {
-  settingsStore.isLoader = true;
+// async function getHeader(lang) {
+//   settingsStore.isLoader = true;
 
-  await fetch(`${baseUrl}/api/header/menu`, {
-    headers: { "Accept-Language": lang || locale.value },
-  })
-    .then((res) => res.json())
-    .then((data) => {
-      headerMenu.value = data.data.tree;
-    })
-    .catch((error) => console.log(error));
-  settingsStore.isLoader = false;
-}
+//   await fetch(`${baseUrl}/api/header/menu`, {
+//     headers: { "Accept-Language": lang || locale.value },
+//   })
+//     .then((res) => res.json())
+//     .then((data) => {
+//       headerMenu.value = data.data.tree;
+//     })
+//     .catch((error) => console.log(error));
+//   settingsStore.isLoader = false;
+// }
 
-async function getFooter(lang) {
-  settingsStore.isLoader = true;
+// async function getFooter(lang) {
+//   settingsStore.isLoader = true;
 
-  await fetch(`${baseUrl}/api/header/footer-menu`, {
-    headers: { "Accept-Language": lang || locale.value },
-  })
-    .then((res) => res.json())
-    .then((data) => {
-      settingsStore.footerMenu = data.data.tree;
-    })
-    .catch((error) => console.log(error));
+//   await fetch(`${baseUrl}/api/header/footer-menu`, {
+//     headers: { "Accept-Language": lang || locale.value },
+//   })
+//     .then((res) => res.json())
+//     .then((data) => {
+//       settingsStore.footerMenu = data.data.tree;
+//     })
+//     .catch((error) => console.log(error));
 
-  settingsStore.isLoader = false;
-}
+//   settingsStore.isLoader = false;
+// }
 
-getHeader();
-getFooter();
+// getHeader();
+// getFooter();
 </script>
 
 <template>
   <header class="relative">
-    <div class="site-container flex-center justify-between">
-      <nuxt-link :to="localePath('/')" class="1024:py-1 w-[230px]">
-        <img src="/images/site-logo.png" alt="" />
-      </nuxt-link>
-      <div class="flex-center">
+    <div class="bg-[#192B69] py-1.5">
+      <div class="site-container flex-center justify-between">
+        <div class="text-[#D9D9D9]">Notice: News & Events Central</div>
+        <div class="flex-center gap-6">
+          <div class="flex-center gap-2 text-white">
+            <img src="" alt="" class="w-5" />
+            <a href="tel:+998 95 511 99 99">+998955119999</a>
+          </div>
+          <div class="flex-center gap-2 text-white">
+            <img src="" alt="" class="w-5" />
+            <a href="mailto:info@bmu-edu.uz">info@bmu-edu.uz</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="site-container !py-5">
+      <div class="flex-center justify-between">
+        <nuxt-link :to="localePath('/')" class="w-[190px]">
+          <img src="/images/site-logo.png" alt="" />
+        </nuxt-link>
         <ul class="flex-center mr-8 menu 1024:!hidden">
           <!-- header menu -->
           <li
             class="relative menu-link border-b-4 border-transparent duration-300 hover:border-b-4 hover:border-[#E22F24]"
-            v-for="(menu, index) in headerMenu"
+            v-for="(menu, index) in dataHeaderMenu"
             :key="index"
             :class="menu.children?.length > 1 ? 'menu-link-big' : ''"
           >
@@ -175,54 +194,42 @@ getFooter();
           </li>
         </ul>
 
-        <button class="mr-6 1024:mr-1.5" @click="openSearchModal">
-          <img src="/icons/search.svg" alt="" />
-        </button>
-
-        <div class="mr-[50px] flex relative language-view mt-[6px] 1024:hidden">
-          <div class="text-[#1C335F] font-semibold flex-center pb-1.5">
-            <img :src="`/images/${localeView[0].image}`" alt="" class="mr-2" />
-            <span>{{ localeView[0].name }}</span>
+        <div class="flex-center gap-10">
+          <button
+            class="text-base text-white py-[14px] px-[22px] bg-[#648AC8] rounded-full font-medium"
+            @click="openApplyNowModal"
+          >
+            {{ $t("apply_now") }}
+            <img
+              src="/icons/apply-now-right.svg"
+              alt="apply-now-right"
+              class="hidden 1024:block ml-2.5"
+            />
+          </button>
+          <div
+            class="mr-[50px] flex relative language-view mt-[6px] 1024:hidden"
+          >
+            <div class="text-[#1C335F] font-semibold flex-center pb-1.5">
+              <img
+                :src="`/images/${localeView[0].image}`"
+                alt=""
+                class="mr-2"
+              />
+              <span>{{ localeView[0].name }}</span>
+            </div>
+            <ul class="language-list">
+              <li
+                v-for="(item, key) in locales"
+                :key="key"
+                @click="language(item.code)"
+                class="flex-center"
+              >
+                <img :src="`/images/${item.image}`" alt="" class="mr-2" />
+                {{ item.name }}
+              </li>
+            </ul>
           </div>
-          <ul class="language-list">
-            <li
-              v-for="(item, key) in locales"
-              :key="key"
-              @click="language(item.code)"
-              class="flex-center"
-            >
-              <img :src="`/images/${item.image}`" alt="" class="mr-2" />
-              {{ item.name }}
-            </li>
-          </ul>
         </div>
-
-        <button
-          class="px-6 py-3 bg-[#e22f24] text-white font-bold rounded-full 1024:fixed 1024:w-full 1024:left-[0] 1024:rounded-none 1024:bottom-0 1024:z-10 1024:flex 1024:justify-center 1024:items-center"
-          @click="openApplyNowModal"
-        >
-          {{ $t("apply_now") }}
-          <img
-            src="/icons/apply-now-right.svg"
-            alt="apply-now-right"
-            class="hidden 1024:block ml-2.5"
-          />
-        </button>
-
-        <button class="hidden 1024:block border-l border-[#E9EAEC] pl-4">
-          <img
-            src="/icons/mobile-burger.svg"
-            alt=""
-            v-if="!settingsStore.isBurgerMenu"
-            @click="openBurgerMenu"
-          />
-          <img
-            src="/icons/mobile-burger-close.svg"
-            alt=""
-            v-else
-            @click="closeBurgerMenu"
-          />
-        </button>
       </div>
     </div>
   </header>

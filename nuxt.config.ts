@@ -9,16 +9,6 @@ export default defineNuxtConfig({
     "nuxt-swiper",
     "@nuxtjs/i18n",
     "@vee-validate/nuxt",
-    [
-      "@nuxtjs/google-fonts",
-      {
-        families: {
-          Manrope: {
-            wght: [400, 500, 600, 700],
-          },
-        },
-      },
-    ],
   ],
   css: ["~/assets/scss/main.scss"],
   pinia: {
@@ -56,4 +46,3 @@ export default defineNuxtConfig({
     },
   },
 });
-

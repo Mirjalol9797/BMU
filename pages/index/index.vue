@@ -1,4 +1,6 @@
 <script setup>
+import { useAsyncData } from "nuxt/app";
+
 const { t } = useI18n();
 
 useSeoMeta({
