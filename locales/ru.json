@@ -1,0 +1,97 @@
+{
+  "apply_now": "Поступить сейчас",
+  "all_rights_reserved": "Все права защищены.",
+  "about": "О нас",
+  "academic_advisory_board": "Академический Попечительский совет",
+  "apply_now_modal": {
+    "title": "To apply",
+    "identification_card": "Identification Card/Passport/Birth Certificate",
+    "first_name": "First Name",
+    "last_name": "Last Name",
+    "father_name": "Father's name",
+    "birthday": "Date of birth",
+    "email_address": "E-mail Address",
+    "phone_number": "Phone Number",
+    "telegram": "Telegram",
+    "ielts_score": "IELTS Score",
+    "ielts_writing": "IELTS writing",
+    "ielts_reading": "IELTS reading",
+    "ielts_listening": "IELTS listening",
+    "ielts_speaking": "IELTS speaking",
+    "if_you_have": "If you have it",
+    "ielts_alternative": "IELTS Alternative - TOEFL",
+    "school_region": "School Region",
+    "please_select_region": "Please select the region of your last school (lyceum, etc.)",
+    "city_your_school": "City of your School",
+    "please_type_city": "Please type in the city of your last school (lyceum, etc.)",
+    "school_number_name": "School Number (or Name)",
+    "please_type_number": "Please type in the number of your last school (lyceum, etc.)",
+    "password": "Password",
+    "please_passport_password": "Please use your passport number as password",
+    "confirm_password": "Confirm Password",
+    "ielts_certificate": "IELTS Certificate (or an alternative). Upload jpg, png, jpeg or pdf",
+    "copy_your_passport": "Copy of your passport. Upload jpg, png, jpeg or pdf",
+    "by_submitting_agree": "By submitting, you agree to our",
+    "privacy_policy": "Privacy Policy.",
+    "submit": "Submit",
+    "youre_all_set": "You're all set",
+    "our_experts_touch_shortly": "Our experts will be in touch with you shortly",
+    "required": "Required",
+    "confirm_number": "Сonfirm number",
+    "code_from_sms": "Сode from sms",
+    "enter_code": "Enter a code",
+    "get_new_code": "You can get a new code",
+    "resend_code": "resend the code"
+  },
+
+  "data_not_found": "Данные не найдены",
+
+  "faculty_members": "Профессора и преподаватели",
+
+  "industry_partnership": "Партнерство с корпоративным сектором",
+
+  "contacts": "Контакты",
+
+  "email_address": "Адрес электронной почты",
+
+  "phone_number": "Номер телефона",
+  "programmes": "Программы",
+  "page": {
+    "explore_frontier": "Исследуйте новый рубеж вместе с нами",
+    "explore_horizons_possibilities_education": "Откройте для себя новые горизонты и откройте бесконечные возможности в сфере образования.",
+    "still_have_questions": "У вас все еще есть вопросы?",
+    "please_contact_information": "Тогда позвоните нам и мы ответим на все ваши вопросы."
+  },
+
+  "read_more": "Подробнее",
+  "region": {
+    "Toshkent": "Tashkent",
+    "Qoraqalpogiston": "Republic of Karakalpakstan",
+    "Andijon": "Andijan region",
+    "Buxoro": "Bukhara region",
+    "Jizzax": "Jizzakh region",
+    "Qashqadaryo": "Kashkadarya region",
+    "Navoiy": "Navoi region",
+    "Namangan": "Namangan region",
+    "Samarqand": "Samarkand region",
+    "Surxondaryo": "Surkhandarya region",
+    "Sirdaryo": "Syrdarya region",
+    "Toshkent_obl": "Tashkent region",
+    "Fargona": "Fergana region",
+    "Xorazm": "Khorezm region"
+  },
+
+  "send_telegram": "Отправить в телеграм",
+  "search_result": "Результат поиска",
+
+  "static_seo": {
+    "title": "Британский университет менеджмента в Ташкенте",
+    "description": "Университет мирового уровня в Узбекистане!. Британский университет менеджмента в Ташкенте"
+  },
+
+  "telegram_bot": "Телеграм-бот",
+  "team": "Команда",
+  "undergraduate_programmes": "Программы Бакалавриата",
+
+  "vision-mission-goals": "Видение Миссия Цели"
+}

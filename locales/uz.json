@@ -1,0 +1,96 @@
+{
+  "apply_now": "Ariza To'ldiring!",
+  "all_rights_reserved": "Barcha huquqlar himoyalangan.",
+  "about": "Biz haqimizda",
+  "academic_advisory_board": "Akademik Vasiylik kengashi",
+  "apply_now_modal": {
+    "title": "To apply",
+    "identification_card": "Identification Card/Passport/Birth Certificate",
+    "first_name": "First Name",
+    "last_name": "Last Name",
+    "father_name": "Father's name",
+    "birthday": "Date of birth",
+    "email_address": "E-mail Address",
+    "phone_number": "Phone Number",
+    "telegram": "Telegram",
+    "ielts_score": "IELTS Score",
+    "ielts_writing": "IELTS writing",
+    "ielts_reading": "IELTS reading",
+    "ielts_listening": "IELTS listening",
+    "ielts_speaking": "IELTS speaking",
+    "if_you_have": "If you have it",
+    "ielts_alternative": "IELTS Alternative - TOEFL",
+    "school_region": "School Region",
+    "please_select_region": "Please select the region of your last school (lyceum, etc.)",
+    "city_your_school": "City of your School",
+    "please_type_city": "Please type in the city of your last school (lyceum, etc.)",
+    "school_number_name": "School Number (or Name)",
+    "please_type_number": "Please type in the number of your last school (lyceum, etc.)",
+    "password": "Password",
+    "please_passport_password": "Please use your passport number as password",
+    "confirm_password": "Confirm Password",
+    "ielts_certificate": "IELTS Certificate (or an alternative). Upload jpg, png, jpeg or pdf",
+    "copy_your_passport": "Copy of your passport. Upload jpg, png, jpeg or pdf",
+    "by_submitting_agree": "By submitting, you agree to our",
+    "privacy_policy": "Privacy Policy.",
+    "submit": "Submit",
+    "youre_all_set": "You're all set",
+    "our_experts_touch_shortly": "Our experts will be in touch with you shortly",
+    "required": "Required",
+    "confirm_number": "Сonfirm number",
+    "code_from_sms": "Сode from sms",
+    "enter_code": "Enter a code",
+    "get_new_code": "You can get a new code",
+    "resend_code": "resend the code"
+  },
+
+  "data_not_found": "Maʼlumot topilmadi",
+
+  "faculty_members": "Professor va o’qituvchilar",
+
+  "industry_partnership": "Korporativ sektor bilan hamkorlik",
+
+  "contacts": "Kontaktlar",
+
+  "email_address": "E-pochta manzili",
+
+  "phone_number": "Telefon raqam",
+  "programmes": "Ta’lim dasturlari",
+  "page": {
+    "explore_frontier": "Biz bilan yangi chegarani o'rganing",
+    "explore_horizons_possibilities_education": "Yangi ufqlarni o'rganing va ta'limning cheksiz imkoniyatlarini kashf eting.",
+    "still_have_questions": "Hali ham savollaringiz bormi?",
+    "please_contact_information": "Bizga qo'ng'iroq qiling va biz barcha savollaringizga javob beramiz."
+  },
+
+  "read_more": "Batafsil",
+  "region": {
+    "Toshkent": "Tashkent city",
+    "Qoraqalpogiston": "Republic of Karakalpakstan",
+    "Andijon": "Andijan region",
+    "Buxoro": "Bukhara region",
+    "Jizzax": "Jizzakh region",
+    "Qashqadaryo": "Kashkadarya region",
+    "Navoiy": "Navoi region",
+    "Namangan": "Namangan region",
+    "Samarqand": "Samarkand region",
+    "Surxondaryo": "Surkhandarya region",
+    "Sirdaryo": "Syrdarya region",
+    "Toshkent_obl": "Tashkent region",
+    "Fargona": "Fergana region",
+    "Xorazm": "Khorezm region"
+  },
+
+  "send_telegram": "Telegramga yuboring",
+  "search_result": "Qidiruv natijasi",
+
+  "static_seo": {
+    "title": "Toshkentdagi Britaniya menejment universiteti",
+    "description": "O'zbekistonda jahon darajasidagi universitet!. Toshkentdagi Britaniya menejment universiteti"
+  },
+
+  "telegram_bot": "Telegram Bot",
+  "team": "Jamoamiz",
+  "undergraduate_programmes": "Bakalavriat dasturlari",
+  "vision-mission-goals": "Istiqboldagi rejamiz Vazifamiz Maqsadlar"
+}
