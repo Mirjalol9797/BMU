@@ -200,7 +200,7 @@ function closeBurgerMenu() {
 
         <div class="flex-center gap-10">
           <button
-            class="text-base text-white py-[14px] px-[22px] bg-[#648AC8] rounded-full font-medium 1024:fixed 1024:w-full 1024:left-[0] 1024:rounded-none 1024:bottom-0 1024:z-10 1024:flex 1024:justify-center 1024:items-center"
+            class="text-base text-white py-[14px] px-[22px] bg-[#648AC8] rounded-full font-medium 1024:fixed 1024:w-full 1024:left-[0] 1024:rounded-none 1024:bottom-0 1024:z-20 1024:flex 1024:justify-center 1024:items-center"
             @click="openApplyNowModal"
           >
             {{ $t("apply_now") }}
