@@ -23,6 +23,7 @@ const props = defineProps({
     }"
     :navigation="true"
     :pagination="true"
+    class="banner-swiper"
   >
     <SwiperSlide
       class="relative after:content-[''] after:inset-0 after:bg-[rgba(0,0,0,0.5)] after:absolute"
@@ -62,7 +63,7 @@ const props = defineProps({
 </template>
 <style lang="scss">
 .main-page {
-  .swiper {
+  .banner-swiper {
     height: calc(100vh - 163px);
 
     .swiper-button-prev,
@@ -115,7 +116,7 @@ const props = defineProps({
 
 @media (max-width: 1024px) {
   .main-page {
-    .swiper {
+    .banner-swiper {
       height: 480px;
       video {
         min-width: 100%;
