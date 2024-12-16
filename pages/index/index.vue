@@ -90,6 +90,7 @@ getMainAbout();
     <IndexCUsApart />
     <IndexСForgingStrategic />
     <IndexСStudentsThink />
+    <IndexCNewsArticles />
     <IndexCAbout :mainContent="mainContent" :mainAbout="mainAbout" />
   </div>
 </template>
