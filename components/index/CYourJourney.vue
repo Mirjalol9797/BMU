@@ -11,7 +11,9 @@ const images = [
 ];
 
 const sliderTrack = ref(null);
+const sliderTrack2 = ref(null);
 const offset = ref(0);
+const offset2 = ref(-1000);
 const loopedImages = [...images, ...images]; // Дублируем изображения для бесконечной прокрутки
 
 const speed = 200; // Скорость прокрутки (мс на шаг)
@@ -30,8 +32,22 @@ const animateSlider = () => {
   }, 1000 / speed); // Чем меньше speed, тем быстрее прокрутка
 };
 
+const animateSlider2 = () => {
+  offset2.value += step;
+
+  // Если прокрутка дошла до половины трека (один набор картинок), сбрасываем
+  if (offset2.value >= sliderTrack2.value.scrollHeight / 2) {
+    offset2.value = 0;
+  }
+
+  setTimeout(() => {
+    requestAnimationFrame(animateSlider2);
+  }, 1000 / speed); // Чем меньше speed, тем быстрее прокрутка
+};
+
 onMounted(() => {
   animateSlider();
+  animateSlider2();
 });
 </script>
 
@@ -60,6 +76,21 @@ onMounted(() => {
             class="slider-track"
             :style="{ transform: `translateY(-${offset}px)` }"
             ref="sliderTrack"
+          >
+            <img
+              v-for="(image, index) in loopedImages"
+              :key="index"
+              :src="image"
+              alt="slider image"
+              class="slide mb-6"
+            />
+          </div>
+        </div>
+        <div class="animate-images-down">
+          <div
+            class="slider-track"
+            :style="{ transform: `translateY(${offset2}px)` }"
+            ref="sliderTrack2"
           >
             <img
               v-for="(image, index) in loopedImages"
