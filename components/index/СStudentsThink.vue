@@ -82,7 +82,7 @@
     position: absolute;
     bottom: -80px;
     display: flex;
-    align-items: end;
+    align-items: flex-end;
     justify-content: center;
     width: 100%;
     height: 40px;

@@ -40,10 +40,10 @@ const props = defineProps({
       </video>
 
       <div
-        class="absolute top-[50%] left-[10%] translate-y-[-50%] text-white z-10 w-[90%] 1024:w-[80%]"
+        class="absolute top-[50%] left-[10%] translate-y-[-50%] text-white z-10 w-[80%]"
       >
         <div
-          class="text-8xl leading-[120px] mb-6 font-medium 1024:text-5xl 480:!text-2xl"
+          class="text-7xl leading-[100px] mb-6 font-medium 1024:text-5xl 480:!text-2xl"
         >
           {{ slider.title }}
         </div>

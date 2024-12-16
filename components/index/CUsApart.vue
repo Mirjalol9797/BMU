@@ -67,7 +67,7 @@
     right: 20px;
     top: 4px;
     display: flex;
-    align-items: end;
+    align-items: flex-end;
     justify-content: end;
     width: 100%;
     height: 40px;

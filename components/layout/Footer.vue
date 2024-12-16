@@ -40,7 +40,7 @@ const settingsStore = useSettingsStore();
             <a href="tel:+998 95 511 99 99">+998 95 511 99 99</a>
           </div>
           <div class="flex-center gap-2 text-[#424343] mb-5">
-            <img src="../../public/icons/" alt="" class="w-5" />
+            <img src="" alt="" class="w-5" />
             <a href="mailto:info@bmu-edu.uz">info@bmu-edu.uz</a>
           </div>
           <iframe
