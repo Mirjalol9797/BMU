@@ -89,7 +89,7 @@ function closeBurgerMenu() {
               alt="phone"
               class="w-5"
             />
-            <a href="tel:+998 95 511 99 99">+998955119999</a>
+            <a href="tel:+998 95 511 99 99">+998 95 511 99 99</a>
           </div>
           <div class="flex-center gap-2 text-white">
             <img src="../../public/icons/" alt="" class="w-5" />
