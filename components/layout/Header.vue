@@ -81,7 +81,10 @@ function closeBurgerMenu() {
   <header class="relative">
     <div class="bg-[#192B69] py-1.5">
       <div class="site-container flex-center justify-between 768:flex-col">
-        <div class="text-[#D9D9D9] 768:mb-2">Notice: News & Events Central</div>
+        <div class="text-[#D9D9D9] 768:mb-2 flex">
+          <span class="pr-1">Notice:</span>
+          News & Events Central
+        </div>
         <div class="flex-center gap-6">
           <div class="flex-center gap-2 text-white">
             <img
@@ -92,7 +95,7 @@ function closeBurgerMenu() {
             <a href="tel:+998 95 511 99 99">+998 95 511 99 99</a>
           </div>
           <div class="flex-center gap-2 text-white">
-            <img src="../../public/icons/" alt="" class="w-5" />
+            <img src="" alt="" class="w-5" />
             <a href="mailto:info@bmu-edu.uz">info@bmu-edu.uz</a>
           </div>
         </div>

@@ -1,7 +1,11 @@
 <script setup></script>
 
 <template>
-  <div class="students-think py-[100px] 768:pt-10">
+  <div
+    class="students-think py-[100px] 768:pt-10"
+    data-aos="fade-up"
+    data-aos-duration="1000"
+  >
     <div class="site-container relative">
       <div
         class="text-center text-5xl font-medium mb-4 1024:text-4xl 480:!text-3xl"

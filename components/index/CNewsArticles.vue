@@ -1,7 +1,11 @@
 <script setup></script>
 
 <template>
-  <div class="news py-[100px] 768:py-10">
+  <div
+    class="news py-[100px] 768:py-10"
+    data-aos="fade-up"
+    data-aos-duration="1000"
+  >
     <div class="site-container">
       <div class="text-5xl font-medium mb-12 1024:text-4xl 480:!text-3xl">
         News & Events Central

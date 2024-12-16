@@ -10,7 +10,7 @@ export default defineNuxtConfig({
     "@nuxtjs/i18n",
     "@vee-validate/nuxt",
   ],
-  css: ["~/assets/scss/main.scss", "animate.css/animate.min.css"],
+  css: ["~/assets/scss/main.scss"],
   pinia: {
     storesDirs: ["./stores/**"],
   },

@@ -1,7 +1,11 @@
 <script setup></script>
 
 <template>
-  <div class="us-apart py-[100px] 768:py-10">
+  <div
+    class="us-apart py-[100px] 768:py-10"
+    data-aos="fade-up"
+    data-aos-duration="1000"
+  >
     <div class="site-container relative">
       <div class="mb-10 text-5xl font-medium 768:text-2xl">
         What Sets Us Apart

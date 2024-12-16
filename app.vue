@@ -1,4 +1,5 @@
 <script setup>
+import { onMounted } from "vue";
 useHead({
   link: [
     {
@@ -27,9 +28,14 @@ useHead({
   ],
   // meta: [{ "http-equiv": "Content-Security-Policy", content: "*" }],
 });
+
+const { $aos } = useNuxtApp();
+
+onMounted(() => {
+  $aos();
+});
 </script>
 
 <template>
   <NuxtLayout></NuxtLayout>
 </template>
-
