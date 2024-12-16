@@ -88,6 +88,8 @@ getMainAbout();
     <IndexCPartnerUniversities />
     <IndexCAcademicPrograms />
     <IndexCUsApart />
+    <IndexСForgingStrategic />
+    <IndexСStudentsThink />
     <IndexCAbout :mainContent="mainContent" :mainAbout="mainAbout" />
   </div>
 </template>

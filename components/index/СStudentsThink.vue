@@ -1,0 +1,110 @@
+<script setup></script>
+
+<template>
+  <div class="students-think py-[100px] 768:pt-10">
+    <div class="site-container relative">
+      <div
+        class="text-center text-5xl font-medium mb-4 1024:text-4xl 480:!text-3xl"
+      >
+        Discover What Our Students Think
+      </div>
+      <div class="text-center text-lg text-[#424343] mb-14 768:mb-8">
+        Gain valuable insights from their experiences and see the impact of our
+        programs through their stories.
+      </div>
+      <div>
+        <Swiper
+          :modules="[
+            SwiperAutoplay,
+            SwiperEffectCreative,
+            SwiperNavigation,
+            SwiperPagination,
+          ]"
+          :loop="false"
+          :spaceBetween="40"
+          :autoplay="{
+            delay: 4000,
+            disableOnInteraction: true,
+          }"
+          :navigation="{
+            nextEl: '.swiper-button-next-usapart',
+            prevEl: '.swiper-button-prev-usapart',
+          }"
+          :breakpoints="{
+            320: {
+              slidesPerView: 1,
+            },
+            640: {
+              slidesPerView: 2,
+            },
+          }"
+        >
+          <SwiperSlide v-for="(slider, index) in 6" :key="index">
+            <div class="p-12 text-white bg-[#192B69] 768:p-5">
+              <div class="mb-12">
+                British Management University has provided me with a solid
+                foundation for my career. The professors are dedicated and the
+                coursework is both challenging and relevant. The supportive
+                environment and diverse community have helped me grow
+                academically and personally. I'm grateful for everything I've
+                learned here and feel ready to take on the professional world.
+              </div>
+              <div class="flex-center">
+                <div class="min-w-[60px] h-[60px] mr-4">
+                  <img
+                    src="https://framerusercontent.com/images/frW4A4V1f3izRg6buvTpBwo8XCI.jpg?scale-down-to=512"
+                    alt=""
+                    class="w-full h-full object-cover rounded-full"
+                  />
+                </div>
+                <div>
+                  <div class="text-2xl font-medium 768:text-lg">
+                    Ava Matthews
+                  </div>
+                  <div class="text-[#648AC8]">BA in Finance and Accounting</div>
+                </div>
+              </div>
+            </div>
+          </SwiperSlide>
+        </Swiper>
+        <div class="swiper-buttons">
+          <div class="swiper-button-prev swiper-button-prev-usapart"></div>
+          <div class="swiper-button-next swiper-button-next-usapart"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<style lang="scss" scoped>
+.students-think {
+  .swiper-buttons {
+    position: absolute;
+    bottom: -80px;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    width: 100%;
+    height: 40px;
+    gap: 16px;
+    left: 0;
+
+    div {
+      background-color: #648ac8;
+      width: 40px;
+      height: 40px;
+      border-radius: 2px;
+
+      position: relative;
+      top: 0;
+      left: 0;
+      right: 0;
+
+      &:after {
+        font-size: 20px;
+        color: #fff;
+      }
+    }
+  }
+}
+</style>

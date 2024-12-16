@@ -19,7 +19,7 @@ const props = defineProps({
         <div>{{ mainContent?.description }}</div>
 
         <nuxt-link
-          to=""
+          to="/"
           class="text-[#648AC8] inline-block py-3 px-6 border border-[#648AC8] rounded-full mt-5"
         >
           Learn More
