@@ -4,7 +4,8 @@
   <!-- <TemplatesCTemplateContent /> -->
   <!-- <TemplatesCTemplateSimple /> -->
   <!-- <TemplatesCTemplateItems /> -->
-  <TemplatesCTemplateImage />
+  <!-- <TemplatesCTemplateImage /> -->
+  <TemplatesCTemplateRandom />
 </template>
 
 <style lang="scss" scoped></style>
