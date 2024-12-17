@@ -10,7 +10,7 @@
           class="w-full h-full object-cover"
         />
       </div>
-      <div class="template-title">Licenses & Official Documents</div>
+      <h1 class="template-title">Licenses & Official Documents</h1>
     </div>
     <div class="site-container">
       <div class="py-[100px] 768:py-[60px]">

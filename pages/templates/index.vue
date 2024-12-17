@@ -3,7 +3,8 @@
 <template>
   <!-- <TemplatesCTemplateContent /> -->
   <!-- <TemplatesCTemplateSimple /> -->
-  <TemplatesCTemplateItems />
+  <!-- <TemplatesCTemplateItems /> -->
+  <TemplatesCTemplateImage />
 </template>
 
 <style lang="scss" scoped></style>

@@ -10,7 +10,7 @@
           class="w-full h-full object-cover"
         />
       </div>
-      <div class="template-title">Licenses & Official Documents</div>
+      <h1 class="template-title">Licenses & Official Documents</h1>
     </div>
     <div
       class="site-container !py-[100px] grid grid-cols-2 gap-10 768:grid-cols-1 768:gap-6 768:!py-[70px]"
