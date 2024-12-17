@@ -9,9 +9,6 @@ const { data: dataFooterMenu } = useAsyncData("FooterMenu", () =>
 </script>
 
 <template>
-  <pre>
-    {{ dataFooterMenu.data.tree }}
-  </pre>
   <footer class="pt-[100px] pb-8 footer">
     <div class="site-container">
       <div class="pb-6 border-b border-[#01010133]">

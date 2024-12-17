@@ -4,7 +4,6 @@ import { onMounted } from "vue";
 const settingsStore = useSettingsStore();
 const { locales, locale, setLocale } = useI18n();
 const getHeaderMenu = useApiMenu();
-
 const localeView = computed(() =>
   locales.value.filter((item) => locale.value == item.code)
 );
@@ -37,7 +36,6 @@ function closeBurgerMenu() {
 </script>
 
 <template>
-  <pre></pre>
   <header class="relative">
     <div class="bg-[#192B69] py-1.5">
       <div class="site-container flex-center justify-between 768:flex-col">
@@ -45,7 +43,7 @@ function closeBurgerMenu() {
           <span class="pr-1">Notice:</span>
           News & Events Central
         </div>
-        <div class="flex-center gap-6">
+        <div class="flex-center gap-6 480:gap-2">
           <div class="flex-center gap-2 text-white">
             <img
               src="../../public/icons/header/phone.svg"
@@ -80,7 +78,7 @@ function closeBurgerMenu() {
                   menu?.url ? `${menu?.url}` : `/page/${menu?.page?.slug}`
                 )
               "
-              class="inline-block py-[38px] px-3 text-sm"
+              class="inline-block py-[38px] px-3"
             >
               {{ menu.title }}
             </nuxt-link>
@@ -191,18 +189,26 @@ function closeBurgerMenu() {
               </li>
             </ul>
           </div>
-          <button class="hidden 1024:block" @click="openBurgerMenu">
-            <img src="/icons/mobile-burger.svg" alt="" />
+          <button class="hidden 1024:block">
+            <img
+              src="/icons/mobile-burger.svg"
+              alt=""
+              @click="openBurgerMenu"
+              v-if="!settingsStore.isBurgerMenu"
+            />
+            <img
+              src="/icons/mobile-burger-close.svg"
+              alt=""
+              @click="closeBurgerMenu"
+              v-if="settingsStore.isBurgerMenu"
+            />
           </button>
         </div>
       </div>
     </div>
   </header>
 
-  <ModalsBurgerMenu
-    v-show="settingsStore.isBurgerMenu"
-    :headerMenu="headerMenu"
-  />
+  <ModalsBurgerMenu v-show="settingsStore.isBurgerMenu" />
 </template>
 
 <style lang="scss" scoped>

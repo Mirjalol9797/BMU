@@ -8,12 +8,11 @@ const localeView = computed(() =>
   locales.value.filter((item) => locale.value == item.code)
 );
 
-const props = defineProps({
-  headerMenu: {
-    type: Object,
-    default: {},
-  },
-});
+const getHeaderMenu = useApiMenu();
+
+const { data: dataHeaderMenu } = useAsyncData("HeaderMenu", () =>
+  getHeaderMenu.getHeaderMenu()
+);
 
 function language(value) {
   setLocale(value);
@@ -44,11 +43,15 @@ const isOpen = (id) => {
 <template>
   <div
     class="bg-white w-full fixed top-0 left-0 h-full border-t border-[#E9EAEC] translate-y-[-1000px] transition-all duration-500 z-[1001] overflow-auto pb-[150px]"
-    :class="settingsStore.isBurgerMenu ? '!translate-y-[88px]' : ''"
+    :class="
+      settingsStore.isBurgerMenu
+        ? 'translate-y-[111px] 768:translate-y-[143px]'
+        : ''
+    "
   >
     <div class="accordion">
       <div
-        v-for="(menu, index) in headerMenu"
+        v-for="(menu, index) in dataHeaderMenu.data.tree"
         :key="index"
         class="accordion-item"
       >
