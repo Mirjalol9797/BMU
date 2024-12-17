@@ -3,7 +3,7 @@ import { useAsyncData } from "nuxt/app";
 import { onMounted } from "vue";
 const settingsStore = useSettingsStore();
 const { locales, locale, setLocale } = useI18n();
-const getHeaderMenu = useApiHeader();
+const getHeaderMenu = useApiMenu();
 
 const localeView = computed(() =>
   locales.value.filter((item) => locale.value == item.code)
@@ -13,10 +13,6 @@ const localeView = computed(() =>
 const { data: dataHeaderMenu } = useAsyncData("HeaderMenu", () =>
   getHeaderMenu.getHeaderMenu()
 );
-
-onMounted(() => {
-  console.log("dataHeaderMenu", dataHeaderMenu);
-});
 
 function language(value) {
   setLocale(value);
@@ -38,46 +34,10 @@ function closeBurgerMenu() {
   settingsStore.isBurgerMenu = false;
   document.querySelector("body").classList.remove("open-modal");
 }
-
-// api
-
-// const headerMenu = ref(null);
-// const { $axiosPlugin } = useNuxtApp();
-
-// async function getHeader(lang) {
-//   settingsStore.isLoader = true;
-
-//   await fetch(`${baseUrl}/api/header/menu`, {
-//     headers: { "Accept-Language": lang || locale.value },
-//   })
-//     .then((res) => res.json())
-//     .then((data) => {
-//       headerMenu.value = data.data.tree;
-//     })
-//     .catch((error) => console.log(error));
-//   settingsStore.isLoader = false;
-// }
-
-// async function getFooter(lang) {
-//   settingsStore.isLoader = true;
-
-//   await fetch(`${baseUrl}/api/header/footer-menu`, {
-//     headers: { "Accept-Language": lang || locale.value },
-//   })
-//     .then((res) => res.json())
-//     .then((data) => {
-//       settingsStore.footerMenu = data.data.tree;
-//     })
-//     .catch((error) => console.log(error));
-
-//   settingsStore.isLoader = false;
-// }
-
-// getHeader();
-// getFooter();
 </script>
 
 <template>
+  <pre></pre>
   <header class="relative">
     <div class="bg-[#192B69] py-1.5">
       <div class="site-container flex-center justify-between 768:flex-col">
@@ -101,7 +61,7 @@ function closeBurgerMenu() {
         </div>
       </div>
     </div>
-    <div class="site-container !py-5">
+    <div class="site-container">
       <div class="flex-center justify-between">
         <nuxt-link :to="localePath('/')" class="w-[190px]">
           <img src="/images/site-logo.png" alt="" />
@@ -110,7 +70,7 @@ function closeBurgerMenu() {
           <!-- header menu -->
           <li
             class="relative menu-link border-b-4 border-transparent duration-300 hover:border-b-4 hover:border-[#E22F24]"
-            v-for="(menu, index) in dataHeaderMenu"
+            v-for="(menu, index) in dataHeaderMenu.data.tree"
             :key="index"
             :class="menu.children?.length > 1 ? 'menu-link-big' : ''"
           >
@@ -312,7 +272,7 @@ function closeBurgerMenu() {
   left: 0;
   background: #fff;
   z-index: 12;
-  top: 100px;
+  top: 136px;
   border-top: 1px solid #e9eaec;
   padding-top: 32px;
   padding-bottom: 40px;

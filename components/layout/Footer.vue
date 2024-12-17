@@ -1,8 +1,17 @@
 <script setup>
 const settingsStore = useSettingsStore();
+
+const getFooterMenu = useApiMenu();
+
+const { data: dataFooterMenu } = useAsyncData("FooterMenu", () =>
+  getFooterMenu.getFooterMenu()
+);
 </script>
 
 <template>
+  <pre>
+    {{ dataFooterMenu.data.tree }}
+  </pre>
   <footer class="pt-[100px] pb-8 footer">
     <div class="site-container">
       <div class="pb-6 border-b border-[#01010133]">
@@ -14,18 +23,30 @@ const settingsStore = useSettingsStore();
         class="py-[60px] flex gap-4 1024:flex-wrap 1024:gap-0 1024:justify-between"
       >
         <div
-          v-for="item in 4"
-          :key="item"
+          v-for="(menu, index) in dataFooterMenu.data.tree"
+          :key="index"
           class="w-1/5 1024:w-1/3 1024:mb-6 640:!w-full"
         >
-          <nuxt-link to="/" class="block text-xl mb-5">About</nuxt-link>
           <nuxt-link
-            to="/"
-            class="block text-[#424343] mb-4"
-            v-for="item in 5"
-            :key="item"
+            :to="
+              localePath(
+                menu?.url ? `${menu?.url}` : `/page/${menu?.page?.slug}`
+              )
+            "
+            class="block text-xl mb-5"
+            >{{ menu.title }}</nuxt-link
           >
-            Academic Advisory Board
+          <nuxt-link
+            :to="
+              localePath(
+                item?.url ? `${item?.url}` : `/page/${item?.page?.slug}`
+              )
+            "
+            class="block text-[#424343] mb-4"
+            v-for="(item, index) in menu.children"
+            :key="index"
+          >
+            {{ item.title }}
           </nuxt-link>
         </div>
 
