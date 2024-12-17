@@ -72,7 +72,7 @@
     top: 4px;
     display: flex;
     align-items: flex-end;
-    justify-content: end;
+    justify-content: flex-end;
     width: 100%;
     height: 40px;
     gap: 16px;

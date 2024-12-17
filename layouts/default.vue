@@ -12,6 +12,7 @@ const settingsStore = useSettingsStore();
     <ModalsApplyNow v-if="settingsStore.isApplyNowModal" />
     <ModalsSearch v-if="settingsStore.isSearchModal" />
   </div>
+  <IndexCYourJourney />
   <LayoutFooter />
   <!-- <UiTmLoader v-if="settingsStore.isLoader" /> -->
 </template>
