@@ -6,6 +6,7 @@
   <!-- <TemplatesCTemplateItems /> -->
   <!-- <TemplatesCTemplateImage /> -->
   <TemplatesCTemplateRandom />
+  <CFaqs />
 </template>
 
 <style lang="scss" scoped></style>
