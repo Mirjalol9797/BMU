@@ -1,7 +1,9 @@
 <script setup></script>
 
 <template>
-  <TemplatesCTemplateSimple />
+  <!-- <TemplatesCTemplateContent /> -->
+  <!-- <TemplatesCTemplateSimple /> -->
+  <TemplatesCTemplateItems />
 </template>
 
 <style lang="scss" scoped></style>
