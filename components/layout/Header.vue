@@ -45,24 +45,20 @@ function closeBurgerMenu() {
         </div>
         <div class="flex-center gap-6 480:gap-2">
           <div class="flex-center gap-2 text-white">
-            <img
-              src="../../public/icons/header/phone.svg"
-              alt="phone"
-              class="w-5"
-            />
+            <img src="/icons/header/phone.svg" alt="phone" class="w-5" />
             <a href="tel:+998 95 511 99 99">+998 95 511 99 99</a>
           </div>
           <div class="flex-center gap-2 text-white">
-            <img src="" alt="" class="w-5" />
+            <img src="/icons/header/sms.svg" alt="" class="w-5" />
             <a href="mailto:info@bmu-edu.uz">info@bmu-edu.uz</a>
           </div>
         </div>
       </div>
     </div>
     <div class="site-container">
-      <div class="flex-center justify-between">
+      <div class="flex-center justify-between 1024:py-2.5">
         <nuxt-link :to="localePath('/')" class="w-[190px]">
-          <img src="/images/site-logo.png" alt="" />
+          <img src="/images/site-logo.svg" alt="site-logo" />
         </nuxt-link>
         <ul class="flex-center mr-8 menu 1024:!hidden">
           <!-- header menu -->
@@ -78,9 +74,14 @@ function closeBurgerMenu() {
                   menu?.url ? `${menu?.url}` : `/page/${menu?.page?.slug}`
                 )
               "
-              class="inline-block py-[38px] px-3"
+              class="flex-center gap-1 py-[38px] px-5 menu-title"
             >
               {{ menu.title }}
+              <img
+                src="/icons/header/arrow-down.svg"
+                alt=""
+                v-if="menu.children?.length >= 1"
+              />
             </nuxt-link>
 
             <!-- big menu -->
@@ -240,7 +241,7 @@ function closeBurgerMenu() {
 }
 .sub-menu-mini {
   position: absolute;
-  top: 100px;
+  top: 104px;
   left: 0;
   width: 260px;
   padding: 32px;
@@ -264,7 +265,15 @@ function closeBurgerMenu() {
   &:hover .sub-menu-mini {
     display: block;
   }
+  &:hover {
+    .menu-title {
+      img {
+        transform: rotate(180deg);
+      }
+    }
+  }
 }
+
 .menu-link-big {
   position: static;
   &:hover .sub-menu-big {
@@ -278,7 +287,7 @@ function closeBurgerMenu() {
   left: 0;
   background: #fff;
   z-index: 12;
-  top: 136px;
+  top: 140px;
   border-top: 1px solid #e9eaec;
   padding-top: 32px;
   padding-bottom: 40px;
