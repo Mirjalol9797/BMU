@@ -29,7 +29,16 @@
             development, explore how this partnership can enhance your
             educational journey and open doors to a brighter future.
           </div>
-          <nuxt-link to="/" class="text-[#648AC8]">Learn more</nuxt-link>
+          <nuxt-link
+            to="/"
+            class="text-[#648AC8] inline-flex items-center learn-more"
+            >Learn more
+            <img
+              src="/icons/blue-arrow.svg"
+              alt="blue-arrow"
+              class="ml-4 transform transition-transform duration-2000"
+            />
+          </nuxt-link>
         </div>
         <div>
           <div class="h-[500px] w-full mb-8 768:h-[250px]">
@@ -44,7 +53,15 @@
             development, explore how this partnership can enhance your
             educational journey and open doors to a brighter future.
           </div>
-          <nuxt-link to="/" class="text-[#648AC8]">Learn more</nuxt-link>
+          <nuxt-link
+            to="/"
+            class="text-[#648AC8] inline-flex items-center learn-more"
+            >Learn more
+            <img
+              src="/icons/blue-arrow.svg"
+              alt="blue-arrow"
+              class="ml-4 transform transition-transform duration-2000"
+          /></nuxt-link>
         </div>
       </div>
     </div>

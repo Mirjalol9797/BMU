@@ -20,9 +20,14 @@ const props = defineProps({
 
         <nuxt-link
           to="/"
-          class="text-[#648AC8] inline-block py-3 px-6 border border-[#648AC8] rounded-full mt-5"
+          class="text-[#648AC8] py-3 px-6 border border-[#648AC8] rounded-full mt-5 inline-flex items-center learn-more"
         >
           Learn More
+          <img
+            src="/icons/blue-arrow.svg"
+            alt="blue-arrow"
+            class="ml-4 transform transition-transform duration-2000"
+          />
         </nuxt-link>
       </div>
     </div>
