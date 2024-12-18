@@ -2,16 +2,8 @@
 
 <template>
   <div class="template">
-    <div class="template-banner relative">
-      <div class="w-full h-[440px] 768:h-[280px]">
-        <img
-          src="https://framerusercontent.com/images/Q9lx63caBiK49m1rhskauQKbD8g.jpg?scale-down-to=1024"
-          alt=""
-          class="w-full h-full object-cover"
-        />
-      </div>
-      <h1 class="template-title">Licenses & Official Documents</h1>
-    </div>
+    <CBannerAllPage />
+
     <div class="site-container">
       <div class="py-[100px] 768:py-[60px]">
         <div
@@ -51,38 +43,4 @@
   </div>
 </template>
 
-<style lang="scss" scoped>
-.template {
-  &-banner {
-    &:after {
-      content: "";
-      position: absolute;
-      background-color: rgba(0, 0, 0, 0.4);
-      inset: 0;
-      z-index: 8;
-    }
-  }
-  &-title {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 80px;
-    line-height: 100px;
-    color: #fff;
-    z-index: 9;
-    text-align: center;
-    font-weight: 500;
-
-    @media (max-width: 1024px) {
-      font-size: 48px;
-      line-height: 60px;
-    }
-
-    @media (max-width: 768px) {
-      font-size: 32px;
-      line-height: 48px;
-    }
-  }
-}
-</style>
+<style lang="scss" scoped></style>
