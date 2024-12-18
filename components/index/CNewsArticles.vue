@@ -10,7 +10,7 @@
       <div class="text-5xl font-medium mb-12 1024:text-4xl 480:!text-3xl">
         News & Events Central
       </div>
-      <div class="grid grid-cols-2 gap-14 768:grid-cols-1">
+      <div class="grid grid-cols-2 gap-14 768:grid-cols-1 768:gap-8">
         <div>
           <nuxt-link to="/" class="mb-9 inline-block">
             <div class="h-[200px] mb-4">

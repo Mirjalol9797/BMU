@@ -77,6 +77,15 @@
     height: 40px;
     gap: 16px;
 
+    .swiper-button-prev-usapart {
+      background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='40' height='40' rx='2' fill='%23648AC8'/%3E%3Cpath d='M28 20L12 20M12 20L18 26M12 20L18 14' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+    }
+
+    .swiper-button-next-usapart {
+      background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='40' height='40' rx='2' fill='%23648AC8'/%3E%3Cpath d='M28 20L12 20M12 20L18 26M12 20L18 14' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+      transform: rotate(180deg);
+    }
+
     div {
       background-color: #648ac8;
       width: 40px;
@@ -87,10 +96,8 @@
       top: 0;
       left: 0;
       right: 0;
-
       &:after {
-        font-size: 20px;
-        color: #fff;
+        content: none;
       }
     }
   }

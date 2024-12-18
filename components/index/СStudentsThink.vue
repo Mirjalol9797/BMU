@@ -31,8 +31,8 @@
             disableOnInteraction: true,
           }"
           :navigation="{
-            nextEl: '.swiper-button-next-usapart',
-            prevEl: '.swiper-button-prev-usapart',
+            nextEl: '.swiper-button-next-studentsThink',
+            prevEl: '.swiper-button-prev-studentsThink',
           }"
           :breakpoints="{
             320: {
@@ -72,8 +72,12 @@
           </SwiperSlide>
         </Swiper>
         <div class="swiper-buttons">
-          <div class="swiper-button-prev swiper-button-prev-usapart"></div>
-          <div class="swiper-button-next swiper-button-next-usapart"></div>
+          <div
+            class="swiper-button-prev swiper-button-prev-studentsThink"
+          ></div>
+          <div
+            class="swiper-button-next swiper-button-next-studentsThink"
+          ></div>
         </div>
       </div>
     </div>
@@ -93,6 +97,15 @@
     gap: 16px;
     left: 0;
 
+    .swiper-button-prev-studentsThink {
+      background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='40' height='40' rx='2' fill='%23648AC8'/%3E%3Cpath d='M28 20L12 20M12 20L18 26M12 20L18 14' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+    }
+
+    .swiper-button-next-studentsThink {
+      background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='40' height='40' rx='2' fill='%23648AC8'/%3E%3Cpath d='M28 20L12 20M12 20L18 26M12 20L18 14' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+      transform: rotate(180deg);
+    }
+
     div {
       background-color: #648ac8;
       width: 40px;
@@ -105,8 +118,7 @@
       right: 0;
 
       &:after {
-        font-size: 20px;
-        color: #fff;
+        content: none;
       }
     }
   }

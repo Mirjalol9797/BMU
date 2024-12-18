@@ -9,7 +9,7 @@ const { data: dataFooterMenu } = useAsyncData("FooterMenu", () =>
 </script>
 
 <template>
-  <footer class="pt-[100px] pb-8 footer">
+  <footer class="pt-[100px] pb-8 footer 768:py-[70px]">
     <div class="site-container">
       <div class="pb-6 border-b border-[#01010133]">
         <nuxt-link :to="localePath('/')">
@@ -17,7 +17,7 @@ const { data: dataFooterMenu } = useAsyncData("FooterMenu", () =>
         </nuxt-link>
       </div>
       <div
-        class="py-[60px] flex gap-4 1024:flex-wrap 1024:gap-0 1024:justify-between"
+        class="py-[60px] flex gap-4 1024:flex-wrap 1024:gap-0 1024:justify-between 768:py-10"
       >
         <div
           v-for="(menu, index) in dataFooterMenu.data.tree"
@@ -30,7 +30,7 @@ const { data: dataFooterMenu } = useAsyncData("FooterMenu", () =>
                 menu?.url ? `${menu?.url}` : `/page/${menu?.page?.slug}`
               )
             "
-            class="block text-xl mb-5"
+            class="block text-xl mb-5 768:mb-3"
             >{{ menu.title }}</nuxt-link
           >
           <nuxt-link
@@ -39,7 +39,7 @@ const { data: dataFooterMenu } = useAsyncData("FooterMenu", () =>
                 item?.url ? `${item?.url}` : `/page/${item?.page?.slug}`
               )
             "
-            class="block text-[#424343] mb-4"
+            class="block text-[#424343] mb-4 last:mb-0"
             v-for="(item, index) in menu.children"
             :key="index"
           >
@@ -50,15 +50,11 @@ const { data: dataFooterMenu } = useAsyncData("FooterMenu", () =>
         <div class="w-1/5 1024:w-1/2 640:!w-full">
           <nuxt-link to="/" class="block text-xl mb-6">Contact</nuxt-link>
           <div class="flex-center gap-2 text-[#424343] mb-5">
-            <img
-              src="../../public/icons/header/phone.svg"
-              alt="phone"
-              class="w-5"
-            />
+            <img src="/icons/header/phone.svg" alt="phone" class="w-5" />
             <a href="tel:+998 95 511 99 99">+998 95 511 99 99</a>
           </div>
           <div class="flex-center gap-2 text-[#424343] mb-5">
-            <img src="" alt="" class="w-5" />
+            <img src="/icons/header/sms.svg" alt="sms" class="w-5" />
             <a href="mailto:info@bmu-edu.uz">info@bmu-edu.uz</a>
           </div>
           <iframe
