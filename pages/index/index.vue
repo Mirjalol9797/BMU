@@ -1,6 +1,5 @@
 <script setup>
 import { useAsyncData } from "nuxt/app";
-
 const { t } = useI18n();
 
 useSeoMeta({
@@ -19,72 +18,24 @@ useSeoMeta({
   twitterImage: "/images/logo.png",
 });
 
-//
+const getSliders = useApiSliders();
+const getMainPagesData = useApiMainPage();
 
-import { ref } from "vue";
+// fetch api
+const { data: dataSlider } = useAsyncData("Slider", () =>
+  getSliders.getSlider()
+);
 
-const settingsStore = useSettingsStore();
-
-const sliderData = ref(null);
-const mainContent = ref(null);
-const mainAbout = ref(null);
-const { $axiosPlugin } = useNuxtApp();
-
-async function getSlider() {
-  settingsStore.isLoader = true;
-
-  await $axiosPlugin
-    .get("/api/slider")
-    .then((res) => {
-      if (res.data.success) {
-        sliderData.value = res.data.data.sliders;
-      }
-    })
-    .catch((error) => console.log(error));
-
-  settingsStore.isLoader = false;
-}
-
-async function getMainContent() {
-  settingsStore.isLoader = true;
-
-  await $axiosPlugin
-    .get("/api/main_page_header")
-    .then((res) => {
-      if (res.data.success) {
-        mainContent.value = res.data.data.main_page_header;
-      }
-    })
-    .catch((error) => console.log(error));
-
-  settingsStore.isLoader = false;
-}
-
-async function getMainAbout() {
-  settingsStore.isLoader = true;
-
-  await $axiosPlugin
-    .get("/api/main_page_body")
-    .then((res) => {
-      if (res.data.success) {
-        mainAbout.value = res.data.data.main_page_body;
-      }
-    })
-    .catch((error) => console.log(error));
-
-  settingsStore.isLoader = false;
-}
-
-getSlider();
-getMainContent();
-getMainAbout();
+const { data: dataWelcomeInfo } = useAsyncData("WelcomeInfo", () =>
+  getMainPagesData.getWelcomeInfo()
+);
 </script>
 
 <template>
   <div class="main-page">
-    <IndexCSlider :sliderData="sliderData" />
+    <IndexCSlider :sliderData="dataSlider.data.sliders" />
     <!-- <IndexCCounts /> -->
-    <IndexCWelcome :mainContent="mainContent" />
+    <IndexCWelcome :mainContent="dataWelcomeInfo.data.main_page_header" />
     <IndexCPartnerUniversities />
     <IndexCAcademicPrograms />
     <IndexCUsApart />

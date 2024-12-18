@@ -40,7 +40,7 @@ const props = defineProps({
       </video>
 
       <div
-        class="absolute top-[50%] left-[10%] translate-y-[-50%] text-white z-10 w-[80%]"
+        class="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] text-white z-10 w-[70%] text-center"
       >
         <div
           class="text-7xl leading-[100px] mb-6 font-medium 1024:text-5xl 480:!text-2xl"
@@ -64,7 +64,7 @@ const props = defineProps({
 <style lang="scss">
 .main-page {
   .banner-swiper {
-    height: calc(100vh - 163px);
+    height: calc(100vh - 140px);
 
     .swiper-button-prev,
     .swiper-button-next {

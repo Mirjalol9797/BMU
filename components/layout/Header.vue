@@ -3,7 +3,9 @@ import { useAsyncData } from "nuxt/app";
 import { onMounted } from "vue";
 const settingsStore = useSettingsStore();
 const { locales, locale, setLocale } = useI18n();
+
 const getHeaderMenu = useApiMenu();
+
 const localeView = computed(() =>
   locales.value.filter((item) => locale.value == item.code)
 );
