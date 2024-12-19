@@ -16,9 +16,15 @@
           By joining forces with esteemed institutions, organizations, and
           industry leaders.
         </div>
-        <nuxt-link to="/" class="text-[#648AC8] font-medium"
-          >Learn More</nuxt-link
-        >
+        <nuxt-link
+          to="/"
+          class="text-[#648AC8] inline-flex font-medium learn-more"
+          >Learn More
+          <img
+            src="/icons/blue-arrow.svg"
+            alt="blue-arrow"
+            class="ml-4 transform transition-transform duration-2000"
+        /></nuxt-link>
       </div>
       <div
         class="absolute top-4 right-0 max-w-[700px] 1024:relative 1024:max-w-full 1024:top-0 1024:right-[-16px] 1024:mt-14"

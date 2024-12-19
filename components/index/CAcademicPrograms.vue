@@ -47,9 +47,14 @@
               </div>
               <nuxt-link
                 to="/"
-                class="font-medium inline-block py-3 px-6 rounded-full border border-[#fff]"
+                class="font-medium inline-flex py-3 px-6 rounded-full border border-[#fff] learn-more"
               >
                 Get started
+                <img
+                  src="/icons/white-arrow.svg"
+                  alt="white-arrow"
+                  class="ml-4 transform transition-transform duration-2000"
+                />
               </nuxt-link>
             </div>
           </div>
