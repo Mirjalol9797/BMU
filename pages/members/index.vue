@@ -1,6 +1,6 @@
 <script setup></script>
 <template>
-  <CBannerAllPage title="Distinguished Faculty Memebers" />
+  <CBannerAllPage title="Distinguished Faculty Members" />
   <div class="members-page py-[100px] 768:py-[70px]">
     <div class="site-container">
       <div class="grid grid-cols-3 gap-6 768:grid-cols-2 480:!grid-cols-1">
