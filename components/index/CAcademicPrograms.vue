@@ -7,15 +7,14 @@
         data-aos="fade-up"
         data-aos-duration="1000"
       >
-        Our Academic Programs
+        Our Academic Programmes
       </div>
       <div
         class="text-center text-lg text-[#424343] mb-14 768:mb-8"
         data-aos="fade-up"
         data-aos-duration="1000"
       >
-        Gain valuable insights from their experiences and see the impact of our
-        programs through their stories.
+        Learn about academic programmes available at the University
       </div>
       <div
         class="grid grid-cols-2 gap-14 1024:gap-8 640:grid-cols-1"
@@ -49,7 +48,7 @@
                 to="/"
                 class="font-medium inline-block py-3 px-6 rounded-full border border-[#fff]"
               >
-                Get started
+                Get started <img src="" alt="" />
               </nuxt-link>
             </div>
           </div>

@@ -12,22 +12,29 @@
         class="text-center text-lg text-[#CFCFCF] mb-14 768:mb-8"
         data-aos="fade-up"
       >
-        We partner with top universities worldwide to expand opportunities,
-        foster excellence, and inspire global connections.
+        Many of our undergraduate and postgraduate programmes are designed in
+        collaboration with well-known British universities and are
+        quality-controlled by our partners.
       </div>
       <div class="grid grid-cols-2 gap-14 768:grid-cols-1" data-aos="fade-up">
         <div>
-          <div class="h-[500px] w-full mb-8 768:h-[250px]">
-            <img src="" alt="" class="w-full h-full object-cover" />
+          <div class="h-[580px] w-full mb-8 768:h-[250px]">
+            <img
+              src="/images/partner_universities/university_of_reading.png"
+              alt=""
+              class="w-full h-full object-cover"
+            />
           </div>
           <div class="text-white mb-3 text-4xl font-medium 1024:text-2xl">
             University of Reading
           </div>
           <div class="text-[#CFCFCF] mb-8">
-            Discover more about this exciting collaboration and the unique
-            opportunities it offers students. From academic enrichment to career
-            development, explore how this partnership can enhance your
-            educational journey and open doors to a brighter future.
+            The BMU Foundation Programme is validated by the University of
+            Reading (UK) – TOP-30 in the UK and TOP-250 of the best universities
+            in the world. Upon completion of the BMU Foundation Programme,
+            students will receive a Foundation Diploma from the University of
+            Reading that will allow them to continue their studies in many
+            universities in the U.K. and other countries.
           </div>
           <nuxt-link
             to="/"
@@ -41,17 +48,23 @@
           </nuxt-link>
         </div>
         <div>
-          <div class="h-[500px] w-full mb-8 768:h-[250px]">
-            <img src="" alt="" class="w-full h-full object-cover" />
+          <div class="h-[580px] w-full mb-8 768:h-[250px]">
+            <img
+              src="/images/partner_universities/queen_margater_university.png"
+              alt=""
+              class="w-full h-full object-cover"
+            />
           </div>
           <div class="text-white mb-3 text-4xl font-medium 1024:text-2xl">
             Queen Margaret University
           </div>
           <div class="text-[#CFCFCF] mb-8">
-            Discover more about this exciting collaboration and the unique
-            opportunities it offers students. From academic enrichment to career
-            development, explore how this partnership can enhance your
-            educational journey and open doors to a brighter future.
+            QMU and BMU have been in partnership since 2023. The partnership is
+            focused on the delivery of modern business, finance and accounting
+            programmes that will prepare graduates for management careers in
+            Uzbekistan, Central Asia and beyond. The programmes offered through
+            this partnership are delivered by BMU, with quality assurance from
+            QMU.
           </div>
           <nuxt-link
             to="/"
