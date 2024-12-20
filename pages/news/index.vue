@@ -35,7 +35,7 @@
           </div>
         </div>
       </nuxt-link>
-      <div class="news-content mt-[100px]">
+      <div class="news-content mt-[100px] 768:mt-[60px]">
         <div
           class="text-center text-5xl font-medium mb-4 1024:text-4xl 480:!text-3xl"
         >
