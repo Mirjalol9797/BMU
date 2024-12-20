@@ -69,9 +69,14 @@ onMounted(() => {
           growth, and boundless possibilities.
         </div>
         <button
-          class="text-white font-medium bg-[#648AC8] py-3 px-6 rounded-full"
+          class="text-white font-medium bg-[#648AC8] py-3 px-6 rounded-full inline-flex items-center learn-more"
         >
           Apply Online
+          <img
+            src="/icons/white-arrow.svg"
+            alt="blue-arrow"
+            class="ml-4 transform transition-transform duration-2000"
+          />
         </button>
       </div>
       <div
