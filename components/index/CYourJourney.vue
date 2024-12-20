@@ -65,8 +65,8 @@ onMounted(() => {
           Embark on Your Journey
         </div>
         <div class="mb-8">
-          Join EduVerse and explore a world of academic excellence, personal
-          growth, and boundless possibilities.
+          Join British Management University and explore a world of academic
+          excellence, personal growth, and boundless possibilities.
         </div>
         <button
           class="text-white font-medium bg-[#648AC8] py-3 px-6 rounded-full inline-flex items-center learn-more"

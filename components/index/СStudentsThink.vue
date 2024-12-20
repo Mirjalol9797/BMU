@@ -13,8 +13,7 @@
         Discover What Our Students Think
       </div>
       <div class="text-center text-lg text-[#424343] mb-14 768:mb-8">
-        Gain valuable insights from their experiences and see the impact of our
-        programs through their stories.
+        Our students sharing their stories:
       </div>
       <div>
         <Swiper

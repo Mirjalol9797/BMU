@@ -8,13 +8,13 @@
   >
     <div class="site-container grid grid-cols-2 1024:grid-cols-1">
       <div class="max-w-[450px] w-full text-white">
-        <div class="text-5xl mb-5 font-medium">
-          Forging Strategic Collaborations
+        <div class="text-5xl leading-[60px] mb-5 font-medium">
+          Career Development Centre
         </div>
         <div class="mb-5">
-          At EduVerse, we believe in the power of partnership and collaboration.
-          By joining forces with esteemed institutions, organizations, and
-          industry leaders.
+          Offering services that range from selecting majors and planning
+          careers to developing job search strategies, the center provides a
+          robust support system.
         </div>
         <nuxt-link
           to="/"
