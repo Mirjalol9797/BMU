@@ -150,24 +150,32 @@ async function checkConfirmNumber() {
   if (!validate) {
     loaderBtn.value = true;
 
-    await $axiosPlugin
-      .post("/api/get-otp", {
-        phone: studentPhone.value.phone,
-      })
-      .then((res) => {
-        console.log(res);
-        if (res.data.success) {
-          viewSmsCodeField.value = true;
-          localStorage.setItem("expireAt", res.data.data.expireAt);
-          localStorage.setItem("phone", studentPhone.value.phone);
-          startTimer();
-        } else {
-          phoneError.value = res.data.message;
-        }
-      })
-      .catch((error) => console.log(error));
+    try {
+      const response = await fetch("https://bmu-api.tm.uz/api/get-otp", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          phone: studentPhone.value.phone,
+        }),
+      });
 
-    loaderBtn.value = false;
+      const res = await response.json();
+
+      if (res.success) {
+        viewSmsCodeField.value = true;
+        localStorage.setItem("expireAt", res.data.expireAt);
+        localStorage.setItem("phone", studentPhone.value.phone);
+        startTimer();
+      } else {
+        phoneError.value = res.message;
+      }
+    } catch (error) {
+      console.log(error);
+    } finally {
+      loaderBtn.value = false;
+    }
   }
 }
 
@@ -176,26 +184,37 @@ async function getToken() {
   codeError.value = null;
   let validate = v$3.value.$invalid;
   v$3.value.$touch();
-  if (!validate) {
-    await $axiosPlugin
-      .post("/api/validate-otp", {
-        phone: studentPhone.value.phone,
-        code: studentSmsCode.value.code,
-      })
-      .then((res) => {
-        console.log(res);
-        if (res.data.success) {
-          access_token.value = res.data.data.access_token;
-          user_id.value = res.data.data.user_id;
-          localStorage.setItem("token", res.data.data.access_token);
-        } else {
-          codeError.value = res.data.message;
-        }
-      })
-      .catch((error) => console.log(error));
-  }
 
-  smsCodeLoader.value = false;
+  if (!validate) {
+    try {
+      const response = await fetch("https://bmu-api.tm.uz/api/validate-otp", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          phone: studentPhone.value.phone,
+          code: studentSmsCode.value.code,
+        }),
+      });
+
+      const res = await response.json();
+
+      if (res.success) {
+        access_token.value = res.data.access_token;
+        user_id.value = res.data.user_id;
+        localStorage.setItem("token", res.data.access_token);
+      } else {
+        codeError.value = res.message;
+      }
+    } catch (error) {
+      console.log(error);
+    } finally {
+      smsCodeLoader.value = false;
+    }
+  } else {
+    smsCodeLoader.value = false;
+  }
 }
 
 function changePhoneNumber() {
@@ -207,6 +226,7 @@ async function sendData() {
   let validate = v$1.value.$invalid;
   console.log(validate);
   v$1.value.$touch();
+
   if (!validate) {
     const sendData = new FormData();
     sendData.append("passport", formData.value.passport);
@@ -230,24 +250,30 @@ async function sendData() {
     sendData.append("passport_file", formData.value.copy_passport);
     sendData.append("user_id", user_id.value);
 
-    await $axiosPlugin
-      .post("/api/apply", sendData, {
+    try {
+      const response = await fetch("https://bmu-api.tm.uz/api/apply", {
+        method: "POST",
+        body: sendData,
         headers: {
-          "Content-Type": "multipart/form-data",
           Authorization: `Bearer ${access_token.value}`,
         },
-      })
-      .then((res) => {
-        if (res.data.success) {
-          applyContent.value = false;
-          localStorage.clear();
-        }
-        console.log(res.data);
-      })
-      .catch((error) => console.log(error));
-  }
+      });
 
-  loaderBtn.value = false;
+      const res = await response.json();
+
+      if (res.success) {
+        applyContent.value = false;
+        localStorage.clear();
+      }
+      console.log(res);
+    } catch (error) {
+      console.log(error);
+    } finally {
+      loaderBtn.value = false;
+    }
+  } else {
+    loaderBtn.value = false;
+  }
 }
 
 onMounted(() => {
@@ -260,7 +286,7 @@ onMounted(() => {
 });
 </script>
 <template>
-  <UiTmModal classModal="!pt-[52px] pb-[60px] px-[60px]">
+  <UiTmModal classModal="!pt-[52px] pb-[60px] px-[60px] rounded-lg">
     <template #modal_content>
       <button class="absolute top-0 right-0" @click="closeApplyNowModal">
         <img src="/icons/close-modal.svg" alt="close-modal" />
@@ -295,7 +321,7 @@ onMounted(() => {
           </div>
 
           <button
-            class="px-4 py-2 text-white font-medium bg-[#E22F24] text-sm h-10 480:w-full"
+            class="px-4 py-2 text-white font-medium bg-[#648AC8] text-sm h-10 480:w-full"
             @click="checkConfirmNumber"
             v-if="!viewSmsCodeField"
             :class="loaderBtn ? 'site-btn-loader' : ''"
