@@ -33,9 +33,9 @@ const { data: dataWelcomeInfo } = useAsyncData("WelcomeInfo", () =>
 
 <template>
   <div class="main-page">
-    <IndexCSlider :sliderData="dataSlider.data.sliders" />
+    <IndexCSlider :sliderData="dataSlider?.data?.sliders" />
     <!-- <IndexCCounts /> -->
-    <IndexCWelcome :mainContent="dataWelcomeInfo.data.main_page_header" />
+    <IndexCWelcome :mainContent="dataWelcomeInfo?.data?.main_page_header" />
     <IndexCPartnerUniversities />
     <IndexCAcademicPrograms />
     <IndexCUsApart />

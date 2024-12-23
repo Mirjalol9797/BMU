@@ -4,7 +4,7 @@ export const useApiMembers = () => {
 
   const getFacultyMembers = async () => {
     const res = await $api(`/api/faculty-members`);
-    return res.data;
+    return res?.data;
   };
 
   const getMemberId = async (id) => {
