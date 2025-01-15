@@ -1,6 +1,8 @@
 export default defineNuxtPlugin((nuxtApp) => {
   const api = $fetch.create({
-    baseURL: "https://bmu-api.tm.uz",
+    // baseURL: "https://bmu-api.tm.uz",
+    baseURL: "https://api2.bmu-edu.uz/",
+
     onRequest({ options }) {
       const headers = (options.headers ||= {});
       const locale = nuxtApp.$i18n.locale.value;

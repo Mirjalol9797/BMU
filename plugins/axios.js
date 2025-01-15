@@ -5,8 +5,8 @@ export default defineNuxtPlugin((nuxtApp) => {
   const config = useRuntimeConfig();
   const axiosPlugin = axios.create({});
 
-  axiosPlugin.defaults.baseURL = "https://bmu-api.tm.uz";
-  // axiosPlugin.defaults.baseURL = "https://api2.bmu-edu.uz/";
+  // axiosPlugin.defaults.baseURL = "https://bmu-api.tm.uz";
+  axiosPlugin.defaults.baseURL = "https://api2.bmu-edu.uz/";
   // читай коммент в header.vue Тоже есть baseUrl его тоже надо менять
 
   axiosPlugin.interceptors.request.use(

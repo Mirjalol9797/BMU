@@ -3,6 +3,7 @@ import { ref, onMounted } from "vue";
 import { useVuelidate } from "@vuelidate/core";
 import { required, minLength, email, sameAs } from "@vuelidate/validators";
 
+const baseUrl = "https://api2.bmu-edu.uz/";
 const { t } = useI18n();
 const settingsStore = useSettingsStore();
 const { $axiosPlugin } = useNuxtApp();
@@ -151,7 +152,7 @@ async function checkConfirmNumber() {
     loaderBtn.value = true;
 
     try {
-      const response = await fetch("https://bmu-api.tm.uz/api/get-otp", {
+      const response = await fetch(`${baseUrl}/api/get-otp`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -187,7 +188,7 @@ async function getToken() {
 
   if (!validate) {
     try {
-      const response = await fetch("https://bmu-api.tm.uz/api/validate-otp", {
+      const response = await fetch(`${baseUrl}/api/validate-otp`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -251,7 +252,7 @@ async function sendData() {
     sendData.append("user_id", user_id.value);
 
     try {
-      const response = await fetch("https://bmu-api.tm.uz/api/apply", {
+      const response = await fetch(`${baseUrl}/api/apply`, {
         method: "POST",
         body: sendData,
         headers: {
