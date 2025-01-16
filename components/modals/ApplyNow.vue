@@ -3,7 +3,7 @@ import { ref, onMounted } from "vue";
 import { useVuelidate } from "@vuelidate/core";
 import { required, minLength, email, sameAs } from "@vuelidate/validators";
 
-const baseUrl = "https://api2.bmu-edu.uz/";
+const baseUrl = "https://api2.bmu-edu.uz";
 const { t } = useI18n();
 const settingsStore = useSettingsStore();
 const { $axiosPlugin } = useNuxtApp();
