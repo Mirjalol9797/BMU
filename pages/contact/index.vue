@@ -1,4 +1,35 @@
-<script setup></script>
+<script setup>
+import { ref } from "vue";
+import { useVuelidate } from "@vuelidate/core";
+import { required, minLength, email } from "@vuelidate/validators";
+
+const getContact = useContactPage();
+const { t } = useI18n();
+const errorText = ref(t("apply_now_modal.required"));
+const userData = ref({
+  name: null,
+  email: null,
+  phone: null,
+  message: null,
+});
+
+const userDataError = ref({
+  name: { required },
+  email: { required, email },
+  phone: { required, minLength: minLength(19) },
+  message: { required },
+});
+
+const v$1 = useVuelidate(userDataError, userData);
+
+function sendUserData() {
+  let validate = v$1.value.$invalid;
+  v$1.value.$touch();
+  if (!validate) {
+    getContact.sendContact(userData.value);
+  }
+}
+</script>
 <template>
   <CBannerAllPage title="Distinguished Faculty Memebers" />
   <div class="contact py-[100px] 768:py-[70px]">
@@ -37,39 +68,42 @@
         </div>
       </div>
       <div class="grid grid-cols-2 gap-6 768:grid-cols-1">
-        <div class="p-12 bg-[rgba(1,1,1,0.02)] 768:p-6">
-          <label class="mb-6 inline-block w-full">
-            <div class="mb-2 text-xl 768:text-lg">Your Name</div>
-            <input
-              type="text"
-              class="py-4 px-7 rounded-[32px] border border-[#424343] w-full"
-              placeholder="Enter Name"
-            />
-          </label>
-          <label class="mb-6 inline-block w-full">
-            <div class="mb-2 text-xl 768:text-lg">Your Email</div>
-            <input
-              type="text"
-              class="py-4 px-7 rounded-[32px] border border-[#424343] w-full"
-              placeholder="Enter Name"
-            />
-          </label>
-          <label class="mb-6 inline-block w-full">
-            <div class="mb-2 text-xl 768:text-lg">Your Phone Number</div>
-            <input
-              type="text"
-              class="py-4 px-7 rounded-[32px] border border-[#424343] w-full"
-              placeholder="Enter Phone Number"
-            />
-          </label>
-          <label class="mb-6 inline-block w-full">
-            <div class="mb-2 text-xl 768:text-lg">Your Message</div>
-            <textarea
-              placeholder="Enter Message"
-              class="py-4 px-7 min-h-[120px] rounded-[32px] border border-[#424343] w-full"
-            ></textarea>
-          </label>
-          <button class="bg-[#648AC8] text-white py-4 px-7 rounded-full">
+        <div class="p-12 bg-[rgba(1,1,1,0.02)] contact-form 768:p-6">
+          <UiTmInput
+            label="Your Name"
+            :error="v$1.name.$error"
+            :errorText="errorText"
+            v-model="userData.name"
+            placeholder="Enter Name"
+          />
+          <UiTmInput
+            label="Your Email"
+            :error="v$1.email.$error"
+            :errorText="errorText"
+            v-model="userData.email"
+            placeholder="Enter Email"
+          />
+          <UiTmInput
+            label="Your Phone Number"
+            dataMaska="+(998) ## ### ## ##"
+            :error="v$1.phone.$error"
+            :errorText="errorText"
+            v-model="userData.phone"
+            placeholder="Enter Phone Number"
+          />
+
+          <UiTmTextarea
+            label="Your Message"
+            :error="v$1.message.$error"
+            :errorText="errorText"
+            v-model="userData.message"
+            placeholder="Enter Message"
+          />
+
+          <button
+            class="bg-[#648AC8] text-white py-4 px-7 rounded-full"
+            @click="sendUserData"
+          >
             Send Message
           </button>
         </div>
@@ -88,11 +122,36 @@
     </div>
   </div>
 </template>
-<style lang="scss" scoped>
+<style lang="scss">
 .contact {
   iframe {
     @media (max-width: 768px) {
       height: 400px;
+    }
+  }
+  &-form {
+    .form-item {
+      margin-bottom: 24px;
+    }
+    label {
+      span {
+        margin-bottom: 8px;
+        font-size: 20px;
+        line-height: 28px;
+        color: #010101;
+      }
+      .form-input {
+        padding: 16px 32px;
+        border-radius: 32px;
+        border: 1px solid #424343;
+        width: 100%;
+        height: auto;
+        font-size: 16px;
+        color: #010101;
+      }
+      textarea {
+        min-height: 150px;
+      }
     }
   }
 }
