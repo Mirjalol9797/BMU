@@ -18,11 +18,10 @@ const props = defineProps({
       </div>
       <div
         class="text-center text-lg text-[#424343] mb-14 768:mb-8"
+        v-html="content?.description"
         data-aos="fade-up"
         data-aos-duration="1000"
-      >
-        {{ content?.description }}
-      </div>
+      ></div>
       <div
         class="grid grid-cols-2 gap-14 1024:gap-8 640:grid-cols-1"
         data-aos="fade-up"
@@ -54,7 +53,7 @@ const props = defineProps({
                 :to="localePath(`${item.url}`)"
                 class="font-medium inline-flex py-3 px-6 rounded-full border border-[#fff] learn-more"
               >
-                Get started
+                {{ $t("get_started") }}
                 <img
                   src="/icons/white-arrow.svg"
                   alt="white-arrow"

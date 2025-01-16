@@ -673,7 +673,7 @@ onMounted(() => {
             <div>
               {{ $t("apply_now_modal.by_submitting_agree") }}
               <nuxt-link
-                :to="localePath('/page/privacy-policy')"
+                :to="localePath(' privacy-policy')"
                 class="underline"
                 target="_blank"
               >

@@ -38,7 +38,7 @@ function closeBurgerMenu() {
 </script>
 
 <template>
-  <header class="relative">
+  <header class="sticky top-0 bg-white z-50">
     <div class="bg-[#192B69] py-1.5">
       <div class="site-container flex-center justify-between 768:flex-col">
         <div class="text-[#D9D9D9] 768:mb-2 flex">
@@ -72,9 +72,7 @@ function closeBurgerMenu() {
           >
             <nuxt-link
               :to="
-                localePath(
-                  menu?.url ? `${menu?.url}` : `/page/${menu?.page?.slug}`
-                )
+                localePath(menu?.url ? `${menu?.url}` : ` ${menu?.page?.slug}`)
               "
               class="flex-center gap-1 py-[38px] px-5 menu-title"
             >
@@ -97,9 +95,7 @@ function closeBurgerMenu() {
                   <nuxt-link
                     :to="
                       localePath(
-                        child?.url
-                          ? `${child?.url}`
-                          : `/page/${child?.page?.slug}`
+                        child?.url ? `${child?.url}` : ` ${child?.page?.slug}`
                       )
                     "
                     class="text-base font-semibold mb-5 inline-block"
@@ -116,9 +112,7 @@ function closeBurgerMenu() {
                       <nuxt-link
                         :to="
                           localePath(
-                            item?.url
-                              ? `${item?.url}`
-                              : `/page/${item?.page?.slug}`
+                            item?.url ? `${item?.url}` : ` ${item?.page?.slug}`
                           )
                         "
                       >
@@ -136,7 +130,7 @@ function closeBurgerMenu() {
                 <nuxt-link
                   :to="
                     localePath(
-                      item?.url ? `${item?.url}` : `/page/${item?.page?.slug}`
+                      item?.url ? `${item?.url}` : ` ${item?.page?.slug}`
                     )
                   "
                 >
@@ -151,7 +145,7 @@ function closeBurgerMenu() {
                 <nuxt-link
                   :to="
                     localePath(
-                      item?.url ? `${item?.url}` : `/page/${item?.page?.slug}`
+                      item?.url ? `${item?.url}` : ` ${item?.page?.slug}`
                     )
                   "
                 >

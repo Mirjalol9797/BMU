@@ -17,10 +17,9 @@ const props = defineProps({
       </div>
       <div
         class="text-center text-lg text-[#CFCFCF] mb-14 768:mb-8"
+        v-html="content?.description"
         data-aos="fade-up"
-      >
-        {{ content?.description }}
-      </div>
+      ></div>
       <div class="grid grid-cols-2 gap-14 768:grid-cols-1" data-aos="fade-up">
         <div v-for="(item, index) in content?.blocks" :key="index">
           <div class="h-[580px] w-full mb-8 768:h-[250px]">
@@ -39,7 +38,7 @@ const props = defineProps({
           <nuxt-link
             :to="localePath(`${item.url}`)"
             class="text-[#648AC8] inline-flex items-center learn-more"
-            >Learn more
+            >{{ $t("learn_more") }}
             <img
               src="/icons/blue-arrow.svg"
               alt="blue-arrow"

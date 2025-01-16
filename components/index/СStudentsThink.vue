@@ -19,9 +19,10 @@ const props = defineProps({
       >
         {{ content?.title }}
       </div>
-      <div class="text-center text-lg text-[#424343] mb-14 768:mb-8">
-        {{ content?.description }}
-      </div>
+      <div
+        class="text-center text-lg text-[#424343] mb-14 768:mb-8"
+        v-html="content?.description"
+      ></div>
       <div>
         <Swiper
           :modules="[

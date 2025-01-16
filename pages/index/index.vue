@@ -27,8 +27,9 @@ const { data: dataSlider } = useAsyncData("Slider", () =>
   getSliders.getSlider()
 );
 
-const { data: dataWelcomeInfo } = useAsyncData("WelcomeInfo", () =>
-  getMainPagesData.getWelcomeInfo()
+const { data: dataScholarlyCommunities } = useAsyncData(
+  "ScholarlyCommunities",
+  () => getMainPagesData.getScholarlyCommunities()
 );
 
 const { data: dataPartnerUniversities } = useAsyncData(
@@ -59,7 +60,7 @@ const { data: dataDiscoverStudentThink } = useAsyncData(
   <div class="main-page">
     <IndexCSlider :sliderData="dataSlider?.data?.sliders" />
     <!-- <IndexCCounts /> -->
-    <IndexCWelcome :mainContent="dataWelcomeInfo?.data?.main_page_header" />
+    <IndexCWelcome :content="dataScholarlyCommunities?.data" />
     <IndexCPartnerUniversities :content="dataPartnerUniversities?.data" />
     <IndexCAcademicPrograms :content="dataOurAcademicPrograms?.data" />
     <IndexCUsApart :content="dataWhatSetsUsApart?.data" />

@@ -57,7 +57,7 @@ const isOpen = (id) => {
       >
         <div class="accordion-header p-4 flex items-center justify-between">
           <nuxt-link
-            :to="localePath(`/page/${menu.url}`)"
+            :to="localePath(` ${menu.url}`)"
             class="font-semibold inline-block"
           >
             {{ menu.title }}
@@ -84,7 +84,7 @@ const isOpen = (id) => {
             class="mb-6 last:mb-0"
           >
             <nuxt-link
-              :to="localePath(`/page/${item.url}`)"
+              :to="localePath(` ${item.url}`)"
               class="inline-block"
               :class="
                 menu.children?.length == 1
@@ -100,7 +100,7 @@ const isOpen = (id) => {
                 :key="index"
                 class="mb-3 text-sm last:mb-0"
               >
-                <nuxt-link :to="localePath(`/page/${item.url}`)">
+                <nuxt-link :to="localePath(` ${item.url}`)">
                   {{ item.title }}
                 </nuxt-link>
               </li>

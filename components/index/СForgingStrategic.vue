@@ -18,13 +18,11 @@ const props = defineProps({
         <div class="text-5xl leading-[60px] mb-5 font-medium">
           {{ content?.title }}
         </div>
-        <div class="mb-5">
-          {{ content?.description }}
-        </div>
+        <div class="mb-5" v-html="content?.description"></div>
         <nuxt-link
           to="/"
           class="text-[#648AC8] inline-flex font-medium learn-more"
-          >Learn More
+          >{{ $t("learn_more") }}
           <img
             src="/icons/blue-arrow.svg"
             alt="blue-arrow"

@@ -1,6 +1,6 @@
 <script setup>
 const props = defineProps({
-  mainContent: {
+  content: {
     type: Object,
     default: {},
   },
@@ -13,16 +13,16 @@ const props = defineProps({
       <h1
         class="w-1/2 text-5xl leading-[60px] font-medium 1024:w-full 1024:text-4xl 1024:mb-7 480:!text-3xl"
       >
-        {{ mainContent?.title }}
+        {{ content?.title }}
       </h1>
       <div class="w-1/2 leading-9 max-w-[1072px] mx-auto 1024:w-full">
-        <div>{{ mainContent?.description }}</div>
+        <div v-html="content?.description"></div>
 
         <nuxt-link
-          to="/"
+          :to="localePath(`${content.link}`)"
           class="text-[#648AC8] py-3 px-6 border border-[#648AC8] rounded-full mt-5 inline-flex items-center learn-more"
         >
-          Learn More
+          {{ $t("learn_more") }}
           <img
             src="/icons/blue-arrow.svg"
             alt="blue-arrow"
