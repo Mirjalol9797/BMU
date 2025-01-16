@@ -7,7 +7,13 @@ export const useApiMainPage = () => {
     return res;
   };
 
+  const getPartnerUniversities = async () => {
+    const res = await $api(`/api/homepage/partner-university`);
+    return res;
+  };
+
   return {
     getWelcomeInfo,
+    getPartnerUniversities,
   };
 };

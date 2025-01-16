@@ -1,4 +1,5 @@
 <script setup>
+import { onMounted } from "vue";
 import { useAsyncData } from "nuxt/app";
 const { t } = useI18n();
 
@@ -29,6 +30,15 @@ const { data: dataSlider } = useAsyncData("Slider", () =>
 const { data: dataWelcomeInfo } = useAsyncData("WelcomeInfo", () =>
   getMainPagesData.getWelcomeInfo()
 );
+
+const { data: dataPartnerUniversities } = useAsyncData(
+  "PartnerUniversities",
+  () => getMainPagesData.getPartnerUniversities()
+);
+
+onMounted(() => {
+  console.log("dataPartnerUniversities", dataPartnerUniversities);
+});
 </script>
 
 <template>
@@ -36,7 +46,7 @@ const { data: dataWelcomeInfo } = useAsyncData("WelcomeInfo", () =>
     <IndexCSlider :sliderData="dataSlider?.data?.sliders" />
     <!-- <IndexCCounts /> -->
     <IndexCWelcome :mainContent="dataWelcomeInfo?.data?.main_page_header" />
-    <IndexCPartnerUniversities />
+    <IndexCPartnerUniversities :content="dataPartnerUniversities?.data" />
     <IndexCAcademicPrograms />
     <IndexCUsApart />
     <IndexСForgingStrategic />
