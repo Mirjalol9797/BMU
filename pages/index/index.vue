@@ -36,9 +36,23 @@ const { data: dataPartnerUniversities } = useAsyncData(
   () => getMainPagesData.getPartnerUniversities()
 );
 
-onMounted(() => {
-  console.log("dataPartnerUniversities", dataPartnerUniversities);
-});
+const { data: dataOurAcademicPrograms } = useAsyncData(
+  "OurAcademicPrograms",
+  () => getMainPagesData.getOurAcademicPrograms()
+);
+
+const { data: dataWhatSetsUsApart } = useAsyncData("WhatSetsUsApart", () =>
+  getMainPagesData.getWhatSetsUsApart()
+);
+
+const { data: dataForgingStrategic } = useAsyncData("ForgingStrategic", () =>
+  getMainPagesData.getForgingStrategic()
+);
+
+const { data: dataDiscoverStudentThink } = useAsyncData(
+  "DiscoverStudentThink",
+  () => getMainPagesData.getDiscoverStudentThink()
+);
 </script>
 
 <template>
@@ -47,10 +61,10 @@ onMounted(() => {
     <!-- <IndexCCounts /> -->
     <IndexCWelcome :mainContent="dataWelcomeInfo?.data?.main_page_header" />
     <IndexCPartnerUniversities :content="dataPartnerUniversities?.data" />
-    <IndexCAcademicPrograms />
-    <IndexCUsApart />
-    <IndexСForgingStrategic />
-    <IndexСStudentsThink />
+    <IndexCAcademicPrograms :content="dataOurAcademicPrograms?.data" />
+    <IndexCUsApart :content="dataWhatSetsUsApart?.data" />
+    <IndexСForgingStrategic :content="dataForgingStrategic?.data" />
+    <IndexСStudentsThink :content="dataDiscoverStudentThink?.data" />
     <IndexCNewsArticles />
     <!-- <IndexCAbout :mainContent="mainContent" :mainAbout="mainAbout" /> -->
   </div>

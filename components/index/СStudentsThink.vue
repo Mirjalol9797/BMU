@@ -1,4 +1,11 @@
-<script setup></script>
+<script setup>
+const props = defineProps({
+  content: {
+    type: Object,
+    default: {},
+  },
+});
+</script>
 
 <template>
   <div
@@ -10,10 +17,10 @@
       <div
         class="text-center text-5xl font-medium mb-4 1024:text-4xl 480:!text-3xl"
       >
-        Discover What Our Students Think
+        {{ content?.title }}
       </div>
       <div class="text-center text-lg text-[#424343] mb-14 768:mb-8">
-        Our students sharing their stories:
+        {{ content?.description }}
       </div>
       <div>
         <Swiper
@@ -42,15 +49,10 @@
             },
           }"
         >
-          <SwiperSlide v-for="(slider, index) in 6" :key="index">
+          <SwiperSlide v-for="(slider, index) in content?.blocks" :key="index">
             <div class="p-12 text-white bg-[#192B69] 768:p-5">
               <div class="mb-12">
-                British Management University has provided me with a solid
-                foundation for my career. The professors are dedicated and the
-                coursework is both challenging and relevant. The supportive
-                environment and diverse community have helped me grow
-                academically and personally. I'm grateful for everything I've
-                learned here and feel ready to take on the professional world.
+                {{ slider.description }}
               </div>
               <div class="flex-center">
                 <div class="min-w-[60px] h-[60px] mr-4">
@@ -62,7 +64,7 @@
                 </div>
                 <div>
                   <div class="text-2xl font-medium 768:text-lg">
-                    Ava Matthews
+                    {{ slider.title }}
                   </div>
                   <div class="text-[#648AC8]">BA in Finance and Accounting</div>
                 </div>

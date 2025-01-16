@@ -1,4 +1,11 @@
-<script setup></script>
+<script setup>
+const props = defineProps({
+  content: {
+    type: Object,
+    default: {},
+  },
+});
+</script>
 <template>
   <div class="py-[130px] academic-programs 768:py-10">
     <div class="site-container">
@@ -7,14 +14,14 @@
         data-aos="fade-up"
         data-aos-duration="1000"
       >
-        Our Academic Programmes
+        {{ content?.title }}
       </div>
       <div
         class="text-center text-lg text-[#424343] mb-14 768:mb-8"
         data-aos="fade-up"
         data-aos-duration="1000"
       >
-        Learn about academic programmes available at the University
+        {{ content?.description }}
       </div>
       <div
         class="grid grid-cols-2 gap-14 1024:gap-8 640:grid-cols-1"
@@ -22,14 +29,14 @@
         data-aos-duration="1000"
       >
         <div
-          v-for="item in 4"
-          :key="item"
+          v-for="(item, index) in content?.blocks"
+          :key="index"
           class="relative academic-programs__item"
         >
           <div class="h-[580px] w-full academic-programs__img 768:h-[380px]">
             <img
-              src="https://www.insidehighered.com/sites/default/files/2024-02/GettyImages-1072191138.jpg"
-              alt=""
+              :src="item.image"
+              :alt="item.title"
               class="h-full w-full object-cover"
             />
           </div>
@@ -37,15 +44,14 @@
             class="absolute bottom-0 left-0 p-8 pb-10 z-10 text-white w-full academic-programs__text 768:px-4"
           >
             <div class="text-4xl font-medium mb-4 768:text-xl">
-              Undegraduate Program
+              {{ item.title }}
             </div>
             <div class="content">
               <div class="text-[#CFCFCF] mb-6">
-                Explore diverse degrees to ignite your potential and shape your
-                future.
+                {{ item.description }}
               </div>
               <nuxt-link
-                to="/"
+                :to="localePath(`${item.url}`)"
                 class="font-medium inline-flex py-3 px-6 rounded-full border border-[#fff] learn-more"
               >
                 Get started

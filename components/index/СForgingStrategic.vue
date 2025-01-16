@@ -1,4 +1,11 @@
-<script setup></script>
+<script setup>
+const props = defineProps({
+  content: {
+    type: Object,
+    default: {},
+  },
+});
+</script>
 
 <template>
   <div
@@ -9,12 +16,10 @@
     <div class="site-container grid grid-cols-2 1024:grid-cols-1">
       <div class="max-w-[450px] w-full text-white">
         <div class="text-5xl leading-[60px] mb-5 font-medium">
-          Career Development Centre
+          {{ content?.title }}
         </div>
         <div class="mb-5">
-          Offering services that range from selecting majors and planning
-          careers to developing job search strategies, the center provides a
-          robust support system.
+          {{ content?.description }}
         </div>
         <nuxt-link
           to="/"

@@ -1,4 +1,11 @@
-<script setup></script>
+<script setup>
+const props = defineProps({
+  content: {
+    type: Object,
+    default: {},
+  },
+});
+</script>
 
 <template>
   <div
@@ -8,7 +15,7 @@
   >
     <div class="site-container relative">
       <div class="mb-10 text-5xl font-medium 768:text-2xl">
-        What Sets Us Apart
+        {{ content?.title }}
       </div>
       <Swiper
         :modules="[
@@ -43,17 +50,19 @@
           },
         }"
       >
-        <SwiperSlide v-for="(slider, index) in 6" :key="index">
-          <div class="h-[480px] mb-4 768:h-[320px]">
-            <img
-              src="https://framerusercontent.com/images/tEX90ibE91PUFiyiQVNjfmk.jpg?scale-down-to=1024"
-              alt=""
-              class="w-full h-full object-cover"
-            />
-          </div>
-          <div class="text-2xl font-medium 768:text-base">
-            Personalized Academic Support
-          </div>
+        <SwiperSlide v-for="(slider, index) in content?.blocks" :key="index">
+          <nuxt-link :to="localePath(`${slider.url}`)">
+            <div class="h-[480px] mb-4 768:h-[320px]">
+              <img
+                :src="slider.image"
+                :alt="slider.title"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div class="text-2xl font-medium 768:text-base">
+              {{ slider.title }}
+            </div>
+          </nuxt-link>
         </SwiperSlide>
       </Swiper>
       <div class="swiper-buttons">
