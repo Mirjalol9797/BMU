@@ -1,50 +1,52 @@
 <script setup>
-import { ref, onMounted } from "vue";
+import { ref, onMounted, computed } from "vue";
+import { useAsyncData } from "nuxt/app";
 
-// Список изображений
-const images = [
-  "https://framerusercontent.com/images/1dFgOco0vEkohZjPN5SBrvSwh4.png",
-  "https://framerusercontent.com/images/KVIKHL1OStxBGafOmPo75bmAqU.png",
-  "https://framerusercontent.com/images/NcrD2mctc6prY0BGOG2NvXolE0.png",
-  // "https://framerusercontent.com/images/1dFgOco0vEkohZjPN5SBrvSwh4.png",
-  // "https://framerusercontent.com/images/1dFgOco0vEkohZjPN5SBrvSwh4.png",
-];
+const getMainPagesData = useApiMainPage();
 
+const { data: dataJourney } = useAsyncData("Journey", () =>
+  getMainPagesData.getJourney()
+);
+
+// Ссылки на элементы и переменные
 const sliderTrack = ref(null);
 const sliderTrack2 = ref(null);
 const offset = ref(0);
 const offset2 = ref(-1000);
-const loopedImages = [...images, ...images]; // Дублируем изображения для бесконечной прокрутки
+const speed = 60; // Скорость прокрутки
+const step = 1; // Шаг анимации
 
-const speed = 10000; // Скорость прокрутки (мс на шаг)
-const step = 0.5; // Шаг смещения в пикселях
+// Получение массива изображений из API
+const images = computed(() => {
+  const gallery = dataJourney?.value?.data?.gallery || [];
+  return [...gallery, ...gallery]; // Дублируем изображения для бесконечной прокрутки
+});
 
+// Анимация первого слайдера
 const animateSlider = () => {
   offset.value += step;
 
-  // Если прокрутка дошла до половины трека (один набор картинок), сбрасываем
-  if (offset.value >= sliderTrack.value.scrollHeight / 2) {
+  // Сброс, если прокрутка достигла половины
+  if (sliderTrack.value && offset.value >= sliderTrack.value.scrollHeight / 2) {
     offset.value = 0;
   }
 
-  setTimeout(() => {
-    requestAnimationFrame(animateSlider);
-  }, 1000 / speed); // Чем меньше speed, тем быстрее прокрутка
+  requestAnimationFrame(animateSlider);
 };
 
+// Анимация второго слайдера
 const animateSlider2 = () => {
   offset2.value += step;
 
-  // Если прокрутка дошла до половины трека (один набор картинок), сбрасываем
-  if (offset2.value >= 0) {
-    offset2.value = -1000;
+  // Сброс, если прокрутка достигла половины
+  if (sliderTrack2.value && offset2.value >= 0) {
+    offset2.value = -sliderTrack2.value.scrollHeight / 2;
   }
 
-  setTimeout(() => {
-    requestAnimationFrame(animateSlider2);
-  }, 1000 / speed); // Чем меньше speed, тем быстрее прокрутка
+  requestAnimationFrame(animateSlider2);
 };
 
+// Запуск анимации после монтирования
 onMounted(() => {
   animateSlider();
   animateSlider2();
@@ -62,16 +64,15 @@ onMounted(() => {
         class="max-w-[500px] w-full text-white 1024:max-w-full 1024:text-center 1024:mb-[100px]"
       >
         <div class="text-5xl font-medium mb-5 1024:text-4xl 480:!text-3xl">
-          Embark on Your Journey
+          {{ dataJourney?.data?.journey?.title }}
         </div>
         <div class="mb-8">
-          Join British Management University and explore a world of academic
-          excellence, personal growth, and boundless possibilities.
+          {{ dataJourney?.data?.journey?.description }}
         </div>
         <button
           class="text-white font-medium bg-[#648AC8] py-3 px-6 rounded-full inline-flex items-center learn-more"
         >
-          Apply Online
+          {{ $t("apply_now") }}
           <img
             src="/icons/white-arrow.svg"
             alt="blue-arrow"
@@ -89,9 +90,9 @@ onMounted(() => {
             ref="sliderTrack"
           >
             <img
-              v-for="(image, index) in loopedImages"
-              :key="index"
-              :src="image"
+              v-for="(item, index) in images"
+              :key="item.id + '-' + index"
+              :src="item.image"
               alt="slider image"
               class="slide mb-6"
             />
@@ -104,9 +105,9 @@ onMounted(() => {
             ref="sliderTrack2"
           >
             <img
-              v-for="(image, index) in loopedImages"
-              :key="index"
-              :src="image"
+              v-for="(item, index) in images"
+              :key="item.id + '-' + index"
+              :src="item.image"
               alt="slider image"
               class="slide mb-6"
             />

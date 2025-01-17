@@ -32,6 +32,11 @@ export const useApiMainPage = () => {
     return res;
   };
 
+  const getJourney = async () => {
+    const res = await $api(`/api/journey`);
+    return res;
+  };
+
   return {
     getScholarlyCommunities,
     getPartnerUniversities,
@@ -39,5 +44,6 @@ export const useApiMainPage = () => {
     getWhatSetsUsApart,
     getForgingStrategic,
     getDiscoverStudentThink,
+    getJourney,
   };
 };
