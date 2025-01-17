@@ -32,11 +32,6 @@ export const useApiMainPage = () => {
     return res;
   };
 
-  const getJourney = async () => {
-    const res = await $api(`/api/journey`);
-    return res;
-  };
-
   const getNews = async () => {
     const res = await $api(`/api/news`, {
       method: "POST", // Указываем метод POST
@@ -57,7 +52,6 @@ export const useApiMainPage = () => {
     getWhatSetsUsApart,
     getForgingStrategic,
     getDiscoverStudentThink,
-    getJourney,
     getNews,
   };
 };

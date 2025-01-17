@@ -8,6 +8,7 @@ export const useSettingsStore = defineStore("settings", {
     isLoader: false,
     textSearch: null,
     footerMenu: null,
+    journeyData: null,
   }),
   getters: {},
   actions: {},

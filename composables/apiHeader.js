@@ -12,8 +12,14 @@ export const useApiMenu = () => {
     return res;
   };
 
+  const getJourney = async () => {
+    const res = await $api(`/api/journey`);
+    return res;
+  };
+
   return {
     getHeaderMenu,
     getFooterMenu,
+    getJourney,
   };
 };

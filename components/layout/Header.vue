@@ -16,6 +16,7 @@ async function fetchHeaderMenu() {
   try {
     const response = await getHeaderMenu.getHeaderMenu(); // Передаём текущий язык
     settingsStore.footerMenu = await getHeaderMenu.getFooterMenu();
+    settingsStore.journeyData = await getHeaderMenu.getJourney();
     dataHeaderMenu.value = response; // Обновляем данные меню
   } catch (error) {
     console.error("Ошибка при получении меню:", error);

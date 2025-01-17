@@ -2,11 +2,9 @@
 import { ref, onMounted, computed } from "vue";
 import { useAsyncData } from "nuxt/app";
 
-const getMainPagesData = useApiMainPage();
+const settingsStore = useSettingsStore();
 
-const { data: dataJourney } = useAsyncData("Journey", () =>
-  getMainPagesData.getJourney()
-);
+settingsStore.journeyData;
 
 // Ссылки на элементы и переменные
 const sliderTrack = ref(null);
@@ -18,7 +16,7 @@ const step = 1; // Шаг анимации
 
 // Получение массива изображений из API
 const images = computed(() => {
-  const gallery = dataJourney?.value?.data?.gallery || [];
+  const gallery = settingsStore.journeyData?.data?.gallery || [];
   return [...gallery, ...gallery]; // Дублируем изображения для бесконечной прокрутки
 });
 
@@ -64,10 +62,10 @@ onMounted(() => {
         class="max-w-[500px] w-full text-white 1024:max-w-full 1024:text-center 1024:mb-[100px]"
       >
         <div class="text-5xl font-medium mb-5 1024:text-4xl 480:!text-3xl">
-          {{ dataJourney?.data?.journey?.title }}
+          {{ settingsStore.journeyData?.data?.journey?.title }}
         </div>
         <div class="mb-8">
-          {{ dataJourney?.data?.journey?.description }}
+          {{ settingsStore.journeyData?.data?.journey?.description }}
         </div>
         <button
           class="text-white font-medium bg-[#648AC8] py-3 px-6 rounded-full inline-flex items-center learn-more"
