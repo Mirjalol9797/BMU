@@ -30,7 +30,7 @@ const props = defineProps({
         /></nuxt-link>
       </div>
       <div
-        class="absolute top-4 right-0 max-w-[700px] 1024:relative 1024:max-w-full 1024:top-0 1024:right-[-16px] 1024:mt-14"
+        class="absolute top-[50%] translate-y-[-50%] right-0 max-w-[700px] 1024:relative 1024:max-w-full 1024:top-0 1024:translate-y-0 1024:right-[-16px] 1024:mt-14"
       >
         <img src="/images/forgin-strategic.png" alt="forgin-strategic" />
       </div>
