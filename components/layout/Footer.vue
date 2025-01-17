@@ -20,7 +20,7 @@ const { data: dataFooterMenu } = useAsyncData("FooterMenu", () =>
         class="py-[60px] flex gap-4 1024:flex-wrap 1024:gap-0 1024:justify-between 768:py-10"
       >
         <div
-          v-for="(menu, index) in settingsStore.footerMenu.data.tree"
+          v-for="(menu, index) in settingsStore.footerMenu?.data?.tree"
           :key="index"
           class="w-1/5 1024:w-1/3 1024:mb-6 640:!w-full"
         >

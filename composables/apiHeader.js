@@ -5,20 +5,12 @@ export const useApiMenu = () => {
   const getHeaderMenu = async (lang) => {
     console.log("lang", lang);
 
-    const res = await $api(`/api/header/menu`, {
-      headers: {
-        "Accept-Language": lang, // Передаём заголовок Accept-Language
-      },
-    });
+    const res = await $api(`/api/header/menu`);
     return res;
   };
 
   const getFooterMenu = async (lang) => {
-    const res = await $api(`/api/header/footer-menu`, {
-      headers: {
-        "Accept-Language": lang, // Передаём заголовок Accept-Language
-      },
-    });
+    const res = await $api(`/api/header/footer-menu`);
     return res;
   };
 
