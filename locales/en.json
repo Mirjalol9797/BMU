@@ -55,8 +55,28 @@
   "learn_more": "Learn more",
 
   "contacts": "Contacts",
+  "contact_page": {
+    "contact_now": "Contact Now",
+    "phone": "phone",
+    "email": "email",
+    "location": "location",
+    "your_name": "Your Name",
+    "your_email": "Your Email",
+    "your_phone_number": "Your Phone Number",
+    "your_message": "Your Message",
+    "enter_name": "Enter Name",
+    "enter_email": "Enter Email",
+    "enter_phone_number": "Enter Phone Number",
+    "enter_message": "Enter Message",
+    "address": "Mirzo Ulugbek district, Amir Temur mahalla, Mirzo Bobur street 35, Tashkent, Uzbekistan",
+    "send_message": "Send Message",
+    "required": "Required",
+    "data_sent_successfully": "Data sent successfully"
+  },
 
   "email_address": "E-mail Address",
+
+  "news_events": "News & Events",
 
   "phone_number": "Phone number",
   "programmes": "Programmes",

@@ -29,7 +29,7 @@ const props = defineProps({
       position: absolute;
       background-color: rgba(0, 0, 0, 0.4);
       inset: 0;
-      z-index: 8;
+      z-index: 6;
     }
   }
   &__title {
@@ -40,7 +40,7 @@ const props = defineProps({
     font-size: 80px;
     line-height: 100px;
     color: #fff;
-    z-index: 9;
+    z-index: 7;
     text-align: center;
     font-weight: 500;
 

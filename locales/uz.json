@@ -55,8 +55,28 @@
   "learn_more": "Batafsil ma'lumot",
 
   "contacts": "Kontaktlar",
+  "contact_page": {
+    "contact_now": "Hozir bog'laning",
+    "phone": "telefon",
+    "email": "elektron pochta",
+    "location": "joylashuv",
+    "your_name": "Ismingiz",
+    "your_email": "Elektron pochta manzilingiz",
+    "your_phone_number": "Telefon raqamingiz",
+    "your_message": "Xabaringiz",
+    "enter_name": "Ismni kiriting",
+    "enter_email": "Elektron pochta manzilini kiriting",
+    "enter_phone_number": "Telefon raqamini kiriting",
+    "enter_message": "Xabarni kiriting",
+    "address": "Mirzo Ulug‘bek tumani, Amir Temur mahallasi, Mirzo Bobur ko‘chasi 35, Toshkent, O‘zbekiston",
+    "send_message": "Xabarni yuboring",
+    "required": "Majburiy maydon",
+    "data_sent_successfully": "Ma'lumotlar muvaffaqiyatli yuborildi"
+  },
 
   "email_address": "E-pochta manzili",
+
+  "news_events": "Yangiliklar va tadbirlar",
 
   "phone_number": "Telefon raqam",
   "programmes": "Ta’lim dasturlari",

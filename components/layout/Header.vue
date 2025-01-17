@@ -53,7 +53,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <header class="sticky top-0 bg-white z-50">
+  <header class="sticky top-0 bg-white z-[9]">
     <div class="bg-[#192B69] py-1.5">
       <div class="site-container flex-center justify-between 768:flex-col">
         <div class="text-[#D9D9D9] 768:mb-2 flex">

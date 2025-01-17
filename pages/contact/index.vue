@@ -5,7 +5,9 @@ import { required, minLength, email } from "@vuelidate/validators";
 
 const getContact = useContactPage();
 const { t } = useI18n();
-const errorText = ref(t("apply_now_modal.required"));
+const errorText = ref(t("contact_page.required"));
+const successModal = ref(false);
+const modalText = ref(null);
 const userData = ref({
   name: null,
   email: null,
@@ -22,11 +24,32 @@ const userDataError = ref({
 
 const v$1 = useVuelidate(userDataError, userData);
 
-function sendUserData() {
+async function sendUserData() {
   let validate = v$1.value.$invalid;
   v$1.value.$touch();
   if (!validate) {
-    getContact.sendContact(userData.value);
+    try {
+      const response = await getContact.sendContact(userData.value);
+
+      // Обрабатываем успешный ответ
+      if (response.success) {
+        successModal.value = true;
+        modalText.value = t("contact_page.data_sent_successfully");
+        // Например, очищаем форму
+        userData.value = {
+          name: null,
+          email: null,
+          phone: null,
+          message: null,
+        };
+        v$1.value.$reset();
+      } else {
+        // Обрабатываем ошибку, если бэкенд вернул ошибку
+        modalText.value = "Ошибка при отправке данных. Повторите попытку позже";
+      }
+    } catch (error) {
+      console.error("Произошла ошибка при отправке данных:", error.message);
+    }
   }
 }
 </script>
@@ -35,11 +58,13 @@ function sendUserData() {
   <div class="contact py-[100px] 768:py-[70px]">
     <div class="site-container">
       <div class="w-1/2 bg-[rgba(1,1,1,0.02)] p-12 mb-12 1024:w-full 768:p-6">
-        <div class="text-2xl mb-9 font-medium">Contact Now:</div>
+        <div class="text-2xl mb-9 font-medium">
+          {{ $t("contact_page.contact_now") }}:
+        </div>
         <div class="font-medium mb-[60px]">
           <div class="text-[#424343] flex-center mb-2">
             <div class="w-5 h-[1.5px] bg-[#424343] mr-2"></div>
-            <span>PHONE</span>
+            <span class="uppercase">{{ $t("contact_page.phone") }}</span>
           </div>
           <a href="tel:+998955119999" class="text-xl font-medium 768:text-base"
             >+998 95 511 99 99</a
@@ -48,7 +73,7 @@ function sendUserData() {
         <div class="font-medium mb-[60px]">
           <div class="text-[#424343] flex-center mb-2">
             <div class="w-5 h-[1.5px] bg-[#424343] mr-2"></div>
-            <span>EMAIL</span>
+            <span class="uppercase">{{ $t("contact_page.email") }}</span>
           </div>
           <a
             href="mailto:info@bmu-edu.uz"
@@ -59,52 +84,51 @@ function sendUserData() {
         <div class="font-medium">
           <div class="text-[#424343] flex-center mb-2">
             <div class="w-5 h-[1.5px] bg-[#424343] mr-2"></div>
-            <span>LOCATION</span>
+            <span class="uppercase">{{ $t("contact_page.location") }}</span>
           </div>
           <div class="text-xl font-medium 768:text-base">
-            Mirzo Ulugbek district, Amir Temur mahalla, Mirzo Bobur street 35,
-            Tashkent, Uzbekistan
+            {{ $t("contact_page.address") }}
           </div>
         </div>
       </div>
       <div class="grid grid-cols-2 gap-6 768:grid-cols-1">
         <div class="p-12 bg-[rgba(1,1,1,0.02)] contact-form 768:p-6">
           <UiTmInput
-            label="Your Name"
+            :label="$t('contact_page.your_name')"
             :error="v$1.name.$error"
             :errorText="errorText"
             v-model="userData.name"
-            placeholder="Enter Name"
+            :placeholder="$t('contact_page.enter_name')"
           />
           <UiTmInput
-            label="Your Email"
+            :label="$t('contact_page.your_email')"
             :error="v$1.email.$error"
             :errorText="errorText"
             v-model="userData.email"
-            placeholder="Enter Email"
+            :placeholder="$t('contact_page.enter_email')"
           />
           <UiTmInput
-            label="Your Phone Number"
+            :label="$t('contact_page.your_phone_number')"
             dataMaska="+(998) ## ### ## ##"
             :error="v$1.phone.$error"
             :errorText="errorText"
             v-model="userData.phone"
-            placeholder="Enter Phone Number"
+            :placeholder="$t('contact_page.enter_phone_number')"
           />
 
           <UiTmTextarea
-            label="Your Message"
+            :label="$t('contact_page.your_message')"
             :error="v$1.message.$error"
             :errorText="errorText"
             v-model="userData.message"
-            placeholder="Enter Message"
+            :placeholder="$t('contact_page.enter_message')"
           />
 
           <button
             class="bg-[#648AC8] text-white py-4 px-7 rounded-full"
             @click="sendUserData"
           >
-            Send Message
+            {{ $t("contact_page.send_message") }}
           </button>
         </div>
         <div>
@@ -121,6 +145,19 @@ function sendUserData() {
       </div>
     </div>
   </div>
+  <UiTmModal v-if="successModal" width="480" classModal="rounded-[20px]">
+    <template #modal_content>
+      <div class="text-2xl font-medium text-center mb-8">
+        {{ modalText }}
+      </div>
+      <button
+        @click="successModal = false"
+        class="text-base text-white py-2.5 px-6 bg-[#648AC8] rounded-full font-medium mx-auto flex"
+      >
+        Oк
+      </button>
+    </template>
+  </UiTmModal>
 </template>
 <style lang="scss">
 .contact {
