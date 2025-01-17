@@ -54,7 +54,10 @@ async function sendUserData() {
 }
 </script>
 <template>
-  <CBannerAllPage title="Distinguished Faculty Memebers" />
+  <CBannerAllPage
+    :title="$t('get_in_touch')"
+    image="/images/contact-page.webp"
+  />
   <div class="contact py-[100px] 768:py-[70px]">
     <div class="site-container">
       <div class="w-1/2 bg-[rgba(1,1,1,0.02)] p-12 mb-12 1024:w-full 768:p-6">
