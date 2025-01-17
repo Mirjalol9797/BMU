@@ -37,8 +37,8 @@ const props = defineProps({
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 80px;
-    line-height: 100px;
+    font-size: 60px;
+    line-height: 80px;
     color: #fff;
     z-index: 7;
     text-align: center;
@@ -52,6 +52,11 @@ const props = defineProps({
     @media (max-width: 768px) {
       font-size: 32px;
       line-height: 48px;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 24px;
+      line-height: 32px;
     }
   }
 }
