@@ -20,7 +20,7 @@ const { data: dataFooterMenu } = useAsyncData("FooterMenu", () =>
         class="py-[60px] flex gap-4 1024:flex-wrap 1024:gap-0 1024:justify-between 768:py-10"
       >
         <div
-          v-for="(menu, index) in dataFooterMenu.data.tree"
+          v-for="(menu, index) in settingsStore.footerMenu.data.tree"
           :key="index"
           class="w-1/5 1024:w-1/3 1024:mb-6 640:!w-full"
         >
@@ -42,10 +42,12 @@ const { data: dataFooterMenu } = useAsyncData("FooterMenu", () =>
         </div>
 
         <div class="w-1/5 1024:w-1/2 640:!w-full">
-          <nuxt-link to="/" class="block text-xl mb-6">Contact</nuxt-link>
+          <nuxt-link to="/" class="block text-xl mb-6">{{
+            $t("contacts")
+          }}</nuxt-link>
           <div class="flex-center gap-2 text-[#424343] mb-5">
             <img src="/icons/header/phone.svg" alt="phone" class="w-5" />
-            <a href="tel:+998 95 511 99 99">+998 95 511 99 99</a>
+            <a href="tel:+998955119999">+998 95 511 99 99</a>
           </div>
           <div class="flex-center gap-2 text-[#424343] mb-5">
             <img src="/icons/header/sms.svg" alt="sms" class="w-5" />

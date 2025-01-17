@@ -1,24 +1,31 @@
 <script setup>
 import { useAsyncData } from "nuxt/app";
-import { onMounted } from "vue";
+import { onMounted, ref, computed, watch } from "vue";
 const settingsStore = useSettingsStore();
 const { locales, locale, setLocale } = useI18n();
 
 const getHeaderMenu = useApiMenu();
-
 const localeView = computed(() =>
   locales.value.filter((item) => locale.value == item.code)
 );
 
-// fetch api
-const { data: dataHeaderMenu } = useAsyncData("HeaderMenu", () =>
-  getHeaderMenu.getHeaderMenu()
-);
+const dataHeaderMenu = ref(null);
 
-function language(value) {
+// Функция для получения данных
+async function fetchHeaderMenu() {
+  try {
+    const response = await getHeaderMenu.getHeaderMenu(); // Передаём текущий язык
+    settingsStore.footerMenu = await getHeaderMenu.getFooterMenu();
+    dataHeaderMenu.value = response; // Обновляем данные меню
+  } catch (error) {
+    console.error("Ошибка при получении меню:", error);
+  }
+}
+
+async function language(value) {
   setLocale(value);
-  getHeader(value);
-  getFooter(value);
+  await nextTick();
+  fetchHeaderMenu();
 }
 
 function openApplyNowModal() {
@@ -35,6 +42,14 @@ function closeBurgerMenu() {
   settingsStore.isBurgerMenu = false;
   document.querySelector("body").classList.remove("open-modal");
 }
+
+// Автоматически получаем данные меню при изменении языка
+watch(locale, fetchHeaderMenu);
+
+// Вызываем функцию получения данных при монтировании
+onMounted(() => {
+  fetchHeaderMenu();
+});
 </script>
 
 <template>
@@ -66,7 +81,7 @@ function closeBurgerMenu() {
           <!-- header menu -->
           <li
             class="relative menu-link border-b-4 border-transparent duration-300 hover:border-b-4 hover:border-[#E22F24]"
-            v-for="(menu, index) in dataHeaderMenu.data.tree"
+            v-for="(menu, index) in dataHeaderMenu?.data?.tree"
             :key="index"
             :class="menu.children?.length > 1 ? 'menu-link-big' : ''"
           >
