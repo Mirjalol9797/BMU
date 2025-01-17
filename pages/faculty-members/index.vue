@@ -10,7 +10,7 @@ const { data: dataFacultyMembers } = useAsyncData("FacultyMembers", () =>
 </script>
 <template>
   <CBannerAllPage
-    title="Distinguished Faculty Members"
+    :title="$t('distinguished_faculty_members')"
     :image="dataFacultyMembers?.background?.image"
   />
   <div class="members-page py-[100px] 768:py-[70px]">

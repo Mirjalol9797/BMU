@@ -12,7 +12,10 @@ const { data: dataMember } = useAsyncData("Member", () =>
 );
 </script>
 <template>
-  <CBannerAllPage title="Distinguished Faculty Memebers" />
+  <CBannerAllPage
+    :title="$t('distinguished_faculty_members')"
+    :image="dataMember?.background"
+  />
   <div class="teacher-page py-[100px] 768:py-[70px]">
     <div class="site-container">
       <div class="grid grid-cols-2 gap-x-10 mb-14 768:grid-cols-1">
