@@ -37,6 +37,19 @@ export const useApiMainPage = () => {
     return res;
   };
 
+  const getNews = async () => {
+    const res = await $api(`/api/news`, {
+      method: "POST", // Указываем метод POST
+      body: {
+        sort: "id",
+        order: "desc",
+        limit: 5,
+        page: 1,
+      },
+    });
+    return res;
+  };
+
   return {
     getScholarlyCommunities,
     getPartnerUniversities,
@@ -45,5 +58,6 @@ export const useApiMainPage = () => {
     getForgingStrategic,
     getDiscoverStudentThink,
     getJourney,
+    getNews,
   };
 };

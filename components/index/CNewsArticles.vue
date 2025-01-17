@@ -1,4 +1,11 @@
-<script setup></script>
+<script setup>
+const props = defineProps({
+  news: {
+    type: Object,
+    default: {},
+  },
+});
+</script>
 
 <template>
   <div
@@ -12,36 +19,46 @@
       </div>
       <div class="grid grid-cols-2 gap-14 768:grid-cols-1 768:gap-8">
         <div>
-          <nuxt-link to="/" class="mb-9 inline-block">
+          <nuxt-link
+            :to="
+              localePath(`/news-detail/${news?.data?.news?.credentials[0]?.id}`)
+            "
+            class="mb-9 inline-block"
+          >
             <div class="h-[200px] mb-4">
               <img
-                src="/images/news/news_events.png"
-                alt=""
+                :src="news?.data?.news?.credentials[0]?.image"
+                :alt="news?.data?.news?.credentials[0]?.title"
                 class="w-full h-full object-cover"
               />
             </div>
-            <div class="text-[#424343] font-medium mb-3">EVENTS</div>
+            <div class="text-[#424343] font-medium mb-3 uppercase">
+              {{ news?.data?.news?.credentials[0]?.category }}
+            </div>
             <div class="text-xl font-medium">
-              Celebrating Success - First Graduation Class of 2024
+              {{ news?.data?.news?.credentials[0]?.title }}
             </div>
           </nuxt-link>
           <nuxt-link
-            to="/"
+            :to="
+              localePath(`/news-detail/${news?.data?.news?.credentials[1]?.id}`)
+            "
             class="flex justify-between gap-8 pb-6 border-b border-[#01010133] 640:flex-col"
           >
             <div>
-              <div class="text-[#424343] font-medium mb-3">SPORTS</div>
+              <div class="text-[#424343] font-medium mb-3 uppercase">
+                {{ news?.data?.news?.credentials[1]?.category }}
+              </div>
               <div class="text-xl font-medium 640:text-lg">
-                Competitive Spirit - Tournaments in Chess, Volleyball, and B
-                asketball
+                {{ news?.data?.news?.credentials[1]?.title }}
               </div>
             </div>
             <div
               class="max-w-[170px] min-w-[170px] h-[100px] 640:max-w-full 640:min-w-full 640:h-auto"
             >
               <img
-                src="/images/news/news2.png"
-                alt=""
+                :src="news?.data?.news?.credentials[1]?.image"
+                :alt="news?.data?.news?.credentials[1]?.title"
                 class="w-full h-full object-cover"
               />
             </div>
@@ -49,24 +66,25 @@
         </div>
         <div>
           <nuxt-link
-            to="/"
+            :to="localePath(`/news-detail/${item.id}`)"
             class="flex justify-between gap-8 pb-6 border-b border-[#01010133] mb-8 640:flex-col"
-            v-for="item in 3"
-            :key="item"
+            v-for="(item, index) in news?.data?.news?.credentials.slice(1)"
+            :key="index"
           >
             <div>
-              <div class="text-[#424343] font-medium mb-3">EVENTS</div>
+              <div class="text-[#424343] font-medium mb-3">
+                {{ item.category }}
+              </div>
               <div class="text-xl font-medium 640:text-lg">
-                CAREER FAIR 2024 - An ultimate event for your professional
-                growth
+                {{ item.title }}
               </div>
             </div>
             <div
               class="max-w-[170px] min-w-[170px] h-[100px] 640:max-w-full 640:min-w-full 640:h-auto"
             >
               <img
-                src="https://framerusercontent.com/images/yHSSS7KYTYoU85kFwBaqI1III.png?scale-down-to=1024"
-                alt=""
+                :src="item.image"
+                :alt="item.title"
                 class="w-full h-full object-cover"
               />
             </div>

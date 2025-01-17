@@ -54,6 +54,10 @@ const { data: dataDiscoverStudentThink } = useAsyncData(
   "DiscoverStudentThink",
   () => getMainPagesData.getDiscoverStudentThink()
 );
+
+const { data: dataNews } = useAsyncData("News", () =>
+  getMainPagesData.getNews()
+);
 </script>
 
 <template>
@@ -66,7 +70,7 @@ const { data: dataDiscoverStudentThink } = useAsyncData(
     <IndexCUsApart :content="dataWhatSetsUsApart?.data" />
     <IndexСForgingStrategic :content="dataForgingStrategic?.data" />
     <IndexСStudentsThink :content="dataDiscoverStudentThink?.data" />
-    <IndexCNewsArticles />
+    <IndexCNewsArticles :news="dataNews" />
     <!-- <IndexCAbout :mainContent="mainContent" :mainAbout="mainAbout" /> -->
   </div>
 </template>
