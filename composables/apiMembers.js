@@ -7,6 +7,11 @@ export const useApiMembers = () => {
     return res?.data;
   };
 
+  const getAcademicAdvisoryBoard = async () => {
+    const res = await $api(`/api/advisory-board`);
+    return res?.data;
+  };
+
   const getMemberId = async (id) => {
     const res = await $api(`/api/member/${id}`);
     return res?.data;
@@ -14,6 +19,7 @@ export const useApiMembers = () => {
 
   return {
     getFacultyMembers,
+    getAcademicAdvisoryBoard,
     getMemberId,
   };
 };

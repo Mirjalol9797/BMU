@@ -52,13 +52,14 @@ const props = defineProps({
         >
           <SwiperSlide v-for="(slider, index) in content?.blocks" :key="index">
             <div class="p-12 text-white bg-[#192B69] 768:p-5">
-              <div class="mb-12">
-                {{ slider.description }}
-              </div>
+              <div
+                class="mb-12 min-h-[144px]"
+                v-html="slider.description"
+              ></div>
               <div class="flex-center">
-                <div class="min-w-[60px] h-[60px] mr-4">
+                <div class="min-w-[60px] max-w-[60px] h-[60px] mr-4">
                   <img
-                    src="https://framerusercontent.com/images/frW4A4V1f3izRg6buvTpBwo8XCI.jpg?scale-down-to=512"
+                    :src="slider.image"
                     alt=""
                     class="w-full h-full object-cover rounded-full"
                   />

@@ -32,9 +32,7 @@ const props = defineProps({
           <div class="text-white mb-3 text-4xl font-medium 1024:text-2xl">
             {{ item.title }}
           </div>
-          <div class="text-[#CFCFCF] mb-8">
-            {{ item.description }}
-          </div>
+          <div class="text-[#CFCFCF] mb-8" v-html="item.description"></div>
           <nuxt-link
             :to="localePath(`${item.url}`)"
             class="text-[#648AC8] inline-flex items-center learn-more"

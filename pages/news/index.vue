@@ -1,8 +1,16 @@
-<script setup></script>
+<script setup>
+import { useAsyncData } from "nuxt/app";
+const getMainPagesData = useApiMainPage();
+
+const { data: dataNews } = useAsyncData("News", () =>
+  getMainPagesData.getNews()
+);
+</script>
 <template>
   <CBannerAllPage title="Our News &Articles" />
   <div class="news py-[100px] 768:py-[70px]">
     <div class="site-container">
+      <!-- article -->
       <nuxt-link
         to="/"
         class="grid grid-cols-2 mb-10 1024:grid-cols-1 last:mb-0 768:mb-14"
@@ -35,6 +43,8 @@
           </div>
         </div>
       </nuxt-link>
+
+      <!-- news -->
       <div class="news-content mt-[100px] 768:mt-[60px]">
         <div
           class="text-center text-5xl font-medium mb-4 1024:text-4xl 480:!text-3xl"
@@ -49,22 +59,24 @@
           class="grid grid-cols-3 gap-8 768:grid-cols-2 768:gap-6 640:!grid-cols-1"
         >
           <nuxt-link
-            to="/"
+            :to="localePath(`/news-detail/${item.id}`)"
             class="shadow-[0px_7px_28.899999618530273px_0px_rgba(0,0,0,0.06)]"
-            v-for="item in 7"
-            :key="item"
+            v-for="(item, index) in dataNews?.data?.data?.news"
+            :key="index"
           >
             <div class="h-[300px]">
               <img
-                src="/images/news/news_page_img.png"
-                alt="news_page_img"
+                :src="item.image"
+                :alt="item.title"
                 class="w-full h-full object-cover"
               />
             </div>
             <div class="py-4 px-5">
-              <div class="text-[#424343] mb-2 font-medium">Arts</div>
+              <div class="text-[#424343] mb-2 font-medium">
+                {{ item.category }}
+              </div>
               <div class="text-xl font-medium 640:text-lg">
-                Exploring Creative Expression Through Visual Arts Exhibition
+                {{ item.title }}
               </div>
             </div>
           </nuxt-link>
