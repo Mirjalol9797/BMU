@@ -2,6 +2,7 @@
 import { onMounted } from "vue";
 import { useAsyncData } from "nuxt/app";
 const { t } = useI18n();
+const settingsStore = useSettingsStore();
 
 useSeoMeta({
   title: t("static_seo.title"),

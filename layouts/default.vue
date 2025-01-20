@@ -1,4 +1,5 @@
 <script setup>
+import { onMounted } from "vue";
 import { useRoute } from "vue-router";
 
 const route = useRoute();
@@ -14,7 +15,7 @@ const settingsStore = useSettingsStore();
   </div>
   <IndexCYourJourney />
   <LayoutFooter />
-  <!-- <UiTmLoader v-if="settingsStore.isLoader" /> -->
+  <UiTmLoader v-if="settingsStore.isLoader" />
 </template>
 
 <style scoped></style>

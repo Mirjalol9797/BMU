@@ -68,7 +68,7 @@ const props = defineProps({
             :key="index"
           >
             <div>
-              <div class="text-[#424343] font-medium mb-3">
+              <div class="text-[#424343] font-medium mb-3 uppercase">
                 {{ item.category }}
               </div>
               <div class="text-xl font-medium 640:text-lg">

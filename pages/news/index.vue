@@ -72,7 +72,7 @@ const { data: dataNews } = useAsyncData("News", () =>
               />
             </div>
             <div class="py-4 px-5">
-              <div class="text-[#424343] mb-2 font-medium">
+              <div class="text-[#424343] mb-2 font-medium uppercase">
                 {{ item.category }}
               </div>
               <div class="text-xl font-medium 640:text-lg">
