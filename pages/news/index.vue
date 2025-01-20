@@ -1,49 +1,72 @@
 <script setup>
 import { useAsyncData } from "nuxt/app";
 const getMainPagesData = useApiMainPage();
+const getArticles = useApiArticles();
+const isLoading = ref(false);
 
-const { data: dataNews } = useAsyncData("News", () =>
-  getMainPagesData.getNews()
-);
+// const { data: dataNews } = useAsyncData("News", () =>
+//   getMainPagesData.getNews()
+// );
+
+// const { data: dataArticles } = useAsyncData("Articles", () =>
+//   getArticles.getArticles()
+// );
+
+const { data: dataNews } = useAsyncData("News", async () => {
+  isLoading.value = true; // Включаем лоадер
+  try {
+    return await getMainPagesData.getNews();
+  } finally {
+    isLoading.value = false; // Выключаем лоадер
+  }
+});
+
+const { data: dataArticles } = useAsyncData("Articles", async () => {
+  isLoading.value = true; // Включаем лоадер
+  try {
+    return await getArticles.getArticles();
+  } finally {
+    isLoading.value = false; // Выключаем лоадер
+  }
+});
 </script>
 <template>
   <CBannerAllPage title="Our News &Articles" />
   <div class="news py-[100px] 768:py-[70px]">
     <div class="site-container">
       <!-- article -->
-      <nuxt-link
-        to="/"
-        class="grid grid-cols-2 mb-10 1024:grid-cols-1 last:mb-0 768:mb-14"
-        v-for="item in 2"
-        :key="item"
-      >
-        <div class="">
-          <img
-            src="https://framerusercontent.com/images/Q9lx63caBiK49m1rhskauQKbD8g.jpg?scale-down-to=1024"
-            alt=""
-            class="w-full h-full object-cover"
-          />
-        </div>
-        <div
-          class="px-[60px] h-full py-10 shadow-[12px_4px_32px_0_rgba(0,0,0,0.06)] 640:py-6 640:px-4"
+      <div>
+        <nuxt-link
+          :to="localePath(`/articles-detail/${item.id}`)"
+          class="grid grid-cols-2 mb-10 1024:grid-cols-1 last:mb-0 768:mb-14"
+          v-for="item in dataArticles?.data?.data?.articles"
+          :key="item"
         >
-          <div class="text-[#424343] mb-6 font-medium 640:text-base 640:mb-4">
-            SCIENCE
+          <div class="">
+            <img
+              :src="item.image"
+              :alt="item.title"
+              class="w-full h-full object-cover"
+            />
           </div>
-          <div class="text-3xl mb-6 font-medium 640:text-xl">
-            Groundbreaking Research Discoveries Student Success Stories Here.
+          <div
+            class="px-[60px] h-full py-10 shadow-[12px_4px_32px_0_rgba(0,0,0,0.06)] 640:py-6 640:px-4"
+          >
+            <div
+              class="text-[#424343] mb-6 font-medium uppercase 640:text-base 640:mb-4"
+            >
+              {{ item.category }}
+            </div>
+            <div class="text-3xl mb-6 font-medium 640:text-xl">
+              {{ item.title }}
+            </div>
+            <div
+              class="text-[#424343] text-height3"
+              v-html="item.description"
+            ></div>
           </div>
-          <div class="text-[#424343] text-height3">
-            Provide most popular courses that your want to join and lets start
-            the course for the most simply courses here you can build your
-            career very smoothly most efficient Provide most popular courses
-            that your want to join and lets start the course for the most simply
-            courses here you can build your career very smoothly most
-            efficient....
-          </div>
-        </div>
-      </nuxt-link>
-
+        </nuxt-link>
+      </div>
       <!-- news -->
       <div class="news-content mt-[100px] 768:mt-[60px]">
         <div
@@ -84,5 +107,7 @@ const { data: dataNews } = useAsyncData("News", () =>
       </div>
     </div>
   </div>
+
+  <UiTmLoader v-if="isLoading" />
 </template>
 <style lang="scss" scoped></style>
