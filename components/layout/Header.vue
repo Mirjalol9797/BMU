@@ -10,9 +10,11 @@ const localeView = computed(() =>
 );
 
 const dataHeaderMenu = ref(null);
+const isLoading = ref(false);
 
 // Функция для получения данных
 async function fetchHeaderMenu() {
+  isLoading.value = true; // Включаем лоадер
   try {
     const response = await getHeaderMenu.getHeaderMenu(); // Передаём текущий язык
     settingsStore.footerMenu = await getHeaderMenu.getFooterMenu();
@@ -20,6 +22,8 @@ async function fetchHeaderMenu() {
     dataHeaderMenu.value = response; // Обновляем данные меню
   } catch (error) {
     console.error("Ошибка при получении меню:", error);
+  } finally {
+    isLoading.value = false; // Выключаем лоадер
   }
 }
 
@@ -222,6 +226,8 @@ onMounted(() => {
   </header>
 
   <ModalsBurgerMenu v-show="settingsStore.isBurgerMenu" />
+
+  <UiTmLoader v-if="isLoading" />
 </template>
 
 <style lang="scss" scoped>

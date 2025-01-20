@@ -3,12 +3,21 @@ import { useAsyncData } from "nuxt/app";
 import { useRoute } from "vue-router";
 
 const getNewsDetail = useApiNewsDetail();
-
+const isLoading = ref(false);
 const route = useRoute();
 
-const { data: dataNewsDetail } = useAsyncData("NewsDetail", () =>
-  getNewsDetail.getNewsDetail(route.params.id)
-);
+// const { data: dataNewsDetail } = useAsyncData("NewsDetail", () =>
+//   getNewsDetail.getNewsDetail(route.params.id)
+// );
+
+const { data: dataNewsDetail } = useAsyncData("NewsDetail", async () => {
+  isLoading.value = true; // Включаем лоадер
+  try {
+    return await getNewsDetail.getNewsDetail(route.params.id);
+  } finally {
+    isLoading.value = false; // Выключаем лоадер
+  }
+});
 
 console.log("route", route.params.id);
 </script>
@@ -26,5 +35,7 @@ console.log("route", route.params.id);
       <div v-html="dataNewsDetail?.data?.news?.description"></div>
     </div>
   </div>
+
+  <UiTmLoader v-if="isLoading" />
 </template>
 <style lang="scss" scoped></style>

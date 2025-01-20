@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
 import { useVuelidate } from "@vuelidate/core";
 import { required, minLength, email } from "@vuelidate/validators";
 
@@ -8,6 +8,7 @@ const { t } = useI18n();
 const errorText = ref(t("contact_page.required"));
 const successModal = ref(false);
 const modalText = ref(null);
+const isLoading = ref(true);
 const userData = ref({
   name: null,
   email: null,
@@ -52,6 +53,12 @@ async function sendUserData() {
     }
   }
 }
+
+onMounted(() => {
+  setTimeout(() => {
+    isLoading.value = false;
+  }, 700);
+});
 </script>
 <template>
   <CBannerAllPage
@@ -161,6 +168,8 @@ async function sendUserData() {
       </button>
     </template>
   </UiTmModal>
+
+  <UiTmLoader v-if="isLoading" />
 </template>
 <style lang="scss">
 .contact {

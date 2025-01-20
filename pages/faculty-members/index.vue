@@ -1,11 +1,24 @@
 <script setup>
 import { useAsyncData } from "nuxt/app";
 
+const isLoading = ref(false);
 const getMembers = useApiMembers();
 
 // fetch api
-const { data: dataFacultyMembers } = useAsyncData("FacultyMembers", () =>
-  getMembers.getFacultyMembers()
+// const { data: dataFacultyMembers } = useAsyncData("FacultyMembers", () =>
+//   getMembers.getFacultyMembers()
+// );
+
+const { data: dataFacultyMembers } = useAsyncData(
+  "FacultyMembers",
+  async () => {
+    isLoading.value = true; // Включаем лоадер
+    try {
+      return await getMembers.getFacultyMembers();
+    } finally {
+      isLoading.value = false; // Выключаем лоадер
+    }
+  }
 );
 </script>
 <template>
@@ -36,6 +49,8 @@ const { data: dataFacultyMembers } = useAsyncData("FacultyMembers", () =>
       </div>
     </div>
   </div>
+
+  <UiTmLoader v-if="isLoading" />
 </template>
 <style lang="scss" scoped>
 .members-page {

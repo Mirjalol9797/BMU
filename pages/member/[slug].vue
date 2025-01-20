@@ -3,13 +3,22 @@ import { useAsyncData } from "nuxt/app";
 import { useRoute } from "vue-router";
 
 const route = useRoute();
-
+const isLoading = ref(false);
 const getMember = useApiMembers();
 
 // fetch api
-const { data: dataMember } = useAsyncData("Member", () =>
-  getMember.getMemberId(route.params.slug)
-);
+// const { data: dataMember } = useAsyncData("Member", () =>
+//   getMember.getMemberId(route.params.slug)
+// );
+
+const { data: dataMember } = useAsyncData("Member", async () => {
+  isLoading.value = true; // Включаем лоадер
+  try {
+    return await getMember.getMemberId(route.params.slug);
+  } finally {
+    isLoading.value = false; // Выключаем лоадер
+  }
+});
 </script>
 <template>
   <CBannerAllPage
@@ -51,5 +60,7 @@ const { data: dataMember } = useAsyncData("Member", () =>
       </div>
     </div>
   </div>
+
+  <UiTmLoader v-if="isLoading" />
 </template>
 <style lang="scss"></style>
