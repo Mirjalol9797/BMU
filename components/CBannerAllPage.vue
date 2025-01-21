@@ -37,7 +37,7 @@ const props = defineProps({
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 60px;
+    font-size: 56px;
     line-height: 80px;
     color: #fff;
     z-index: 7;

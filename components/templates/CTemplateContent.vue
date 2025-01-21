@@ -1,13 +1,18 @@
-<script setup></script>
+<script setup>
+const props = defineProps({
+  content: {
+    type: Object,
+    default: {},
+  },
+});
+</script>
 
 <template>
   <div class="template">
-    <CBannerAllPage />
+    <CBannerAllPage :title="content.title" />
 
-    <div
-      class="site-container !py-[100px] grid grid-cols-2 gap-10 768:grid-cols-1 768:gap-6 768:!py-[70px]"
-    >
-      <div>Content</div>
+    <div class="site-container !py-[80px] 768:!py-[40px]">
+      <div v-html="content?.description"></div>
     </div>
   </div>
 </template>

@@ -42,7 +42,7 @@ const props = defineProps({
           <div
             class="absolute bottom-0 left-0 p-8 pb-10 z-10 text-white w-full academic-programs__text 768:px-4"
           >
-            <div class="text-4xl font-medium mb-4 768:text-xl">
+            <div class="text-3xl font-medium mb-4 768:text-xl">
               {{ item.title }}
             </div>
             <div class="content">

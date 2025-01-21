@@ -106,7 +106,7 @@ onMounted(() => {
 
             <!-- big menu -->
             <div class="sub-menu-big" v-if="menu.children?.length > 1">
-              <div class="site-container flex justify-between">
+              <div class="site-container flex">
                 <div
                   class="max-w-[300px] w-full px-2"
                   v-for="(child, index) in menu.children"

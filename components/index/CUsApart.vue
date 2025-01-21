@@ -59,7 +59,7 @@ const props = defineProps({
                 class="w-full h-full object-cover"
               />
             </div>
-            <div class="text-2xl font-medium 768:text-base">
+            <div class="text-xl font-medium 768:text-base">
               {{ slider.title }}
             </div>
           </nuxt-link>

@@ -65,10 +65,12 @@ const props = defineProps({
                   />
                 </div>
                 <div>
-                  <div class="text-2xl font-medium 768:text-lg">
+                  <div class="text-xl font-medium 768:text-lg">
                     {{ slider.title }}
                   </div>
-                  <div class="text-[#648AC8]">BA in Finance and Accounting</div>
+                  <div class="text-[#648AC8] hidden">
+                    BA in Finance and Accounting
+                  </div>
                 </div>
               </div>
             </div>
