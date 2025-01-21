@@ -23,7 +23,7 @@ const props = defineProps({
             :to="localePath(`/news-detail/${news?.data?.data?.news[0]?.id}`)"
             class="mb-9 inline-block"
           >
-            <div class="h-[200px] mb-4">
+            <div class="h-[200px] mb-4 img-transition overflow-hidden">
               <img
                 :src="news?.data?.data?.news[0]?.image"
                 :alt="news?.data?.data?.news[0]?.title"
@@ -50,7 +50,7 @@ const props = defineProps({
               </div>
             </div>
             <div
-              class="max-w-[170px] min-w-[170px] h-[100px] 640:max-w-full 640:min-w-full 640:h-auto"
+              class="img-transition overflow-hidden max-w-[170px] min-w-[170px] h-[100px] 640:max-w-full 640:min-w-full 640:h-auto"
             >
               <img
                 :src="news?.data?.data?.news[1]?.image"
@@ -76,7 +76,7 @@ const props = defineProps({
               </div>
             </div>
             <div
-              class="max-w-[170px] min-w-[170px] h-[100px] 640:max-w-full 640:min-w-full 640:h-auto"
+              class="img-transition overflow-hidden max-w-[170px] min-w-[170px] h-[100px] 640:max-w-full 640:min-w-full 640:h-auto"
             >
               <img
                 :src="item.image"

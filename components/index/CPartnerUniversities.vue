@@ -22,7 +22,9 @@ const props = defineProps({
       ></div>
       <div class="grid grid-cols-2 gap-14 768:grid-cols-1" data-aos="fade-up">
         <div v-for="(item, index) in content?.blocks" :key="index">
-          <div class="h-[580px] w-full mb-8 768:h-[250px]">
+          <div
+            class="overflow-hidden img-transition h-[580px] w-full mb-8 768:h-[250px]"
+          >
             <img
               :src="item.image"
               :alt="item.title"

@@ -51,8 +51,8 @@ const props = defineProps({
         }"
       >
         <SwiperSlide v-for="(slider, index) in content?.blocks" :key="index">
-          <nuxt-link :to="localePath(`${slider.url}`)">
-            <div class="h-[480px] mb-4 768:h-[320px]">
+          <nuxt-link :to="localePath(`${slider.url}`)" class="img-transition">
+            <div class="overflow-hidden h-[480px] mb-4 768:h-[320px]">
               <img
                 :src="slider.image"
                 :alt="slider.title"

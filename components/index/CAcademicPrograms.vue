@@ -30,9 +30,11 @@ const props = defineProps({
         <div
           v-for="(item, index) in content?.blocks"
           :key="index"
-          class="relative academic-programs__item"
+          class="relative academic-programs__item img-transition"
         >
-          <div class="h-[580px] w-full academic-programs__img 768:h-[380px]">
+          <div
+            class="overflow-hidden h-[580px] w-full academic-programs__img 768:h-[380px]"
+          >
             <img
               :src="item.image"
               :alt="item.title"
