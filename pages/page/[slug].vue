@@ -52,8 +52,14 @@ useSeoMeta({
       v-if="dataPage?.data?.page_id == 4"
       :content="dataPage?.data"
     />
-    <div v-if="dataPage?.data?.page_id == 5">page 5</div>
-    <div v-if="dataPage?.data?.page_id == 6">page 6</div>
+    <TemplatesCTemplateBachelors
+      v-if="dataPage?.data?.page_id == 5"
+      :content="dataPage?.data"
+    />
+    <TemplatesCTemplateAccardion
+      v-if="dataPage?.data?.page_id == 6"
+      :content="dataPage?.data"
+    />
     <CFaqs v-if="dataPage?.data?.has_faq" />
   </div>
 

@@ -1,5 +1,18 @@
 <script setup>
 import { ref } from "vue";
+import { useAsyncData } from "nuxt/app";
+
+const getFaqs = useApiFaqs();
+const isLoading = ref(false);
+
+const { data: dataFaqs } = useAsyncData("Faqs", async () => {
+  isLoading.value = true; // Включаем лоадер
+  try {
+    return await getFaqs.getFaqs();
+  } finally {
+    isLoading.value = false; // Выключаем лоадер
+  }
+});
 
 const activeIndex = ref(null);
 
@@ -15,13 +28,10 @@ const toggleAccordion = (index) => {
       >
         FAQs
       </div>
-      <div class="text-[#424343] mb-12 text-center">
-        Step into a vibrant community where learning extends beyond the
-        classroom, and inspiration is found around every corner.
-      </div>
+
       <div class="max-w-[850px] w-full mx-auto">
         <div
-          v-for="(item, index) in 4"
+          v-for="(item, index) in dataFaqs?.data?.faqs"
           :key="index"
           class="mb-6 shadow-[0_7px_20px_0_rgba(0,0,0,0.05)] px-5 py-4"
           :class="activeIndex === index ? 'bg-[#192B69] text-white' : ''"
@@ -40,15 +50,14 @@ const toggleAccordion = (index) => {
               class="mr-4"
             />
             <span>
-              What are the admission requirements for undergraduate programs?
+              {{ item.question }}
             </span>
           </div>
-          <div v-if="activeIndex === index" class="mt-3 pl-10 text-lg">
-            Applicants must have a high school diploma or equivalent, proof of
-            English proficiency (e.g., IELTS/TOEFL), completed application form,
-            transcripts, a personal statement, and recommendation letters. Some
-            programs may require an entrance exam or interview.
-          </div>
+          <div
+            v-if="activeIndex === index"
+            class="mt-3 pl-10 text-lg"
+            v-html="item.answer"
+          ></div>
         </div>
       </div>
     </div>

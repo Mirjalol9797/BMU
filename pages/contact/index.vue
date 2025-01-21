@@ -83,42 +83,11 @@ useSeoMeta({
   />
   <div class="contact py-[100px] 768:py-[70px]">
     <div class="site-container">
-      <div class="w-1/2 bg-[rgba(1,1,1,0.02)] p-12 mb-12 1024:w-full 768:p-6">
-        <div class="text-2xl mb-9 font-medium">
-          {{ $t("contact_page.contact_now") }}:
-        </div>
-        <div class="font-medium mb-[60px]">
-          <div class="text-[#424343] flex-center mb-2">
-            <div class="w-5 h-[1.5px] bg-[#424343] mr-2"></div>
-            <span class="uppercase">{{ $t("contact_page.phone") }}</span>
-          </div>
-          <a href="tel:+998955119999" class="text-xl font-medium 768:text-base"
-            >+998 95 511 99 99</a
-          >
-        </div>
-        <div class="font-medium mb-[60px]">
-          <div class="text-[#424343] flex-center mb-2">
-            <div class="w-5 h-[1.5px] bg-[#424343] mr-2"></div>
-            <span class="uppercase">{{ $t("contact_page.email") }}</span>
-          </div>
-          <a
-            href="mailto:info@bmu-edu.uz"
-            class="text-xl font-medium 768:text-base"
-            >info@bmu-edu.uz</a
-          >
-        </div>
-        <div class="font-medium">
-          <div class="text-[#424343] flex-center mb-2">
-            <div class="w-5 h-[1.5px] bg-[#424343] mr-2"></div>
-            <span class="uppercase">{{ $t("contact_page.location") }}</span>
-          </div>
-          <div class="text-xl font-medium 768:text-base">
-            {{ $t("contact_page.address") }}
-          </div>
-        </div>
-      </div>
       <div class="grid grid-cols-2 gap-6 768:grid-cols-1">
-        <div class="p-12 bg-[rgba(1,1,1,0.02)] contact-form 768:p-6">
+        <div
+          class="p-12 bg-[rgba(1,1,1,0.02)] contact-form 768:p-6"
+          v-if="false"
+        >
           <UiTmInput
             :label="$t('contact_page.your_name')"
             :error="v$1.name.$error"
@@ -156,6 +125,43 @@ useSeoMeta({
           >
             {{ $t("contact_page.send_message") }}
           </button>
+        </div>
+
+        <div class="bg-[rgba(1,1,1,0.02)] p-12 768:p-6">
+          <div class="text-2xl mb-9 font-medium 768:text-lg">
+            {{ $t("contact_page.contact_now") }}:
+          </div>
+          <div class="font-medium mb-[60px] 768:mb-8">
+            <div class="text-[#424343] flex-center mb-2">
+              <div class="w-5 h-[1.5px] bg-[#424343] mr-2"></div>
+              <span class="uppercase">{{ $t("contact_page.phone") }}</span>
+            </div>
+            <a
+              href="tel:+998955119999"
+              class="text-xl font-medium 768:text-base"
+              >+998 95 511 99 99</a
+            >
+          </div>
+          <div class="font-medium mb-[60px] 768:mb-8">
+            <div class="text-[#424343] flex-center mb-2">
+              <div class="w-5 h-[1.5px] bg-[#424343] mr-2"></div>
+              <span class="uppercase">{{ $t("contact_page.email") }}</span>
+            </div>
+            <a
+              href="mailto:info@bmu-edu.uz"
+              class="text-xl font-medium 768:text-base"
+              >info@bmu-edu.uz</a
+            >
+          </div>
+          <div class="font-medium">
+            <div class="text-[#424343] flex-center mb-2">
+              <div class="w-5 h-[1.5px] bg-[#424343] mr-2"></div>
+              <span class="uppercase">{{ $t("contact_page.location") }}</span>
+            </div>
+            <div class="text-xl font-medium 768:text-base">
+              {{ $t("contact_page.address") }}
+            </div>
+          </div>
         </div>
         <div>
           <iframe
