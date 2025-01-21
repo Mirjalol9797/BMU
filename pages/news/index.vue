@@ -3,14 +3,7 @@ import { useAsyncData } from "nuxt/app";
 const getMainPagesData = useApiMainPage();
 const getArticles = useApiArticles();
 const isLoading = ref(false);
-
-// const { data: dataNews } = useAsyncData("News", () =>
-//   getMainPagesData.getNews()
-// );
-
-// const { data: dataArticles } = useAsyncData("Articles", () =>
-//   getArticles.getArticles()
-// );
+const { t } = useI18n();
 
 const { data: dataNews } = useAsyncData("News", async () => {
   isLoading.value = true; // Включаем лоадер
@@ -29,9 +22,25 @@ const { data: dataArticles } = useAsyncData("Articles", async () => {
     isLoading.value = false; // Выключаем лоадер
   }
 });
+
+useSeoMeta({
+  title: t("our_news_articles"),
+  description: dataNews?.data?.background?.description,
+  keywords: "BMU",
+  ogTitle: t("our_news_articles"),
+  ogDescription: dataNews?.data?.background?.description,
+  ogImage: "/images/logo.png",
+  ogUrl: "https://bmu-edu.uz/news",
+  twitterCard: "summary_large_image",
+  ogSiteName: "site_name",
+  twitterUrl: "https://bmu-edu.uz/news",
+  twitterTitle: t("our_news_articles"),
+  twitterDescription: dataNews?.data?.background?.description,
+  twitterImage: "/images/logo.png",
+});
 </script>
 <template>
-  <CBannerAllPage title="Our News &Articles" />
+  <CBannerAllPage :title="$t('our_news_articles')" />
   <div class="news py-[100px] 768:py-[70px]">
     <div class="site-container">
       <!-- article -->
@@ -72,12 +81,12 @@ const { data: dataArticles } = useAsyncData("Articles", async () => {
         <div
           class="text-center text-5xl font-medium mb-4 1024:text-4xl 480:!text-3xl"
         >
-          Latest News
+          {{ dataNews?.data?.background?.title }}
         </div>
-        <div class="text-center text-lg text-[#424343] mb-14 768:mb-8">
-          One of the key advantages of technology in education is its ability to
-          personalize learning experiences.
-        </div>
+        <div
+          class="text-center text-lg text-[#424343] mb-14 768:mb-8"
+          v-html="dataNews?.data?.background?.description"
+        ></div>
         <div
           class="grid grid-cols-3 gap-8 768:grid-cols-2 768:gap-6 640:!grid-cols-1"
         >

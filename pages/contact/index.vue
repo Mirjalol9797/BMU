@@ -59,6 +59,22 @@ onMounted(() => {
     isLoading.value = false;
   }, 700);
 });
+
+useSeoMeta({
+  title: t("get_in_touch"),
+  description: t("get_in_touch"),
+  keywords: "BMU",
+  ogTitle: t("get_in_touch"),
+  ogDescription: t("get_in_touch"),
+  ogImage: "/images/contact-page.webp",
+  ogUrl: "https://bmu-edu.uz/contact",
+  twitterCard: "summary_large_image",
+  ogSiteName: "site_name",
+  twitterUrl: "https://bmu-edu.uz/contact",
+  twitterTitle: t("get_in_touch"),
+  twitterDescription: t("get_in_touch"),
+  twitterImage: "/images/contact-page.webp",
+});
 </script>
 <template>
   <CBannerAllPage

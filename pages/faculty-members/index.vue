@@ -3,6 +3,7 @@ import { useAsyncData } from "nuxt/app";
 
 const isLoading = ref(false);
 const getMembers = useApiMembers();
+const { t } = useI18n();
 
 // fetch api
 // const { data: dataFacultyMembers } = useAsyncData("FacultyMembers", () =>
@@ -20,6 +21,22 @@ const { data: dataFacultyMembers } = useAsyncData(
     }
   }
 );
+
+useSeoMeta({
+  title: t("distinguished_faculty_members"),
+  description: t("distinguished_faculty_members"),
+  keywords: "BMU",
+  ogTitle: t("distinguished_faculty_members"),
+  ogDescription: t("distinguished_faculty_members"),
+  ogImage: dataFacultyMembers?.background?.image,
+  ogUrl: "https://bmu-edu.uz/news",
+  twitterCard: "summary_large_image",
+  ogSiteName: "site_name",
+  twitterUrl: "https://bmu-edu.uz/news",
+  twitterTitle: t("distinguished_faculty_members"),
+  twitterDescription: t("distinguished_faculty_members"),
+  twitterImage: dataFacultyMembers?.background?.image,
+});
 </script>
 <template>
   <CBannerAllPage

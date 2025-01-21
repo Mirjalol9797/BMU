@@ -5,6 +5,7 @@ import { useRoute } from "vue-router";
 const getArticles = useApiArticles();
 const isLoading = ref(false);
 const route = useRoute();
+const { t } = useI18n();
 
 const { data: dataArticlesDetail } = useAsyncData(
   "ArticlesDetail",
@@ -17,6 +18,22 @@ const { data: dataArticlesDetail } = useAsyncData(
     }
   }
 );
+
+useSeoMeta({
+  title: t("our_news_articles"),
+  description: t("our_news_articles"),
+  keywords: "BMU",
+  ogTitle: t("our_news_articles"),
+  ogDescription: t("our_news_articles"),
+  ogImage: "/images/logo.png",
+  ogUrl: "https://bmu-edu.uz/articles-detail",
+  twitterCard: "summary_large_image",
+  ogSiteName: "site_name",
+  twitterUrl: "https://bmu-edu.uz/articles-detail",
+  twitterTitle: t("our_news_articles"),
+  twitterDescription: t("our_news_articles"),
+  twitterImage: "/images/logo.png",
+});
 </script>
 <template>
   <div class="template">

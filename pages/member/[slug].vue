@@ -5,6 +5,7 @@ import { useRoute } from "vue-router";
 const route = useRoute();
 const isLoading = ref(false);
 const getMember = useApiMembers();
+const { t } = useI18n();
 
 // fetch api
 // const { data: dataMember } = useAsyncData("Member", () =>
@@ -18,6 +19,22 @@ const { data: dataMember } = useAsyncData("Member", async () => {
   } finally {
     isLoading.value = false; // Выключаем лоадер
   }
+});
+
+useSeoMeta({
+  title: t("distinguished_faculty_members"),
+  description: t("distinguished_faculty_members"),
+  keywords: "BMU",
+  ogTitle: t("distinguished_faculty_members"),
+  ogDescription: t("distinguished_faculty_members"),
+  ogImage: "/images/logo.png",
+  ogUrl: "https://bmu-edu.uz/member",
+  twitterCard: "summary_large_image",
+  ogSiteName: "site_name",
+  twitterUrl: "https://bmu-edu.uz/member",
+  twitterTitle: t("distinguished_faculty_members"),
+  twitterDescription: t("distinguished_faculty_members"),
+  twitterImage: "/images/logo.png",
 });
 </script>
 <template>
@@ -38,10 +55,7 @@ const { data: dataMember } = useAsyncData("Member", async () => {
             class="text-2xl font-medium mb-3 768:text-lg"
             v-html="dataMember?.position"
           ></div>
-          <div class="mb-3">
-            Marvin brings a wealth of knowledge and experience to the Department
-            of Information Technology at our university. With a Ph.D.
-          </div>
+          <div class="mb-3" v-html="dataMember?.education"></div>
           <a href="mailto:marvin@gmail.com" class="text-[#648AC8]"
             >Mail: marvin@gmail.com</a
           >
