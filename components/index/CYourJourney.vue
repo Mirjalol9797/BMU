@@ -77,7 +77,7 @@ onMounted(() => {
         </button>
       </div>
       <div
-        class="absolute top-0 right-[20%] flex gap-8 rotate-[12deg] 1024:relative 1024:h-[500px] 1024:top-0 1024:right-0 1024:overflow-hidden 1024:mx-auto"
+        class="absolute top-0 right-[30%] flex gap-8 rotate-[12deg] 1024:relative 1024:h-[500px] 1024:top-0 1024:right-0 1024:overflow-hidden 1024:mx-auto"
       >
         <div class="animate-images-up">
           <div
