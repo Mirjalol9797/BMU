@@ -21,17 +21,17 @@ console.log("dataPage?.data?", dataPage);
 
 useSeoMeta({
   title: dataPage.value?.data?.title,
-  description: t("static_seo.description"),
+  description: dataPage.value?.data?.title,
   keywords: "BMU",
   ogTitle: dataPage.value?.data?.title,
-  ogDescription: t("static_seo.description"),
+  ogDescription: dataPage.value?.data?.title,
   ogImage: dataPage.value?.data?.background,
   ogUrl: "https://bmu-edu.uz/ru/",
   twitterCard: "summary_large_image",
   ogSiteName: "site_name",
   twitterUrl: "https://bmu-edu.uz/ru/",
   twitterTitle: dataPage.value?.data?.title,
-  twitterDescription: t("static_seo.description"),
+  twitterDescription: dataPage.value?.data?.title,
   twitterImage: dataPage.value?.data?.background,
 });
 </script>
@@ -61,6 +61,7 @@ useSeoMeta({
       :content="dataPage?.data"
     />
     <CFaqs v-if="dataPage?.data?.has_faq" />
+    <CGallery />
   </div>
 
   <UiTmLoader v-if="isLoading" />

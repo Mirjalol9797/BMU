@@ -4,8 +4,6 @@ import { useAsyncData } from "nuxt/app";
 
 const settingsStore = useSettingsStore();
 
-settingsStore.journeyData;
-
 // Ссылки на элементы и переменные
 const sliderTrack = ref(null);
 const sliderTrack2 = ref(null);
