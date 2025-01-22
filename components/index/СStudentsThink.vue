@@ -20,7 +20,7 @@ const props = defineProps({
         {{ content?.title }}
       </div>
       <div
-        class="text-center text-lg text-[#424343] mb-14 768:mb-8"
+        class="text-center text-lg text-[#424343] mb-14 768:mb-8 768:text-sm"
         v-html="content?.description"
       ></div>
       <div>

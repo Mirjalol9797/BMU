@@ -48,6 +48,7 @@
   "distinguished_faculty_members": "Taniqli professor-o'qituvchilar",
 
   "faculty_members": "Professor va o’qituvchilar",
+  "follow_us": "Obuna bo'ling",
 
   "get_started": "Boshlash",
   "get_in_touch": "Biz bilan bog'laning",
@@ -75,6 +76,8 @@
     "required": "Majburiy maydon",
     "data_sent_successfully": "Ma'lumotlar muvaffaqiyatli yuborildi"
   },
+
+  "contact_me": "Men bilan bog'laning",
 
   "email_address": "E-pochta manzili",
 

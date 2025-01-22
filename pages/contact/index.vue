@@ -136,9 +136,7 @@ useSeoMeta({
               <div class="w-5 h-[1.5px] bg-[#424343] mr-2"></div>
               <span class="uppercase">{{ $t("contact_page.phone") }}</span>
             </div>
-            <a
-              href="tel:+998955119999"
-              class="text-xl font-medium 768:text-base"
+            <a href="tel:+998955119999" class="text-base font-medium"
               >+998 95 511 99 99</a
             >
           </div>
@@ -147,21 +145,81 @@ useSeoMeta({
               <div class="w-5 h-[1.5px] bg-[#424343] mr-2"></div>
               <span class="uppercase">{{ $t("contact_page.email") }}</span>
             </div>
-            <a
-              href="mailto:info@bmu-edu.uz"
-              class="text-xl font-medium 768:text-base"
+            <a href="mailto:info@bmu-edu.uz" class="text-base font-medium"
               >info@bmu-edu.uz</a
             >
           </div>
-          <div class="font-medium">
+          <div class="font-medium mb-[60px] 768:mb-8">
             <div class="text-[#424343] flex-center mb-2">
               <div class="w-5 h-[1.5px] bg-[#424343] mr-2"></div>
               <span class="uppercase">{{ $t("contact_page.location") }}</span>
             </div>
-            <div class="text-xl font-medium 768:text-base">
+            <div class="text-base font-medium">
               {{ $t("contact_page.address") }}
             </div>
           </div>
+          <div class="font-medium">
+            <div class="text-[#424343] flex-center mb-3">
+              <div class="w-5 h-[1.5px] bg-[#424343] mr-2"></div>
+              <span class="uppercase">{{ $t("follow_us") }}</span>
+            </div>
+            <div
+              class="text-xl font-medium flex items-center gap-6 768:text-base"
+            >
+              <a
+                href="https://t.me/BMUedu"
+                target="_blank"
+                class="w-5 h-5 inline-block"
+                data-v-872b605b=""
+                ><img
+                  src="/_nuxt/icons/social/tg.svg"
+                  alt=""
+                  data-v-872b605b="" /></a
+              ><a
+                href="https://www.linkedin.com/company/british-management-university"
+                target="_blank"
+                class="w-5 h-5 inline-block"
+                data-v-872b605b=""
+                ><img
+                  src="/_nuxt/icons/social/in.svg"
+                  alt=""
+                  data-v-872b605b="" /></a
+              ><a
+                href="https://www.facebook.com/bmuedutashkent/"
+                target="_blank"
+                class="w-5 h-5 inline-block"
+                data-v-872b605b=""
+                ><img
+                  src="/_nuxt/icons/social/fc.svg"
+                  alt=""
+                  data-v-872b605b="" /></a
+              ><a
+                href="https://www.youtube.com/c/BritishManagementUniversity"
+                target="_blank"
+                class="w-5 h-5 inline-block"
+                data-v-872b605b=""
+                ><img
+                  src="/_nuxt/icons/social/yt.svg"
+                  alt=""
+                  data-v-872b605b="" /></a
+              ><a
+                href="https://www.instagram.com/bmuedu/"
+                target="_blank"
+                class="w-5 h-5 inline-block"
+                data-v-872b605b=""
+                ><img
+                  src="/_nuxt/icons/social/ig.svg"
+                  alt=""
+                  data-v-872b605b=""
+              /></a>
+            </div>
+          </div>
+          <a
+            href="https://bit.ly/BMU_App_2025"
+            class="text-base text-white py-[14px] px-[22px] bg-[#648AC8] rounded-full font-medium inline-flex mt-10"
+          >
+            {{ $t("contact_me") }}
+          </a>
         </div>
         <div>
           <iframe

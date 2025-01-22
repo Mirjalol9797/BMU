@@ -55,7 +55,7 @@ const props = defineProps({
           v-if="slider.url"
           class="text-base text-white py-[14px] px-10 bg-[#648AC8] rounded-full font-medium"
         >
-          {{ $t("read_more") }}
+          {{ $t("learn_more") }}
         </nuxt-link>
       </div>
     </SwiperSlide>

@@ -65,7 +65,8 @@ onMounted(() => {
         <div class="mb-8">
           {{ settingsStore.journeyData?.data?.journey?.description }}
         </div>
-        <button
+        <a
+          href="https://bmu-admission-system.netlify.app/signup"
           class="text-white font-medium bg-[#648AC8] py-3 px-6 rounded-full inline-flex items-center learn-more"
         >
           {{ $t("apply_now") }}
@@ -74,10 +75,10 @@ onMounted(() => {
             alt="blue-arrow"
             class="ml-4 transform transition-transform duration-2000"
           />
-        </button>
+        </a>
       </div>
       <div
-        class="absolute top-0 right-[30%] flex gap-8 rotate-[12deg] 1024:relative 1024:h-[500px] 1024:top-0 1024:right-0 1024:overflow-hidden 1024:mx-auto"
+        class="absolute top-0 right-[30%] flex gap-8 rotate-[12deg] 1024:hidden 1024:relative 1024:h-[500px] 1024:top-0 1024:right-0 1024:overflow-hidden 1024:mx-auto"
       >
         <div class="animate-images-up">
           <div

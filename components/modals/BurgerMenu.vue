@@ -42,7 +42,7 @@ const isOpen = (id) => {
 
 <template>
   <div
-    class="bg-white w-full fixed top-0 left-0 h-full border-t border-[#E9EAEC] translate-y-[-1000px] transition-all duration-500 z-[1001] overflow-auto pb-[150px]"
+    class="bg-white w-full fixed top-[-10px] left-0 h-full border-t border-[#E9EAEC] translate-y-[-1000px] transition-all duration-500 z-[1001] overflow-auto pb-[150px]"
     :class="
       settingsStore.isBurgerMenu
         ? 'translate-y-[111px] 768:translate-y-[143px]'
@@ -139,6 +139,13 @@ const isOpen = (id) => {
         </li>
       </ul>
     </div>
+
+    <a
+      href="https://bit.ly/BMU_App_2025"
+      class="text-sm text-white py-3 px-5 bg-[#648AC8] rounded-full font-medium w-[90%] flex justify-center items-center mx-auto mt-10"
+    >
+      {{ $t("contact_me") }}
+    </a>
   </div>
 </template>
 

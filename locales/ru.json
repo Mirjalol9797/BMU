@@ -48,6 +48,7 @@
   "distinguished_faculty_members": "Уважаемые преподаватели",
 
   "faculty_members": "Профессора и преподаватели",
+  "follow_us": "Подписывайтесь на нас",
 
   "get_started": "Начать",
   "get_in_touch": "Связаться с нами",
@@ -75,6 +76,7 @@
     "required": "Обязательно для заполнения",
     "data_sent_successfully": "Данные успешно отправлены"
   },
+  "contact_me": "Свяжитесь со мной",
 
   "email_address": "Адрес электронной почты",
 

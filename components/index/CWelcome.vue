@@ -15,7 +15,9 @@ const props = defineProps({
       >
         {{ content?.title }}
       </h1>
-      <div class="w-1/2 leading-9 max-w-[1072px] mx-auto 1024:w-full">
+      <div
+        class="w-1/2 leading-9 max-w-[1072px] mx-auto 1024:w-full 768:leading-7"
+      >
         <div v-html="content?.description"></div>
 
         <nuxt-link

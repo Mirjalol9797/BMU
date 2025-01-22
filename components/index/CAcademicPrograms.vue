@@ -108,9 +108,14 @@ const props = defineProps({
 @media (max-width: 1024px) {
   .academic-programs {
     &__text {
+      bottom: 0;
       .content {
         display: block;
+        opacity: 1;
       }
+    }
+    &__item {
+      overflow: visible;
     }
   }
 }

@@ -48,6 +48,7 @@
   "distinguished_faculty_members": "Distinguished Faculty Members",
 
   "faculty_members": "Faculty Members",
+  "follow_us": "Follow us",
 
   "get_started": "Get started",
   "get_in_touch": "Get in Touch",
@@ -75,6 +76,7 @@
     "required": "Required",
     "data_sent_successfully": "Data sent successfully"
   },
+  "contact_me": "Contact me",
 
   "email_address": "E-mail Address",
 

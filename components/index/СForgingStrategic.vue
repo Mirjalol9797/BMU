@@ -15,7 +15,9 @@ const props = defineProps({
   >
     <div class="site-container grid grid-cols-2 1024:grid-cols-1">
       <div class="max-w-[450px] w-full text-white">
-        <div class="text-5xl leading-[60px] mb-5 font-medium">
+        <div
+          class="text-5xl leading-[60px] mb-5 font-medium 1024:text-4xl 480:!text-3xl"
+        >
           {{ content?.title }}
         </div>
         <div class="mb-5" v-html="content?.description"></div>

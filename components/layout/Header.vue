@@ -79,7 +79,7 @@ onMounted(() => {
     </div>
     <div class="site-container">
       <div class="flex-center justify-between 1024:py-2.5">
-        <nuxt-link :to="localePath('/')" class="w-[190px]">
+        <nuxt-link :to="localePath('/')" class="w-[160px]">
           <img src="/images/site-logo.svg" alt="site-logo" />
         </nuxt-link>
         <ul class="flex-center mr-8 menu 1024:!hidden">
@@ -94,7 +94,7 @@ onMounted(() => {
               :to="
                 localePath(menu?.url ? `${menu?.url}` : ` ${menu?.page?.slug}`)
               "
-              class="flex-center gap-1 py-[38px] px-5 menu-title"
+              class="flex-center gap-1 py-[38px] px-3 menu-title"
             >
               {{ menu.title }}
               <img
@@ -176,16 +176,20 @@ onMounted(() => {
           </li>
         </ul>
 
-        <div class="flex-center gap-10">
-          <button
-            class="text-base text-white py-[14px] px-[22px] bg-[#648AC8] rounded-full font-medium 1024:fixed 1024:w-full 1024:left-[0] 1024:rounded-none 1024:bottom-0 1024:z-20 1024:flex 1024:justify-center 1024:items-center"
-            @click="openApplyNowModal"
+        <div class="flex-center gap-4">
+          <a
+            href="https://bit.ly/BMU_App_2025"
+            class="inline-flex text-sm text-white py-3 px-5 bg-[#648AC8] rounded-full font-medium 1024:fixed 1024:w-full 1024:left-[0] 1024:rounded-none 1024:bottom-0 1024:z-20 1024:flex 1024:justify-center 1024:items-center"
+          >
+            {{ $t("contact_me") }}
+          </a>
+          <a
+            href="https://bmu-admission-system.netlify.app/signup"
+            class="inline-flex text-sm text-white py-3 px-5 bg-[#FF0000] rounded-full font-medium 1024:fixed 1024:w-full 1024:left-[0] 1024:rounded-none 1024:bottom-0 1024:z-20 1024:flex 1024:justify-center 1024:items-center"
           >
             {{ $t("apply_now") }}
-          </button>
-          <div
-            class="mr-[50px] flex relative language-view mt-[6px] 1024:hidden"
-          >
+          </a>
+          <div class="flex relative language-view mt-[6px] 1024:hidden">
             <div class="text-[#1C335F] font-semibold flex-center pb-1.5">
               <img
                 :src="`/images/${localeView[0].image}`"
