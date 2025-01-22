@@ -61,7 +61,7 @@ useSeoMeta({
       :content="dataPage?.data"
     />
     <CFaqs v-if="dataPage?.data?.has_faq" />
-    <CGallery />
+    <CGallery v-if="dataPage?.data?.has_gallery" />
   </div>
 
   <UiTmLoader v-if="isLoading" />
