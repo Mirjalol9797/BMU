@@ -53,6 +53,43 @@ const { data: dataFooterMenu } = useAsyncData("FooterMenu", () =>
             <img src="/icons/header/sms.svg" alt="sms" class="w-5" />
             <a href="mailto:info@bmu-edu.uz">info@bmu-edu.uz</a>
           </div>
+          <div class="mb-5 flex items-center gap-6">
+            <a
+              href="https://t.me/BMUedu"
+              target="_blank"
+              class="w-5 h-5 inline-block"
+            >
+              <img src="/icons/social/tg.svg" alt="" />
+            </a>
+            <a
+              href="https://www.linkedin.com/company/british-management-university"
+              target="_blank"
+              class="w-5 h-5 inline-block"
+            >
+              <img src="/icons/social/in.svg" alt="" />
+            </a>
+            <a
+              href="https://www.facebook.com/bmuedutashkent/"
+              target="_blank"
+              class="w-5 h-5 inline-block"
+            >
+              <img src="/icons/social/fc.svg" alt="" />
+            </a>
+            <a
+              href="https://www.youtube.com/c/BritishManagementUniversity"
+              target="_blank"
+              class="w-5 h-5 inline-block"
+            >
+              <img src="/icons/social/yt.svg" alt="" />
+            </a>
+            <a
+              href="https://www.instagram.com/bmuedu/"
+              target="_blank"
+              class="w-5 h-5 inline-block"
+            >
+              <img src="/icons/social/ig.svg" alt="" />
+            </a>
+          </div>
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2999.607744450507!2d69.37976340169757!3d41.32850281679719!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38ae8b82eea369d7%3A0xbc51733ffe66b99c!2sBritish%20Management%20University%20in%20Tashkent!5e0!3m2!1sru!2s!4v1734335103310!5m2!1sru!2s"
             width="100%"
