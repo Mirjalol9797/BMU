@@ -92,7 +92,9 @@ onMounted(() => {
           >
             <nuxt-link
               :to="
-                localePath(menu?.url ? `${menu?.url}` : ` ${menu?.page?.slug}`)
+                localePath(
+                  menu?.url ? `/${menu?.url}` : `/page/${menu?.page_slug}`
+                )
               "
               class="flex-center gap-1 py-[38px] px-3 menu-title"
             >
@@ -115,7 +117,9 @@ onMounted(() => {
                   <nuxt-link
                     :to="
                       localePath(
-                        child?.url ? `${child?.url}` : ` ${child?.page?.slug}`
+                        child?.url
+                          ? `/${child?.url}`
+                          : `/page/${child?.page_slug}`
                       )
                     "
                     class="text-base font-semibold mb-5 inline-block"
@@ -132,7 +136,9 @@ onMounted(() => {
                       <nuxt-link
                         :to="
                           localePath(
-                            item?.url ? `${item?.url}` : ` ${item?.page?.slug}`
+                            item?.url
+                              ? `/${item?.url}`
+                              : `/page/${item?.page_slug}`
                           )
                         "
                       >
@@ -150,7 +156,7 @@ onMounted(() => {
                 <nuxt-link
                   :to="
                     localePath(
-                      item?.url ? `${item?.url}` : ` ${item?.page?.slug}`
+                      item?.url ? `/${item?.url}` : `/page/${item?.page_slug}`
                     )
                   "
                 >
@@ -165,7 +171,7 @@ onMounted(() => {
                 <nuxt-link
                   :to="
                     localePath(
-                      item?.url ? `${item?.url}` : ` ${item?.page?.slug}`
+                      item?.url ? `/${item?.url}` : `/page/${item?.page_slug}`
                     )
                   "
                 >
