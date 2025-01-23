@@ -7,7 +7,13 @@ export const useApiPages = () => {
     return res;
   };
 
+  const getSettingsStandart = async () => {
+    const res = await $api(`/api/settings`);
+    return res;
+  };
+
   return {
     getPage,
+    getSettingsStandart,
   };
 };

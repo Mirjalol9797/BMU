@@ -66,6 +66,7 @@ useSeoMeta({
       v-if="dataPage?.data?.page_id == 6"
       :content="dataPage?.data"
     />
+    <CSettingStandart v-if="dataPage?.data?.has_setting" />
     <CFaqs v-if="dataPage?.data?.has_faq" />
     <CGallery v-if="dataPage?.data?.has_gallery" />
   </div>

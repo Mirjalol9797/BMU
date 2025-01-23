@@ -31,7 +31,7 @@ const props = defineProps({
             <div
               class="text-[#648AC8] text-xl mb-6 font-medium 640:text-base 640:mb-4"
             >
-              Licences & Ligal Documentation
+              {{ $t("licences_ligal_documentation") }}
             </div>
             <div class="text-4xl mb-4 font-medium 640:text-xl">
               {{ item.title }}

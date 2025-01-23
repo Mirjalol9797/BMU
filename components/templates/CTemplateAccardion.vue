@@ -20,8 +20,12 @@ const toggleAccordion = (index) => {
     <CBannerAllPage :title="content.title" :image="content.background" />
 
     <div class="site-container !py-[80px] 768:!py-[40px]">
-      <div v-html="content?.description" class="mb-10"></div>
-      <div class="w-full mx-auto">
+      <div
+        v-html="content?.description"
+        class="mb-10"
+        v-if="content?.description"
+      ></div>
+      <div class="w-full mx-auto" v-if="content?.accordion_data">
         <div
           v-for="(item, index) in content?.accordion_data"
           :key="index"
