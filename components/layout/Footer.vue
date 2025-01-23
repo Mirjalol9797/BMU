@@ -26,7 +26,7 @@ const { data: dataFooterMenu } = useAsyncData("FooterMenu", () =>
         >
           <nuxt-link
             :to="localePath(menu?.url ? `${menu?.url}` : `${menu?.page?.slug}`)"
-            class="block text-xl mb-5 768:mb-3"
+            class="block text-xl mb-5 768:mb-3 768:text-lg"
             >{{ menu.title }}</nuxt-link
           >
           <nuxt-link
@@ -42,7 +42,7 @@ const { data: dataFooterMenu } = useAsyncData("FooterMenu", () =>
         </div>
 
         <div class="w-1/5 1024:w-1/2 640:!w-full">
-          <nuxt-link to="/" class="block text-xl mb-6">{{
+          <nuxt-link to="/" class="block text-xl mb-6 768:text-lg">{{
             $t("contacts")
           }}</nuxt-link>
           <div class="flex-center gap-2 text-[#424343] mb-5">
