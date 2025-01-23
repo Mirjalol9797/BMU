@@ -42,8 +42,14 @@ useSeoMeta({
       v-if="dataPage?.data?.page_id == 0"
       :content="dataPage?.data"
     />
-    <TemplatesCTemplateImage v-if="dataPage?.data?.page_id == 1" />
-    <TemplatesCTemplateSimple v-if="dataPage?.data?.page_id == 2" />
+    <TemplatesCTemplateImage
+      v-if="dataPage?.data?.page_id == 1"
+      :content="dataPage?.data"
+    />
+    <TemplatesCTemplateSimple
+      v-if="dataPage?.data?.page_id == 2"
+      :content="dataPage?.data"
+    />
     <TemplatesCTemplateItems
       v-if="dataPage?.data?.page_id == 3"
       :content="dataPage?.data"

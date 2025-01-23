@@ -9,7 +9,7 @@ const props = defineProps({
 
 <template>
   <div class="template">
-    <CBannerAllPage :title="content.title" />
+    <CBannerAllPage :title="content.title" :image="content.background" />
 
     <div class="site-container">
       <div class="py-[100px] 768:py-[60px]">
@@ -38,12 +38,12 @@ const props = defineProps({
             </div>
             <div class="text-[#424343]" v-html="item.description"></div>
             <a
-              v-if="item.url"
-              :href="item.url"
+              v-if="item.file"
+              :href="item.file"
               target="_blank"
               class="flex items-center justify-between text-white bg-[#648AC8] py-3 px-5 rounded-full max-w-[180px] mt-6"
             >
-              <span>Download File</span>
+              <span>{{ $t("download_file") }}</span>
               <img src="/icons/download.svg" alt="" />
             </a>
           </div>

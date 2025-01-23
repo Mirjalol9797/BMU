@@ -171,46 +171,31 @@ useSeoMeta({
                 target="_blank"
                 class="w-5 h-5 inline-block"
                 data-v-872b605b=""
-                ><img
-                  src="/_nuxt/icons/social/tg.svg"
-                  alt=""
-                  data-v-872b605b="" /></a
+                ><img src="/icons/social/tg.svg" alt="" data-v-872b605b="" /></a
               ><a
                 href="https://www.linkedin.com/company/british-management-university"
                 target="_blank"
                 class="w-5 h-5 inline-block"
                 data-v-872b605b=""
-                ><img
-                  src="/_nuxt/icons/social/in.svg"
-                  alt=""
-                  data-v-872b605b="" /></a
+                ><img src="/icons/social/in.svg" alt="" data-v-872b605b="" /></a
               ><a
                 href="https://www.facebook.com/bmuedutashkent/"
                 target="_blank"
                 class="w-5 h-5 inline-block"
                 data-v-872b605b=""
-                ><img
-                  src="/_nuxt/icons/social/fc.svg"
-                  alt=""
-                  data-v-872b605b="" /></a
+                ><img src="/icons/social/fc.svg" alt="" data-v-872b605b="" /></a
               ><a
                 href="https://www.youtube.com/c/BritishManagementUniversity"
                 target="_blank"
                 class="w-5 h-5 inline-block"
                 data-v-872b605b=""
-                ><img
-                  src="/_nuxt/icons/social/yt.svg"
-                  alt=""
-                  data-v-872b605b="" /></a
+                ><img src="/icons/social/yt.svg" alt="" data-v-872b605b="" /></a
               ><a
                 href="https://www.instagram.com/bmuedu/"
                 target="_blank"
                 class="w-5 h-5 inline-block"
                 data-v-872b605b=""
-                ><img
-                  src="/_nuxt/icons/social/ig.svg"
-                  alt=""
-                  data-v-872b605b=""
+                ><img src="/icons/social/ig.svg" alt="" data-v-872b605b=""
               /></a>
             </div>
           </div>

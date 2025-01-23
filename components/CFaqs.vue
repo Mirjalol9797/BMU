@@ -24,7 +24,7 @@ const toggleAccordion = (index) => {
   <div class="c-faqs">
     <div class="site-container">
       <div
-        class="text-center text-5xl font-medium mb-6 1024:text-4xl 768:mb-4 768:!text-3xl"
+        class="text-center text-4xl font-medium mb-6 1024:text-3xl 768:mb-4 768:!text-2xl"
       >
         FAQs
       </div>
@@ -37,7 +37,7 @@ const toggleAccordion = (index) => {
           :class="activeIndex === index ? 'bg-[#192B69] text-white' : ''"
         >
           <div
-            class="text-2xl font-medium flex-center cursor-pointer"
+            class="text-xl font-medium flex-center cursor-pointer"
             @click="toggleAccordion(index)"
           >
             <img

@@ -8,10 +8,10 @@ const { data: dataGallery } = useAsyncData("Gallery", () =>
 );
 </script>
 <template>
-  <div class="mb-10">
+  <div class="my-14">
     <div class="site-container">
       <div
-        class="text-center text-5xl font-medium mb-10 1024:text-4xl 480:!text-3xl"
+        class="text-center text-4xl font-medium mb-10 1024:text-3xl 768:!text-2xl"
       >
         Our Campus Gallery
       </div>
