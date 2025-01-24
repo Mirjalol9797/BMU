@@ -44,7 +44,7 @@ useSeoMeta({
   />
   <div class="teacher-page py-[100px] 768:py-[70px]">
     <div class="site-container">
-      <div class="grid grid-cols-2 gap-x-10 mb-14 768:grid-cols-1">
+      <div class="grid grid-cols-2 gap-x-10 mb-14 768:grid-cols-1 768:mb-6">
         <div
           class="text-[#192B69] text-5xl font-medium 768:mb-10 768:text-3xl 480:!text-xl 480:!mb-6"
         >
@@ -61,8 +61,8 @@ useSeoMeta({
           > -->
         </div>
       </div>
-      <div class="flex items-start gap-10">
-        <div class="w-full min-w-[35%]">
+      <div class="flex items-start gap-10 768:flex-col">
+        <div class="w-full min-w-[25%]">
           <img
             :src="dataMember?.image"
             :alt="dataMember?.title"
