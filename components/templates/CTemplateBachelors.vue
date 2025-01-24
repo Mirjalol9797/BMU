@@ -10,12 +10,7 @@ const props = defineProps({
 <template>
   <div class="template">
     <div class="site-container !py-[80px] 768:!py-[40px]">
-      <div class="grid grid-cols-2 gap-10 mb-[80px] 768:grid-cols-1 768:mb-10">
-        <div
-          class="text-4xl font-semibold mb-6 1024:text-3xl 768:mb-4 768:!text-2xl"
-        >
-          {{ content.title }}
-        </div>
+      <div class="gap-10 mb-[80px] 768:mb-10">
         <div v-html="content.description"></div>
       </div>
       <div class="grid grid-cols-3 gap-6 768:grid-cols-2 480:!grid-cols-1">

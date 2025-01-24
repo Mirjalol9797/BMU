@@ -131,7 +131,7 @@ useSeoMeta({
           <div class="text-2xl mb-9 font-medium 768:text-lg">
             {{ $t("contact_page.contact_now") }}:
           </div>
-          <div class="font-medium mb-[60px] 768:mb-8">
+          <div class="font-medium mb-[40px] 768:mb-8">
             <div class="text-[#424343] flex-center mb-2">
               <div class="w-5 h-[1.5px] bg-[#424343] mr-2"></div>
               <span class="uppercase">{{ $t("contact_page.phone") }}</span>
@@ -140,7 +140,7 @@ useSeoMeta({
               >+998 95 511 99 99</a
             >
           </div>
-          <div class="font-medium mb-[60px] 768:mb-8">
+          <div class="font-medium mb-[40px] 768:mb-8">
             <div class="text-[#424343] flex-center mb-2">
               <div class="w-5 h-[1.5px] bg-[#424343] mr-2"></div>
               <span class="uppercase">{{ $t("contact_page.email") }}</span>
@@ -149,7 +149,7 @@ useSeoMeta({
               >info@bmu-edu.uz</a
             >
           </div>
-          <div class="font-medium mb-[60px] 768:mb-8">
+          <div class="font-medium mb-[40px] 768:mb-8">
             <div class="text-[#424343] flex-center mb-2">
               <div class="w-5 h-[1.5px] bg-[#424343] mr-2"></div>
               <span class="uppercase">{{ $t("contact_page.location") }}</span>

@@ -15,9 +15,6 @@ const props = defineProps({
           <img :src="content.image" :alt="content.title" class="mx-auto" />
         </div>
         <div class="w-1/2 768:w-full">
-          <div class="text-5xl font-medium mb-8 768:text-2xl 768:mb-6">
-            {{ content.title }}
-          </div>
           <div v-html="content.description"></div>
         </div>
       </div>
