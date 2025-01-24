@@ -17,8 +17,6 @@ const toggleAccordion = (index) => {
 
 <template>
   <div class="template">
-    <CBannerAllPage :title="content.title" :image="content.background" />
-
     <div class="site-container !py-[80px] 768:!py-[40px]">
       <div
         v-html="content?.description"

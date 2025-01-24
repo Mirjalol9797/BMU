@@ -9,8 +9,6 @@ const props = defineProps({
 
 <template>
   <div class="template">
-    <CBannerAllPage :title="content.title" :image="content.background" />
-
     <div
       class="site-container !py-[80px] 768:!py-[40px] grid grid-cols-2 gap-14 768:grid-cols-1"
     >

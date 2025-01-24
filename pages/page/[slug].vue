@@ -38,6 +38,11 @@ useSeoMeta({
 
 <template>
   <div class="dynamic-pages">
+    <CBannerAllPage
+      :title="dataPage?.data?.title"
+      :image="dataPage?.data?.background"
+    />
+    <CSettingStandart v-if="dataPage?.data?.has_setting" />
     <TemplatesCTemplateContent
       v-if="dataPage?.data?.page_id == 0"
       :content="dataPage?.data"
@@ -66,7 +71,6 @@ useSeoMeta({
       v-if="dataPage?.data?.page_id == 6"
       :content="dataPage?.data"
     />
-    <CSettingStandart v-if="dataPage?.data?.has_setting" />
     <CFaqs v-if="dataPage?.data?.has_faq" />
     <CGallery v-if="dataPage?.data?.has_gallery" />
   </div>
