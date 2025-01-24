@@ -92,9 +92,11 @@ onMounted(() => {
           >
             <nuxt-link
               :to="
-                localePath(
-                  menu?.url ? `/${menu?.url}` : `/page/${menu?.page_slug}`
-                )
+                menu?.url
+                  ? localePath(`/${menu?.url}`)
+                  : menu?.page_slug
+                  ? localePath(`/page/${menu?.page_slug}`)
+                  : ''
               "
               class="flex-center gap-1 py-[38px] px-3 menu-title"
             >
@@ -116,11 +118,11 @@ onMounted(() => {
                 >
                   <nuxt-link
                     :to="
-                      localePath(
-                        child?.url
-                          ? `/${child?.url}`
-                          : `/page/${child?.page_slug}`
-                      )
+                      child?.url
+                        ? localePath(`/${child?.url}`)
+                        : child?.page_slug
+                        ? localePath(`/page/${child?.page_slug}`)
+                        : ''
                     "
                     class="text-base font-semibold mb-5 inline-block"
                   >
@@ -135,11 +137,11 @@ onMounted(() => {
                     >
                       <nuxt-link
                         :to="
-                          localePath(
-                            item?.url
-                              ? `/${item?.url}`
-                              : `/page/${item?.page_slug}`
-                          )
+                          item?.url
+                            ? localePath(`/${item?.url}`)
+                            : item?.page_slug
+                            ? localePath(`/page/${item?.page_slug}`)
+                            : ''
                         "
                       >
                         {{ item.title }}
@@ -155,9 +157,11 @@ onMounted(() => {
               <li v-for="(item, index) in menu.children" :key="index">
                 <nuxt-link
                   :to="
-                    localePath(
-                      item?.url ? `/${item?.url}` : `/page/${item?.page_slug}`
-                    )
+                    item?.url
+                      ? localePath(`/${item?.url}`)
+                      : item?.page_slug
+                      ? localePath(`/page/${item?.page_slug}`)
+                      : ''
                   "
                 >
                   {{ item.title }}
@@ -170,9 +174,11 @@ onMounted(() => {
               >
                 <nuxt-link
                   :to="
-                    localePath(
-                      item?.url ? `/${item?.url}` : `/page/${item?.page_slug}`
-                    )
+                    item?.url
+                      ? localePath(`/${item?.url}`)
+                      : item?.page_slug
+                      ? localePath(`/page/${item?.page_slug}`)
+                      : ''
                   "
                 >
                   {{ item.title }}

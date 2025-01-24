@@ -26,18 +26,22 @@ const { data: dataFooterMenu } = useAsyncData("FooterMenu", () =>
         >
           <nuxt-link
             :to="
-              localePath(
-                menu?.url ? `/${menu?.url}` : `/page/${menu?.page_slug}`
-              )
+              menu?.url
+                ? localePath(`/${menu?.url}`)
+                : menu?.page_slug
+                ? localePath(`/page/${menu?.page_slug}`)
+                : ''
             "
             class="block text-xl mb-5 768:mb-3 768:text-lg"
             >{{ menu.title }}</nuxt-link
           >
           <nuxt-link
             :to="
-              localePath(
-                item?.url ? `/${item?.url}` : `/page/${item?.page_slug}`
-              )
+              item?.url
+                ? localePath(`/${item?.url}`)
+                : item?.page_slug
+                ? localePath(`/page/${item?.page_slug}`)
+                : ''
             "
             class="block text-[#424343] mb-4 last:mb-0"
             v-for="(item, index) in menu.children"

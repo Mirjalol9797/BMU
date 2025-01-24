@@ -26,6 +26,7 @@ function openLangList() {
 }
 
 const openItem = ref([]);
+const openItem2 = ref([]);
 
 const toggleAccordion = (id) => {
   if (openItem.value === id) {
@@ -35,8 +36,20 @@ const toggleAccordion = (id) => {
   }
 };
 
+const toggleAccordion2 = (id) => {
+  if (openItem2.value === id) {
+    openItem2.value = null;
+  } else {
+    openItem2.value = id;
+  }
+};
+
 const isOpen = (id) => {
   return openItem.value === id;
+};
+
+const isOpen2 = (id) => {
+  return openItem2.value === id;
 };
 </script>
 
@@ -58,9 +71,11 @@ const isOpen = (id) => {
         <div class="accordion-header p-4 flex items-center justify-between">
           <nuxt-link
             :to="
-              localePath(
-                menu?.url ? `/${menu?.url}` : `/page/${menu?.page_slug}`
-              )
+              menu?.url
+                ? localePath(`/${menu?.url}`)
+                : menu?.page_slug
+                ? localePath(`/page/${menu?.page_slug}`)
+                : ''
             "
             class="font-semibold inline-block"
           >
@@ -79,7 +94,7 @@ const isOpen = (id) => {
           </button>
         </div>
         <div
-          class="accordion-content px-8 py-6 bg-[#F8F8F8]"
+          class="accordion-content pl-8 pr-4 py-6 bg-[#F8F8F8]"
           v-if="isOpen(menu.id)"
         >
           <div
@@ -87,22 +102,35 @@ const isOpen = (id) => {
             :key="index"
             class="mb-6 last:mb-0"
           >
-            <nuxt-link
-              :to="
-                localePath(
-                  item?.url ? `/${item?.url}` : `/page/${item?.page_slug}`
-                )
-              "
-              class="inline-block"
-              :class="
-                menu.children?.length == 1
-                  ? 'text-sm mb-3'
-                  : 'font-semibold mb-4'
-              "
-            >
-              {{ item.title }}
-            </nuxt-link>
-            <ul>
+            <div class="flex justify-between mb-4 last:mb-0">
+              <nuxt-link
+                :to="
+                  item?.url
+                    ? localePath(`/${item?.url}`)
+                    : item?.page_slug
+                    ? localePath(`/page/${item?.page_slug}`)
+                    : ''
+                "
+                class="inline-block"
+                :class="
+                  menu.children?.length == 1 ? 'text-sm' : 'font-semibold'
+                "
+              >
+                {{ item.title }}
+              </nuxt-link>
+              <button
+                v-if="item.children"
+                @click="toggleAccordion2(item.id)"
+                class="pl-8"
+              >
+                <img
+                  src="/icons/mobile-menu-accar-icon.svg"
+                  alt="mobile-menu"
+                  :class="isOpen2(item.id) ? 'icon-rotate' : ''"
+                />
+              </button>
+            </div>
+            <ul v-if="isOpen2(item.id)">
               <li
                 v-for="(item, index) in item.children"
                 :key="index"
@@ -110,9 +138,11 @@ const isOpen = (id) => {
               >
                 <nuxt-link
                   :to="
-                    localePath(
-                      item?.url ? `/${item?.url}` : `/page/${item?.page_slug}`
-                    )
+                    item?.url
+                      ? localePath(`/${item?.url}`)
+                      : item?.page_slug
+                      ? localePath(`/page/${item?.page_slug}`)
+                      : ''
                   "
                 >
                   {{ item.title }}

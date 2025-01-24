@@ -56,13 +56,13 @@ useSeoMeta({
             v-html="dataMember?.position"
           ></div>
           <div class="mb-3" v-html="dataMember?.education"></div>
-          <a href="mailto:marvin@gmail.com" class="text-[#648AC8]"
+          <!-- <a href="mailto:marvin@gmail.com" class="text-[#648AC8]"
             >Mail: marvin@gmail.com</a
-          >
+          > -->
         </div>
       </div>
-      <div class="grid grid-cols-2 gap-10 768:grid-cols-1 768:gap-6">
-        <div>
+      <div class="flex items-start gap-10">
+        <div class="w-full min-w-[35%]">
           <img
             :src="dataMember?.image"
             :alt="dataMember?.title"
