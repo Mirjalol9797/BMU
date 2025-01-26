@@ -28,12 +28,14 @@ const props = defineProps({
             />
           </div>
           <div class="shadow-[0_7px_28px_0_rgba(0,0,0,0.06)] p-5">
-            <div class="text-xl text-[#010101] mb-5 font-medium 768:text-base">
+            <div
+              class="text-xl text-[#010101] mb-5 font-medium min-h-[56px] 768:text-base"
+            >
               {{ item.title }}
             </div>
             <div
               v-html="item.description"
-              class="text-[#424343] text-height3"
+              class="text-[#424343] text-height6"
             ></div>
           </div>
         </nuxt-link>

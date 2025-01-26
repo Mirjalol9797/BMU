@@ -91,16 +91,6 @@ select {
   }
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-size: revert;
-  font-weight: revert;
-}
-
 .site-btn-loader {
   color: #fbc100 !important;
   pointer-events: none;
@@ -140,6 +130,17 @@ h6 {
 
 .text-height3 {
   -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  font-size: 16px;
+  line-height: 24px;
+  min-height: 72px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.text-height6 {
+  -webkit-line-clamp: 6;
   -webkit-box-orient: vertical;
   display: -webkit-box;
   font-size: 16px;

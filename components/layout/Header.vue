@@ -189,12 +189,12 @@ onMounted(() => {
         </ul>
 
         <div class="flex-center gap-4">
-          <a
-            href="https://bit.ly/BMU_App_2025"
+          <nuxt-link
+            :to="localePath(`/contact`)"
             class="inline-flex text-sm text-white py-3 px-5 bg-[#648AC8] rounded-full font-medium 1024:fixed 1024:w-full 1024:left-[0] 1024:rounded-none 1024:bottom-0 1024:z-20 1024:flex 1024:justify-center 1024:items-center"
           >
             {{ $t("contact_me") }}
-          </a>
+          </nuxt-link>
           <a
             href="https://bmu-admission-system.netlify.app/signup"
             class="inline-flex text-sm text-white py-3 px-5 bg-[#FF0000] rounded-full font-medium 1024:fixed 1024:w-full 1024:left-[0] 1024:rounded-none 1024:bottom-0 1024:z-20 1024:flex 1024:justify-center 1024:items-center"
