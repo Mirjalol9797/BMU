@@ -7,7 +7,7 @@ const currentPage = ref(1);
 const galleryList = ref({
   sort: "id",
   order: "desc",
-  limit: 9,
+  limit: 100,
   page: 1,
 });
 const { data: dataGallery } = useAsyncData("Gallery", () =>
@@ -39,14 +39,6 @@ function changePagePagination() {
           <img :src="item.image" alt="Image 1" />
         </div>
       </div>
-      <vue-awesome-paginate
-        v-if="false"
-        :total-items="50"
-        :items-per-page="5"
-        :max-pages-shown="5"
-        v-model="currentPage"
-        @click="changePagePagination"
-      />
     </div>
   </div>
 </template>
