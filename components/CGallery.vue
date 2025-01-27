@@ -1,11 +1,26 @@
 <script setup>
+import { ref } from "vue";
 import { useAsyncData } from "nuxt/app";
 
 const getGallery = useApiGalleries();
-
+const currentPage = ref(1);
+const galleryList = ref({
+  sort: "id",
+  order: "desc",
+  limit: 100,
+  page: 1,
+});
 const { data: dataGallery } = useAsyncData("Gallery", () =>
-  getGallery.getGallery()
+  getGallery.getGallery(galleryList.value)
 );
+
+function changePagePagination() {
+  galleryList.value.page = currentPage.value;
+
+  getGallery.getGallery({
+    ...galleryList.value,
+  });
+}
 </script>
 <template>
   <div class="my-14">
@@ -13,17 +28,25 @@ const { data: dataGallery } = useAsyncData("Gallery", () =>
       <div
         class="text-center text-4xl font-medium mb-10 1024:text-3xl 768:!text-2xl"
       >
-        Our Campus Gallery
+        {{ $t("our_campus_gallery") }}
       </div>
       <div class="gallery">
         <div
           class="gallery-item item-1"
-          v-for="item in dataGallery?.data?.gallery"
+          v-for="item in dataGallery?.data?.data?.gallery"
           :key="item.id"
         >
           <img :src="item.image" alt="Image 1" />
         </div>
       </div>
+      <!-- <vue-awesome-paginate
+        v-if="false"
+        :total-items="50"
+        :items-per-page="5"
+        :max-pages-shown="5"
+        v-model="currentPage"
+        @click="changePagePagination"
+      /> -->
     </div>
   </div>
 </template>

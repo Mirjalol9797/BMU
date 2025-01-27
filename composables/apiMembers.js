@@ -12,6 +12,11 @@ export const useApiMembers = () => {
     return res?.data;
   };
 
+  const getLeadershipTeam = async () => {
+    const res = await $api(`/api/leadership-team`);
+    return res?.data;
+  };
+
   const getMemberId = async (id) => {
     const res = await $api(`/api/member/${id}`);
     return res?.data;
@@ -20,6 +25,7 @@ export const useApiMembers = () => {
   return {
     getFacultyMembers,
     getAcademicAdvisoryBoard,
+    getLeadershipTeam,
     getMemberId,
   };
 };

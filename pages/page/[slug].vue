@@ -17,8 +17,6 @@ const { data: dataPage } = useAsyncData("Page", async () => {
   }
 });
 
-console.log("dataPage?.data?", dataPage);
-
 useSeoMeta({
   title: dataPage.value?.data?.title,
   description: dataPage.value?.data?.title,
