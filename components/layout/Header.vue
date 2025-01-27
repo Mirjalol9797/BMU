@@ -62,8 +62,7 @@ onMounted(() => {
     <div class="bg-[#192B69] py-1.5">
       <div class="site-container flex-center justify-between 768:flex-col">
         <div class="text-[#D9D9D9] 768:mb-2 flex">
-          <span class="pr-1">Notice:</span>
-          News & Events Central
+          {{ $t("header_news") }}
         </div>
         <div class="flex-center gap-6 480:gap-2">
           <div class="flex-center gap-2 text-white">

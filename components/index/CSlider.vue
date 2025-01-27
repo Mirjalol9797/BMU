@@ -27,7 +27,40 @@ const props = defineProps({
   >
     <SwiperSlide
       class="relative after:content-[''] after:inset-0 after:bg-[rgba(0,0,0,0.5)] after:absolute"
-      v-for="(slider, index) in sliderData"
+      v-for="(slider, index) in sliderData.slice(0, 1)"
+      :key="index"
+    >
+      <img
+        :src="slider.image_url"
+        :alt="slider.title"
+        v-if="slider.image_url"
+      />
+      <video muted autoplay loop v-else>
+        <source :src="slider.background_url" type="video/mp4" />
+      </video>
+
+      <div
+        class="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] text-white z-10 w-[70%] text-center"
+      >
+        <div
+          class="text-6xl leading-[70px] mb-6 font-medium 1024:text-4xl 480:!text-2xl"
+        >
+          {{ slider.title }}
+        </div>
+        <div class="text-xl leading-10 font-bold mb-10 640:text-base">
+          {{ slider.description }}
+        </div>
+        <a
+          href="https://bmu-admission-system.netlify.app/signup"
+          class="text-base text-white py-[14px] px-10 bg-[#FF0000] rounded-full font-medium"
+        >
+          {{ $t("apply_now") }}
+        </a>
+      </div>
+    </SwiperSlide>
+    <SwiperSlide
+      class="relative after:content-[''] after:inset-0 after:bg-[rgba(0,0,0,0.5)] after:absolute"
+      v-for="(slider, index) in sliderData.slice(1)"
       :key="index"
     >
       <img

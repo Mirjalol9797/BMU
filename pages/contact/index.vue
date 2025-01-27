@@ -151,7 +151,7 @@ useSeoMeta({
           </div>
           <div class="font-medium mb-[40px] 768:mb-8">
             <div class="text-[#424343] flex-center mb-2">
-              <div class="w-5 h-[1.5px] bg-[#424343] mr-2"></div>
+              <img src="/icons/header/location.svg" alt="" class="w-5 mr-3" />
               <span class="uppercase">{{ $t("contact_page.location") }}</span>
             </div>
             <div class="text-base font-medium">
@@ -160,7 +160,8 @@ useSeoMeta({
           </div>
           <div class="font-medium">
             <div class="text-[#424343] flex-center mb-3">
-              <div class="w-5 h-[1.5px] bg-[#424343] mr-2"></div>
+              <img src="/icons/header/follow.svg" alt="" class="w-5 mr-3" />
+
               <span class="uppercase">{{ $t("follow_us") }}</span>
             </div>
             <div
