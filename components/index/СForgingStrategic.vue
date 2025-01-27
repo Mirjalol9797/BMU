@@ -22,7 +22,7 @@ const props = defineProps({
         </div>
         <div class="mb-5" v-html="content?.description"></div>
         <nuxt-link
-          to="/"
+          :to="localePath(`${content.link}`)"
           class="text-[#648AC8] inline-flex font-medium learn-more"
           >{{ $t("learn_more") }}
           <img
