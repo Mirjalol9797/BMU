@@ -93,7 +93,7 @@ const { data: dataFooterMenu } = useAsyncData("FooterMenu", () =>
               <img src="/icons/social/yt.svg" alt="" />
             </a>
             <a
-              href="https://www.instagram.com/bmuedu/"
+              href="https://www.instagram.com/bmu_uz/"
               target="_blank"
               class="w-5 h-5 inline-block"
             >

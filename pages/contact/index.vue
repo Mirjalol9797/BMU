@@ -133,7 +133,7 @@ useSeoMeta({
           </div>
           <div class="font-medium mb-[40px] 768:mb-8">
             <div class="text-[#424343] flex-center mb-2">
-              <div class="w-5 h-[1.5px] bg-[#424343] mr-2"></div>
+              <img src="/icons/header/phone.svg" alt="" class="w-5 mr-3" />
               <span class="uppercase">{{ $t("contact_page.phone") }}</span>
             </div>
             <a href="tel:+998955119999" class="text-base font-medium"
@@ -142,7 +142,7 @@ useSeoMeta({
           </div>
           <div class="font-medium mb-[40px] 768:mb-8">
             <div class="text-[#424343] flex-center mb-2">
-              <div class="w-5 h-[1.5px] bg-[#424343] mr-2"></div>
+              <img src="/icons/header/sms.svg" alt="" class="w-5 mr-3" />
               <span class="uppercase">{{ $t("contact_page.email") }}</span>
             </div>
             <a href="mailto:info@bmu-edu.uz" class="text-base font-medium"
@@ -191,7 +191,7 @@ useSeoMeta({
                 data-v-872b605b=""
                 ><img src="/icons/social/yt.svg" alt="" data-v-872b605b="" /></a
               ><a
-                href="https://www.instagram.com/bmuedu/"
+                href="https://www.instagram.com/bmu_uz/"
                 target="_blank"
                 class="w-5 h-5 inline-block"
                 data-v-872b605b=""
