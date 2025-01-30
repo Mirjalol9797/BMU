@@ -17,7 +17,7 @@ const props = defineProps({
         <nuxt-link
           v-for="(item, index) in content.accordion_data"
           :key="index"
-          :to="localePath(`/${item.url}`)"
+          :to="localePath(`${item.url}`)"
           class="bg-white img-transition"
         >
           <div class="h-[300px] overflow-hidden 768:h-[200px]">
