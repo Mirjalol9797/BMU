@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from "vue";
+import { ref, nextTick } from "vue";
 
 const props = defineProps({
   content: {
@@ -9,9 +9,23 @@ const props = defineProps({
 });
 
 const activeIndex = ref(null);
+const accordionRefs = ref([]);
+const accordionHeights = ref([]);
 
-const toggleAccordion = (index) => {
-  activeIndex.value = activeIndex.value === index ? null : index;
+const toggleAccordion = async (index) => {
+  if (activeIndex.value === index) {
+    activeIndex.value = null;
+  } else {
+    activeIndex.value = index;
+
+    // Подождать, пока контент появится в DOM
+    await nextTick();
+
+    // Получаем высоту раскрываемого контента
+    if (accordionRefs.value[index]) {
+      accordionHeights.value[index] = accordionRefs.value[index].scrollHeight;
+    }
+  }
 };
 </script>
 
@@ -29,6 +43,7 @@ const toggleAccordion = (index) => {
           :key="index"
           class="mb-6 text-[#192B69]"
         >
+          <!-- Заголовок -->
           <div
             class="text-xl font-medium flex-center justify-between cursor-pointer px-5 py-4 bg-[#F4F5F8]"
             @click="toggleAccordion(index)"
@@ -45,9 +60,16 @@ const toggleAccordion = (index) => {
               alt="toggle-icon"
             />
           </div>
+
+          <!-- Контент с анимацией -->
           <div
-            v-if="activeIndex === index"
-            class="mt-3 text-lg"
+            ref="accordionRefs"
+            class="accordion-content"
+            :style="{
+              maxHeight:
+                activeIndex === index ? accordionHeights[index] + 'px' : '0px',
+              opacity: activeIndex === index ? '1' : '0',
+            }"
             v-html="item.description"
           ></div>
         </div>
@@ -56,4 +78,11 @@ const toggleAccordion = (index) => {
   </div>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.accordion-content {
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.3s ease-in, opacity 0.3s ease-in;
+}
+</style>

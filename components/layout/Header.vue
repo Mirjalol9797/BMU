@@ -200,7 +200,10 @@ onMounted(() => {
           >
             {{ $t("apply_now") }}
           </a>
-          <div class="flex relative language-view mt-[6px] 1024:hidden">
+          <div
+            class="flex relative language-view mt-[6px] 1024:hidden"
+            v-if="false"
+          >
             <div class="text-[#1C335F] font-semibold flex-center pb-1.5">
               <img
                 :src="`/images/${localeView[0].image}`"

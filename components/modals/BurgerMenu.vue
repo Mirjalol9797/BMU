@@ -156,6 +156,7 @@ const isOpen2 = (id) => {
 
     <div
       class="relative language-view mt-[6px] px-4 border-t border-[#E9EAEC] pt-6"
+      v-if="false"
     >
       <div
         class="text-[#1C335F] font-semibold flex-center mb-3"

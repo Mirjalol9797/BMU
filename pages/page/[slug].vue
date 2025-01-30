@@ -76,4 +76,11 @@ useSeoMeta({
   <UiTmLoader v-if="isLoading" />
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss">
+div[style*="background:#eeeeee"] {
+  background: #648ac8 !important;
+  a {
+    color: #fff !important;
+  }
+}
+</style>
