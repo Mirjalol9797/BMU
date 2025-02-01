@@ -9,7 +9,7 @@ const props = defineProps({
 
 <template>
   <div class="template">
-    <div class="site-container">
+    <div class="template-container">
       <div class="py-[100px] 768:py-[70px]">
         <div
           class="flex-center gap-14 mb-[100px] last:mb-0 768:flex-col 768:gap-8"

@@ -78,6 +78,7 @@ const isOpen2 = (id) => {
                 : ''
             "
             class="font-semibold inline-block"
+            @click="settingsStore.isBurgerMenu = false"
           >
             {{ menu.title }}
           </nuxt-link>
@@ -115,6 +116,7 @@ const isOpen2 = (id) => {
                 :class="
                   menu.children?.length == 1 ? 'text-sm' : 'font-semibold'
                 "
+                @click="settingsStore.isBurgerMenu = false"
               >
                 {{ item.title }}
               </nuxt-link>
@@ -144,6 +146,7 @@ const isOpen2 = (id) => {
                       ? localePath(`/page/${item?.page_slug}`)
                       : ''
                   "
+                  @click="settingsStore.isBurgerMenu = false"
                 >
                   {{ item.title }}
                 </nuxt-link>

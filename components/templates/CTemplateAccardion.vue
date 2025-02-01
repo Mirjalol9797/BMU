@@ -31,7 +31,7 @@ const toggleAccordion = async (index) => {
 
 <template>
   <div class="template">
-    <div class="site-container !py-[80px] 768:!py-[40px]">
+    <div class="template-container !py-[80px] 768:!py-[40px]">
       <div
         v-html="content?.description"
         class="mb-10"
