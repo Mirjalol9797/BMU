@@ -51,6 +51,11 @@ const isOpen = (id) => {
 const isOpen2 = (id) => {
   return openItem2.value === id;
 };
+
+function closeBurgerMenu() {
+  settingsStore.isBurgerMenu = false;
+  document.querySelector("body").classList.remove("open-modal");
+}
 </script>
 
 <template>
@@ -78,7 +83,7 @@ const isOpen2 = (id) => {
                 : ''
             "
             class="font-semibold inline-block"
-            @click="settingsStore.isBurgerMenu = false"
+            @click="closeBurgerMenu"
           >
             {{ menu.title }}
           </nuxt-link>
@@ -116,7 +121,7 @@ const isOpen2 = (id) => {
                 :class="
                   menu.children?.length == 1 ? 'text-sm' : 'font-semibold'
                 "
-                @click="settingsStore.isBurgerMenu = false"
+                @click="closeBurgerMenu"
               >
                 {{ item.title }}
               </nuxt-link>
@@ -146,7 +151,7 @@ const isOpen2 = (id) => {
                       ? localePath(`/page/${item?.page_slug}`)
                       : ''
                   "
-                  @click="settingsStore.isBurgerMenu = false"
+                  @click="closeBurgerMenu"
                 >
                   {{ item.title }}
                 </nuxt-link>
