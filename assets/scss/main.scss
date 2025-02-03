@@ -20,8 +20,15 @@ body {
   padding: 0 20px;
 }
 
+.template-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
 @media (max-width: 768px) {
-  .site-container {
+  .site-container,
+  .template-container {
     padding: 0 16px;
   }
 }
