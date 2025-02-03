@@ -109,7 +109,10 @@ onMounted(() => {
 
             <!-- big menu -->
             <div class="sub-menu-big" v-if="menu.children?.length > 1">
-              <div class="site-container flex">
+              <div
+                class="site-container flex"
+                :class="menu.children?.length >= 3 ? 'justify-center' : ''"
+              >
                 <div
                   class="max-w-[300px] w-full px-2"
                   v-for="(child, index) in menu.children"
@@ -143,7 +146,17 @@ onMounted(() => {
                             : ''
                         "
                       >
-                        {{ item.title }}
+                        <span
+                          :class="
+                            item?.id == 58 ||
+                            item?.id == 21 ||
+                            item?.id == 77 ||
+                            item?.id == 79
+                              ? 'font-semibold text-base'
+                              : ''
+                          "
+                          >{{ item.title }}</span
+                        >
                       </nuxt-link>
                     </li>
                   </ul>
