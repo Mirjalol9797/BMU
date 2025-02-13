@@ -28,6 +28,7 @@ const props = defineProps({
           >
             <div
               class="text-[#648AC8] text-xl mb-6 font-medium 640:text-base 640:mb-4"
+              v-if="false"
             >
               {{ $t("licences_ligal_documentation") }}
             </div>
