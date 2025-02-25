@@ -23,7 +23,7 @@ const props = defineProps({
             :to="localePath(`/news-detail/${news?.data?.data?.news[0]?.id}`)"
             class="mb-9 inline-block"
           >
-            <div class="h-[200px] mb-4 img-transition overflow-hidden">
+            <div class="h-[220px] mb-4 img-transition overflow-hidden">
               <img
                 :src="news?.data?.data?.news[0]?.image"
                 :alt="news?.data?.data?.news[0]?.title"

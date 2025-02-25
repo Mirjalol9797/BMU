@@ -37,8 +37,8 @@ export const useApiMainPage = () => {
       method: "POST", // Указываем метод POST
       body: {
         sort: "id",
-        order: "desc",
-        limit: 5,
+        order: "asc",
+        limit: 6,
         page: 1,
       },
     });
