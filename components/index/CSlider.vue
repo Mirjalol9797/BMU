@@ -1,8 +1,8 @@
 <script setup>
 const props = defineProps({
   sliderData: {
-    type: Object,
-    default: {},
+    type: Array,
+    default: () => [],
   },
 });
 </script>
@@ -27,7 +27,7 @@ const props = defineProps({
   >
     <SwiperSlide
       class="relative after:content-[''] after:inset-0 after:bg-[rgba(0,0,0,0.5)] after:absolute"
-      v-for="(slider, index) in sliderData.slice(0, 1)"
+      v-for="(slider, index) in sliderData?.slice(0, 1)"
       :key="index"
     >
       <img
@@ -60,7 +60,7 @@ const props = defineProps({
     </SwiperSlide>
     <SwiperSlide
       class="relative after:content-[''] after:inset-0 after:bg-[rgba(0,0,0,0.5)] after:absolute"
-      v-for="(slider, index) in sliderData.slice(1)"
+      v-for="(slider, index) in sliderData?.slice(1)"
       :key="index"
     >
       <img

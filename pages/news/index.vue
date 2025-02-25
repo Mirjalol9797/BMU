@@ -40,7 +40,10 @@ useSeoMeta({
 });
 </script>
 <template>
-  <CBannerAllPage :title="$t('our_news_articles')" />
+  <CBannerAllPage
+    :title="$t('our_news_articles')"
+    :image="dataNews?.data?.background?.image"
+  />
   <div class="news py-[100px] 768:py-[70px]">
     <div class="site-container">
       <!-- article -->

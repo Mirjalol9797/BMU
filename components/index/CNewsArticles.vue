@@ -64,7 +64,7 @@ const props = defineProps({
           <nuxt-link
             :to="localePath(`/news-detail/${item.id}`)"
             class="flex justify-between gap-8 pb-6 border-b border-[#01010133] mb-8 640:flex-col"
-            v-for="(item, index) in news?.data?.data?.news.slice(1)"
+            v-for="(item, index) in news?.data?.data?.news.slice(2)"
             :key="index"
           >
             <div>

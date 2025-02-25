@@ -4,11 +4,17 @@ import { useAsyncData } from "nuxt/app";
 
 const getGallery = useApiGalleries();
 const currentPage = ref(1);
+const props = defineProps({
+  limit: {
+    type: Number,
+    default: 9,
+  },
+});
 
 const galleryList = ref({
   sort: "id",
   order: "desc",
-  limit: 9, // Количество элементов на странице
+  limit: props.limit, // Количество элементов на странице
   page: currentPage.value,
 });
 

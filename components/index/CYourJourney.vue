@@ -10,12 +10,24 @@ const sliderTrack2 = ref(null);
 const offset = ref(0);
 const offset2 = ref(-1000);
 const speed = 60; // Скорость прокрутки
-const step = 1; // Шаг анимации
+const step = 0.75; // Шаг анимации
 
 // Получение массива изображений из API
 const images = computed(() => {
   const gallery = settingsStore.journeyData?.data?.gallery || [];
   return [...gallery, ...gallery]; // Дублируем изображения для бесконечной прокрутки
+});
+
+const firstHalf = computed(() => {
+  const gallery = settingsStore.journeyData?.data?.gallery || [];
+  const halfIndex = Math.ceil(gallery.length / 2); // Находим индекс середины массива
+  return gallery.slice(0, halfIndex); // Берем первую половину
+});
+
+const secondHalf = computed(() => {
+  const gallery = settingsStore.journeyData?.data?.gallery || [];
+  const halfIndex = Math.ceil(gallery.length / 2); // Находим индекс середины массива
+  return gallery.slice(halfIndex); // Берем вторую половину
 });
 
 // Анимация первого слайдера
@@ -55,7 +67,7 @@ onMounted(() => {
     data-aos="fade-up"
     data-aos-duration="1000"
   >
-    <div class="site-container flex 1024:flex-col">
+    <div class="site-container flex 1024:flex-col relative">
       <div
         class="max-w-[500px] w-full text-white 1024:max-w-full 1024:text-center 1024:mb-[100px]"
       >
@@ -78,7 +90,7 @@ onMounted(() => {
         </a>
       </div>
       <div
-        class="absolute top-0 right-[30%] flex gap-8 rotate-[12deg] 1024:hidden 1024:relative 1024:h-[500px] 1024:top-0 1024:right-0 1024:overflow-hidden 1024:mx-auto"
+        class="absolute top-0 left-[35%] flex gap-8 rotate-[12deg] 1024:hidden 1024:relative 1024:h-[500px] 1024:top-0 1024:right-0 1024:overflow-hidden 1024:mx-auto"
       >
         <div class="animate-images-up">
           <div
@@ -87,7 +99,7 @@ onMounted(() => {
             ref="sliderTrack"
           >
             <img
-              v-for="(item, index) in images"
+              v-for="(item, index) in firstHalf"
               :key="item.id + '-' + index"
               :src="item.image"
               alt="slider image"
@@ -102,7 +114,7 @@ onMounted(() => {
             ref="sliderTrack2"
           >
             <img
-              v-for="(item, index) in images"
+              v-for="(item, index) in secondHalf"
               :key="item.id + '-' + index"
               :src="item.image"
               alt="slider image"
