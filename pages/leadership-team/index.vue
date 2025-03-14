@@ -18,24 +18,24 @@ const { data: dataFacultyMembers } = useAsyncData(
 );
 
 useSeoMeta({
-  title: t("distinguished_faculty_members"),
-  description: t("distinguished_faculty_members"),
+  title: t("leadership_team"),
+  description: t("leadership_team"),
   keywords: "BMU",
-  ogTitle: t("distinguished_faculty_members"),
-  ogDescription: t("distinguished_faculty_members"),
+  ogTitle: t("leadership_team"),
+  ogDescription: t("leadership_team"),
   ogImage: dataFacultyMembers?.background?.image,
   ogUrl: "https://bmu-edu.uz/news",
   twitterCard: "summary_large_image",
   ogSiteName: "site_name",
   twitterUrl: "https://bmu-edu.uz/news",
-  twitterTitle: t("distinguished_faculty_members"),
-  twitterDescription: t("distinguished_faculty_members"),
+  twitterTitle: t("leadership_team"),
+  twitterDescription: t("leadership_team"),
   twitterImage: dataFacultyMembers?.background?.image,
 });
 </script>
 <template>
   <CBannerAllPage
-    :title="$t('distinguished_faculty_members')"
+    :title="$t('leadership_team')"
     :image="dataFacultyMembers?.background?.image"
   />
   <div class="members-page py-[100px] 768:py-[70px]">

@@ -2,7 +2,7 @@
   "apply_now": "Ariza To'ldiring!",
   "all_rights_reserved": "Barcha huquqlar himoyalangan.",
   "about": "Biz haqimizda",
-  "academic_advisory_board": "Akademik Vasiylik kengashi",
+  "academic_advisory_board": "Akademik Vasiylik Kengashi",
   "apply_now_modal": {
     "title": "To apply",
     "identification_card": "Identification Card/Passport/Birth Certificate",
@@ -48,7 +48,7 @@
   "distinguished_faculty_members": "Taniqli professor-o'qituvchilar",
   "download_file": "Faylni yuklab olish",
 
-  "faculty_members": "Professor va o’qituvchilar",
+  "faculty_members": "Professor va O’qituvchilar",
   "follow_us": "Obuna bo'ling",
 
   "get_started": "Boshlash",
@@ -60,6 +60,7 @@
 
   "learn_more": "Batafsil ma'lumot",
   "licences_ligal_documentation": "Litsenziyalar va huquqiy hujjatlar",
+  "leadership_team": "Rahbariyat",
 
   "contacts": "Kontaktlar",
   "contact_page": {
