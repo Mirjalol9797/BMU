@@ -151,7 +151,8 @@ onMounted(() => {
                             item?.id == 58 ||
                             item?.id == 21 ||
                             item?.id == 77 ||
-                            item?.id == 79
+                            item?.id == 79 ||
+                            item?.id == 86
                               ? 'font-semibold text-base'
                               : ''
                           "
