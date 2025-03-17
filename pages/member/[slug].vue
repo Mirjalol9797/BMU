@@ -1,10 +1,12 @@
 <script setup>
+import { onMounted, watch } from "vue";
 import { useAsyncData } from "nuxt/app";
 import { useRoute } from "vue-router";
 
 const route = useRoute();
 const isLoading = ref(false);
 const getMember = useApiMembers();
+let mainTitle = null;
 const { t } = useI18n();
 
 // fetch api
@@ -21,27 +23,39 @@ const { data: dataMember } = useAsyncData("Member", async () => {
   }
 });
 
+watch(
+  () => dataMember.value,
+  (newValue) => {
+    if (newValue) {
+      mainTitle =
+        newValue.department == 1
+          ? t("academic_advisory_board")
+          : newValue.department == 2
+          ? t("faculty_members")
+          : t("leadership_team");
+    }
+  },
+  { immediate: true }
+);
+
 useSeoMeta({
-  title: t("distinguished_faculty_members"),
-  description: t("distinguished_faculty_members"),
+  title: dataMember?.value?.full_name,
+  description: dataMember?.value?.position,
   keywords: "BMU",
-  ogTitle: t("distinguished_faculty_members"),
-  ogDescription: t("distinguished_faculty_members"),
+  ogTitle: dataMember?.value?.full_name,
+  ogDescription: dataMember?.value?.position,
   ogImage: "/images/logo.png",
   ogUrl: "https://bmu-edu.uz/member",
   twitterCard: "summary_large_image",
   ogSiteName: "site_name",
   twitterUrl: "https://bmu-edu.uz/member",
-  twitterTitle: t("distinguished_faculty_members"),
-  twitterDescription: t("distinguished_faculty_members"),
+  twitterTitle: dataMember?.value?.full_name,
+  twitterDescription: dataMember?.value?.position,
   twitterImage: "/images/logo.png",
 });
 </script>
 <template>
-  <CBannerAllPage
-    :title="$t('distinguished_faculty_members')"
-    :image="dataMember?.background"
-  />
+  <CBannerAllPage :title="mainTitle" :image="dataMember?.background" />
   <div class="teacher-page py-[100px] 768:py-[70px]">
     <div class="site-container">
       <div class="grid grid-cols-2 gap-x-10 mb-14 768:grid-cols-1 768:mb-6">
